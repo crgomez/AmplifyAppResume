@@ -309,7 +309,7 @@ button:focus,
 .header .btn {
     margin-top : 40px;
     }
-/*
+
 .header .content .social-icon {
     margin  : 0;
     padding : 0;
@@ -336,7 +336,7 @@ button:focus,
 .header .content .social-icon li a:hover {
     border-color : #ffffff;
     }
-*/
+
 @media (max-width : 600px) {
     .header .profile-img {
         z-index : 1;
