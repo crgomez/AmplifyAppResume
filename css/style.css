@@ -485,14 +485,14 @@ button:focus,
  * Contact
  *-------------------*/
 
-.feedback-form {
+/* .feedback-form {
     margin-top : 50px;
-    }
+    } */
 
 /*-------------------
  * Form Style
  *-------------------*/
-.form-control {
+/* .form-control {
     height        : 50px;
     padding       : 0 20px;
     font-size     : 13px;
@@ -507,7 +507,7 @@ button:focus,
 .form-control:focus,
 .form-control:active {
     box-shadow : none;
-    }
+    } */
 
 /* --------------------------------------------
  *   Footer
