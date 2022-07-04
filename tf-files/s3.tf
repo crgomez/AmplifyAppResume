@@ -17,6 +17,8 @@ resource "aws_s3_bucket_policy" "crgomez_policy" {
 
 }
 
+/* Configure bucket policies to allow Cloudflare IP addresses
+   https://support.cloudflare.com/hc/en-us/articles/360037983412-Configuring-an-Amazon-Web-Services-static-site-to-use-Cloudflare */
 data "aws_iam_policy_document" "crgomez_policy" {
   statement {
     sid    = "PublicReadGetObject"
