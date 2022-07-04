@@ -17,25 +17,20 @@ resource "aws_s3_bucket_policy" "crgomez_policy" {
 
 }
 
-/* Configure bucket policies to allow Cloudflare IP addresses
-   https://support.cloudflare.com/hc/en-us/articles/360037983412-Configuring-an-Amazon-Web-Services-static-site-to-use-Cloudflare */
 data "aws_iam_policy_document" "crgomez_policy" {
   statement {
-    sid    = "PublicReadGetObject"
-    effect = "Deny"
+    sid    = ""
+    effect = "Allow"
     resources = [aws_s3_bucket.crgomez_imgs.arn,
     "${aws_s3_bucket.crgomez_imgs.arn}/*", ]
     actions = [
+      "s3:ListBucket",
       "s3:GetObject",
     ]
-    condition {
-      test     = "NotIpAddress"
-      variable = "aws:SourceIp"
-      values   = var.ips
-    }
     principals {
       type        = "AWS"
       identifiers = ["*"]
     }
+
   }
 }
