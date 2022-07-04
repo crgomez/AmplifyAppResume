@@ -19,18 +19,21 @@ resource "aws_s3_bucket_policy" "crgomez_policy" {
 
 data "aws_iam_policy_document" "crgomez_policy" {
   statement {
-    sid    = ""
-    effect = "Allow"
+    sid    = "PublicReadGetObject"
+    effect = "Deny"
     resources = [aws_s3_bucket.crgomez_imgs.arn,
     "${aws_s3_bucket.crgomez_imgs.arn}/*", ]
     actions = [
-      "s3:ListBucket",
       "s3:GetObject",
     ]
+    condition {
+      prod     = "NotIpAddress"
+      variable = "aws:SourceIp"
+      values   = var.ips
+    }
     principals {
       type        = "AWS"
       identifiers = ["*"]
     }
-
   }
 }
