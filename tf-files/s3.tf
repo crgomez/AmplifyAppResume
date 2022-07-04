@@ -29,7 +29,7 @@ data "aws_iam_policy_document" "crgomez_policy" {
       "s3:GetObject",
     ]
     condition {
-      prod     = "NotIpAddress"
+      test     = "NotIpAddress"
       variable = "aws:SourceIp"
       values   = var.ips
     }
