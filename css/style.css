@@ -507,7 +507,7 @@ button:focus,
  * Preloader
  * ====================*/
 #preloader {
-    background : #2a54f5;
+    background : #313131;
     bottom     : 0;
     left       : 0;
     position   : fixed;
@@ -515,7 +515,7 @@ button:focus,
     top        : 0;
     z-index    : 9999;
     }
-
+/* 
 #status,
 .status-mes {
     background-image    : url(../img/puff.svg);
@@ -536,3 +536,4 @@ button:focus,
     text-align : center;
     top        : 65%;
     }
+    */
