@@ -376,29 +376,31 @@ button:focus,
 
 .progress-item .progress-title {
     font-size     : 15px;
-    font-weight   : 400;
+    font-weight   : 500;
     display       : inline-block;
     margin-bottom : 5px;
     }
 
 .progress-item .progress {
-    height        : 4px;
+    font-size     : 12px;
+    font-weight   : 500;
+    height        : 15;
     box-shadow    : none;
     border-radius : 5px;
     }
 
 .progress-item .progress-bar {
-    background-color : #2a54f5;
+    background-color : #313131;
     box-shadow       : none;
     text-align       : right;
     }
 
 .progress-item .progress-percent {
-    font-size        : 10px;
+    font-size        : 5px;
     background-color : #313131;
     position         : absolute;
     top              : 5px;
-    padding          : 0 8px;
+    padding          : 0 5px;
     border-radius    : 3px;
     }
 
