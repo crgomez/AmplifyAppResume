@@ -378,7 +378,7 @@ button:focus,
     font-size     : 15px;
     font-weight   : 500;
     display       : inline-block;
-    margin-bottom : 5px;
+    margin-bottom : 1px;
     }
 
 .progress-item .progress {
@@ -386,13 +386,19 @@ button:focus,
     font-weight   : 500;
     height        : 15;
     box-shadow    : none;
-    border-radius : 5px;
+    border-radius : 1px;
+    overflow      : visible;
+    position      : relative;
+    margin-bottom : 2px;
     }
 
 .progress-item .progress-bar {
     background-color : #313131;
     box-shadow       : none;
     text-align       : right;
+    position         : relative;
+    -webkit-animation: animate-positive 2s;
+    animation: animate-positive 2s;
     }
 
 .progress-item .progress-percent {
@@ -400,7 +406,6 @@ button:focus,
     background-color : #313131;
     position         : absolute;
     top              : 5px;
-    padding          : 0 5px;
     border-radius    : 3px;
     }
 
@@ -411,6 +416,13 @@ button:focus,
     bottom       : -4px;
     border-top   : 6px solid #313131;
     border-right : 8px solid transparent;
+    }
+
+    @-webkit-keyframes animate-positive{
+        0% { width: 0; }
+    }
+    @keyframes animate-positive{
+        0% { width: 0; }
     }
 
 /*-------------------
@@ -458,6 +470,7 @@ button:focus,
             rgba(42, 84, 245, 0.5) 100%
     );
     }
+
 
 /*-------------------
  * Content Item
