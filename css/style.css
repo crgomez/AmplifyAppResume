@@ -1,8 +1,8 @@
 /*
-Template Name: Online CV
+Project Name: CRGOMEZ Site CV
 Description: HTML5 / CSS3 One Page
-Version: 1.0
-Author: themehippo.com
+Version: 4.0
+Author: crgomez.com
 */
 
 /*------------------------------------------------------------------
@@ -266,24 +266,7 @@ button:focus,
     background-size     : cover;
     background-position : center bottom 47%;
     }
-/*
-.header .profile-img:before {
-    content    : "";
-    position   : absolute;
-    left       : 0;
-    top        : 0;
-    right      : 0;
-    bottom     : 0;
-    background : linear-gradient(
-            -30deg,
-            rgba(42, 84, 245, 0.5) 0%,
-            rgba(42, 84, 245, 0.5) 40%,
-            transparent 60%,
-            transparent 100%
-    );
 
-    }
-*/
 .header .content {
     position : absolute;
     bottom   : 0;
@@ -492,34 +475,6 @@ button:focus,
 .content-item small {
     color : #888888;
     }
-
-/*-------------------
- * Contact
- *-------------------*/
-
-/* .feedback-form {
-    margin-top : 50px;
-    } */
-
-/*-------------------
- * Form Style
- *-------------------*/
-/* .form-control {
-    height        : 50px;
-    padding       : 0 20px;
-    font-size     : 13px;
-    line-height   : 50px;
-    color         : #969595;
-    border        : 1px solid #cccccc;
-    border-radius : 0;
-    box-shadow    : none;
-    box-sizing    : border-box;
-    }
-
-.form-control:focus,
-.form-control:active {
-    box-shadow : none;
-    } */
 
 /* --------------------------------------------
  *   Footer
