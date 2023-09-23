@@ -15,7 +15,7 @@ CRGOMEZ is built using <a href="https://aws.amazon.com/amplify/">AWS Amplify Hos
 <h3>Why I went with AWS Amplify?</h3>
 <p>
 Overall AWS Amplify supports static sites, enviornment staging, and atomic deployments. Since
-<a href="https://crgomez.com">CRGOMEZ</a> is meant to share my personal career artifacts, having a service that supports a continues development, continues deployment (CI/CD) model is a requirement.
+<a href="https://crgomez.com">CRGOMEZ</a> is meant to share my personal career artifacts, having a service that supports a continues integration, continues deployment (CI/CD) model is a requirement.
 
 Having a global network, features such as instant cache invalidations ensures the site is updated instantly on every github code commit.
 </p>
@@ -27,8 +27,8 @@ CRGOMEZ is built using a number of services including open source projects:
 <div style="text-align: center;">
 
 [![AWS Amplify Badge](https://img.shields.io/badge/AWS%20Amplify-F90?logo=awsamplify&logoColor=fff&style=for-the-badge)](https://crgomez.com)
-![Terraform Badge](https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=fff&style=for-the-badge)
-![jsDelivr Badge](https://img.shields.io/badge/jsDelivr-E84D3D?logo=jsdelivr&logoColor=fff&style=for-the-badge)
-![Google Fonts Badge](https://img.shields.io/badge/Google%20Fonts-4285F4?logo=googlefonts&logoColor=fff&style=for-the-badge)
+[![Terraform Badge](https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=fff&style=for-the-badge)](https://www.terraform.io/)
+[![jsDelivr Badge](https://img.shields.io/badge/jsDelivr-E84D3D?logo=jsdelivr&logoColor=fff&style=for-the-badge)](https://www.jsdelivr.com/)
+[![Google Fonts Badge](https://img.shields.io/badge/Google%20Fonts-4285F4?logo=googlefonts&logoColor=fff&style=for-the-badge)](https://fonts.google.com/)
 
 </dev>
