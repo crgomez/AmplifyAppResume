@@ -3,6 +3,8 @@
 <p>
 Author: CRGOMEZ <br>
 Project: https://crgomez.com
+
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=fff&style=for-the-badge)](https://www.linkedin.com/in/cgomezsystemadmin/)
 </p>
 
 <h3>Project Scope</h3>
@@ -23,9 +25,7 @@ CRGOMEZ is built using a number of services including open source projects:
 </p>
 <div style="text-align: center;">
 
-
 [![AWS Amplify Badge](https://img.shields.io/badge/AWS%20Amplify-F90?logo=awsamplify&logoColor=fff&style=for-the-badge)](https://crgomez.com)
-[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=fff&style=for-the-badge)](https://www.linkedin.com/in/cgomezsystemadmin/)
 ![Terraform Badge](https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=fff&style=for-the-badge)
 ![jsDelivr Badge](https://img.shields.io/badge/jsDelivr-E84D3D?logo=jsdelivr&logoColor=fff&style=for-the-badge)
 ![Google Fonts Badge](https://img.shields.io/badge/Google%20Fonts-4285F4?logo=googlefonts&logoColor=fff&style=for-the-badge)
