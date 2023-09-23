@@ -9,12 +9,13 @@ Project: https://crgomez.com
 
 <h3>Project Scope</h3>
 <p>
-CRGOMEZ is built using [AWS Amplify Hosting](https://aws.amazon.com/amplify/), providing a fully managed CI/CD service for fast, secure, and reliable static serverless web apps.
+CRGOMEZ is built using <a href="https://aws.amazon.com/amplify/">AWS Amplify Hosting</a>, providing a fully managed CI/CD service for fast, secure, and reliable static serverless web apps.
 </p>
 
 <h3>Why I went with AWS Amplify?</h3>
 <p>
-Overall AWS Amplify supports static sites, enviornment staging, and atomic deployments. Since [CRGOMEZ](https://crgomez.com) is meant to share my personal career artifacts, having a service that supports a continues development, continues deployment (CI/CD) model is a requirement.
+Overall AWS Amplify supports static sites, enviornment staging, and atomic deployments. Since
+<a href="https://crgomez.com">CRGOMEZ</a> is meant to share my personal career artifacts, having a service that supports a continues development, continues deployment (CI/CD) model is a requirement.
 
 Having a global network, features such as instant cache invalidations ensures the site is updated instantly on every github code commit.
 </p>
