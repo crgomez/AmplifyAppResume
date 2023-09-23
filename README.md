@@ -1,21 +1,35 @@
-# AmplifyAppResume - CRGOMEZ
+<h1>AmplifyAppResume - CRGOMEZ </h1>
 
-[![Build Status](https://app.travis-ci.com/crgomez/AmplifyAppResume.svg?branch=master)](https://travis-ci.org/github/crgomez/AmplifyAppResume/)
+<p>
+Author: CRGOMEZ <br>
+</p>
 
-CRGOMEZ is built using AWS Amplify Hosting, providing a fully managed CI/CD service for fast, secure, and reliable static serverless web apps.
+<h3>Project Scope</h3>
+<p>
+CRGOMEZ is built using [AWS Amplify Hosting](https://aws.amazon.com/amplify/), providing a fully managed CI/CD service for fast, secure, and reliable static serverless web apps.
+</p>
 
-## Amplify Hosting Features
-- Amplify Hosting supports the common SPA frameworks, for example, React, Angular, Vue.js, Ionic, and   Ember, as well as static site generators like Gatsby, Eleventy, Hugo, VuePress, and Jekyll.
-- Manage production and staging environments for your frontend and backend by connecting new branches.
-- Connect your application to a custom domain.
-- Instant cache invalidations ensure your app is updated instantly on every code commit.
-- Atomic deployments eliminate maintenance windows by ensuring that the web app is updated only after the entire deployment finishes. This eliminates scenarios where files fail to upload properly.
+<h3>Why I went with AWS Amplify?</h3>
+<p>
+Overall AWS Amplify supports static sites, enviornment staging, and atomic deployments. Since [CRGOMEZ](https://crgomez.com) is meant to share my personal career artifacts, having a service that supports a continues development, continues deployment (CI/CD) model is a requirement.
 
-## Backend
+Having a global network, features such as instant cache invalidations ensures the site is updated instantly on every github code commit.
 
-CRGOMEZ uses a number of services including open source projects to work properly:
-- [AWS Amplify Hosting] - Connect your Git repository to continuously deploy your frontend and backend. Host it on a globally available CDN.
-- [Amplify Previews] - Previews offer a way to preview changes before merging a pull request.
-- [Terraform by HashiCorp] - S3 infrastructure as code.
-- [node.js] - <http://nodejs.org>
-- [jQuery] - <http://jquery.com>
+
+
+</p>
+
+<h3> Backend Services </h3>
+<p>
+CRGOMEZ is built using a number of services including open source projects:
+</p>
+<div style="text-align: center;">
+
+
+[![AWS Amplify Badge](https://img.shields.io/badge/AWS%20Amplify-F90?logo=awsamplify&logoColor=fff&style=for-the-badge)](https://crgomez.com)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=fff&style=for-the-badge)](https://www.linkedin.com/in/cgomezsystemadmin/)
+![Terraform Badge](https://img.shields.io/badge/Terraform-844FBA?logo=terraform&logoColor=fff&style=for-the-badge)
+![jsDelivr Badge](https://img.shields.io/badge/jsDelivr-E84D3D?logo=jsdelivr&logoColor=fff&style=for-the-badge)
+![Google Fonts Badge](https://img.shields.io/badge/Google%20Fonts-4285F4?logo=googlefonts&logoColor=fff&style=for-the-badge)
+
+</dev>
