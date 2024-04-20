@@ -1,7 +1,7 @@
 /*
 Project Name: CRGOMEZ Site CV
 Description: HTML5 / CSS3 One Page
-Version: 4.0
+Version: 4.1
 Author: crgomez.com
 */
 
@@ -515,25 +515,4 @@ button:focus,
     top        : 0;
     z-index    : 9999;
     }
-/* 
-#status,
-.status-mes {
-    background-image    : url(../img/puff.svg);
-    background-position : center;
-    background-repeat   : no-repeat;
-    height              : 200px;
-    left                : 50%;
-    margin              : -100px 0 0 -100px;
-    position            : absolute;
-    top                 : 50%;
-    width               : 200px;
-    }
 
-.status-mes {
-    background : none;
-    left       : 0;
-    margin     : 0;
-    text-align : center;
-    top        : 65%;
-    }
-    */
