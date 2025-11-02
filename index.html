@@ -611,12 +611,20 @@ Version: 6.0 - Lovable Inspired
             // Handle mobile photo positioning
             function handleMobilePhoto() {
                 const isMobile = window.innerWidth < 768;
+                const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
                 const desktopPhoto = document.getElementById('interactive-photo');
                 const mobilePlaceholder = document.getElementById('mobile-photo-placeholder');
                 
-                console.log('handleMobilePhoto:', { isMobile, windowWidth: window.innerWidth, desktopPhoto, mobilePlaceholder });
+                console.log('handleMobilePhoto:', { 
+                    isMobile, 
+                    isTouchDevice,
+                    windowWidth: window.innerWidth, 
+                    userAgent: navigator.userAgent,
+                    desktopPhoto: !!desktopPhoto, 
+                    mobilePlaceholder: !!mobilePlaceholder 
+                });
                 
-                if (isMobile && desktopPhoto && mobilePlaceholder) {
+                if ((isMobile || isTouchDevice) && desktopPhoto && mobilePlaceholder) {
                     // Clone the desktop photo for mobile
                     const mobilePhoto = desktopPhoto.cloneNode(true);
                     mobilePhoto.id = 'mobile-interactive-photo';
@@ -638,7 +646,7 @@ Version: 6.0 - Lovable Inspired
                     
                     // Initialize interactive functionality for mobile photo
                     setupPhotoInteraction(mobilePhoto, mobileClearLayer, mobileCursorBorder);
-                } else if (!isMobile && mobilePlaceholder) {
+                } else if (!isMobile && !isTouchDevice && mobilePlaceholder) {
                     // Hide mobile photo on desktop
                     mobilePlaceholder.style.display = 'none';
                     
