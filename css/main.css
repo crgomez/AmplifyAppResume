@@ -1,0 +1,364 @@
+/* ===================================
+ * MAIN CSS - Portfolio Design System
+ * Carlos R. Gomez - Security Engineering Manager
+ * Version: 7.0 - Modular Architecture
+ * =================================== */
+
+/* Import Design System Modules */
+@import url('./design-system/tokens.css');
+@import url('./design-system/base.css');
+@import url('./design-system/components.css');
+@import url('./design-system/utilities.css');
+
+/* ===================================
+ * LAYOUT SYSTEM
+ * =================================== */
+
+/* Main Wrapper */
+#main-wrapper {
+  background: var(--color-background);
+  overflow-x: hidden;
+}
+
+/* Modern Single-Column Layout */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+/* Section System */
+.section {
+  padding: var(--space-20) 0;
+  position: relative;
+}
+
+.section-sm {
+  padding: var(--space-16) 0;
+}
+
+.section-lg {
+  padding: var(--space-24) 0;
+}
+
+.section-xl {
+  padding: var(--space-32) 0;
+}
+
+/* Section Titles */
+.section-title {
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.section-title h2 {
+  margin-bottom: var(--space-2);
+  color: inherit;
+  position: relative;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -var(--space-2);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+.section-title.text-left {
+  text-align: left;
+}
+
+.section-title.text-left h2::after {
+  left: 0;
+  transform: none;
+}
+
+/* ===================================
+ * CONTENT COMPONENTS
+ * =================================== */
+
+/* Content Items for Experience */
+.content-item {
+  margin-bottom: var(--space-8);
+  padding: var(--space-6);
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  border: none;
+  transition: var(--transition-smooth);
+}
+
+.content-item:hover {
+  background: var(--color-card);
+}
+
+.content-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.content-item h3 {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-foreground);
+  line-height: var(--line-height-tight);
+}
+
+.content-item h4 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-foreground);
+}
+
+.content-item h5 {
+  margin: 0 0 var(--space-3);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-muted-foreground);
+}
+
+.content-item small {
+  color: var(--color-muted-foreground);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  background: var(--color-muted);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+/* ===================================
+ * SKILLS & CERTIFICATIONS
+ * =================================== */
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.skill-category {
+  background: var(--color-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  border: none;
+  transition: var(--transition-smooth);
+}
+
+.skill-category:hover {
+  background: var(--color-card);
+}
+
+.skill-category h3 {
+  color: var(--color-foreground);
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skill-tag {
+  background: hsl(210 100% 60% / 0.1);
+  color: var(--color-secondary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  transition: var(--transition-smooth);
+  display: inline-block;
+}
+
+.skill-tag:hover {
+  background: hsl(210 100% 60% / 0.2);
+  transform: translateY(-1px);
+}
+
+/* Certifications */
+.certifications-grid {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.cert-item {
+  background: var(--color-card);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.cert-item:hover {
+  background: var(--color-card);
+}
+
+.cert-item a {
+  display: block;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-snug);
+  margin-bottom: var(--space-2);
+}
+
+.cert-item a:hover {
+  color: var(--color-primary-hover);
+}
+
+.cert-item small {
+  display: block;
+  color: var(--color-muted-foreground);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  background: none;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===================================
+ * FOOTER
+ * =================================== */
+.footer {
+  background: var(--color-foreground);
+  color: var(--color-background);
+  padding: var(--space-12) 0 var(--space-8);
+  margin-top: var(--space-16);
+}
+
+.footer .copyright-section {
+  text-align: center;
+  padding: var(--space-6) 0;
+  border-top: 1px solid hsl(0 0% 100% / 0.1);
+}
+
+.footer .copyright-section .copytext {
+  font-size: var(--font-size-sm);
+  color: hsl(0 0% 100% / 0.7);
+  font-weight: var(--font-weight-normal);
+}
+
+.footer .copyright-section .copytext a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer .copyright-section .copytext a:hover {
+  color: var(--color-background);
+}
+
+
+
+/* ===================================
+ * EDUCATION CARDS LAYOUT
+ * =================================== */
+.education-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.education-card {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .education-cards-container {
+    flex-direction: row;
+  }
+}
+
+/* ===================================
+ * CERTIFICATIONS CARDS LAYOUT
+ * =================================== */
+.certifications-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.certification-card {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .certifications-cards-container {
+    flex-direction: row;
+  }
+}
+
+/* ===================================
+ * SKILLS CARDS LAYOUT
+ * =================================== */
+.skills-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.skill-card {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .skills-cards-container {
+    flex-direction: row;
+  }
+}
+
+/* ===================================
+ * TECHNICAL SKILLS GRID
+ * =================================== */
+.technical-skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .technical-skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+/* ===================================
+ * RESPONSIVE DESIGN
+ * =================================== */
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-24) 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+  
+  .section {
+    padding: var(--space-16) 0;
+  }
+}
