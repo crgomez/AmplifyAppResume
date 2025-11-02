@@ -45,11 +45,25 @@ Version: 6.0 - Lovable Inspired
         <div class="min-h-screen">
             <!-- Hero Section - GitHub Project Layout -->
             <section class="container py-20 md:py-32">
-                <table style="width: 100%; border-collapse: collapse;">
+                <style>
+                    @media (max-width: 767px) {
+                        .responsive-table, .responsive-table tr, .responsive-table td {
+                            display: block !important;
+                            width: 100% !important;
+                        }
+                        .responsive-table td {
+                            padding: 0 !important;
+                            margin-bottom: 2rem;
+                        }
+                        .desktop-photo-cell {
+                            display: none !important;
+                        }
+                    }
+                </style>
+                <table class="responsive-table" style="width: 100%; border-collapse: collapse;">
                     <tr>
                         <td style="vertical-align: top; padding-right: 3rem; width: 60%;">
-                            <!-- Left Column - Content -->
-                            <!-- Role Badge -->
+                        <!-- Role Badge -->
                             <div class="highlight-box mb-6">
                                 Manager, Security Engineering
                             </div>
@@ -62,33 +76,31 @@ Version: 6.0 - Lovable Inspired
                             <!-- Introduction -->
                             <div class="space-y-6 text-lg md:text-xl mb-12">
                                 <p class="text-foreground">
-                                    <strong>Hi! I'm Carlos,</strong> a Security Engineering Leader with advanced
-                                    training in
+                                    <strong>Hi! I'm Carlos,</strong> a Security Engineering Leader with advanced training in
                                     AI/ML and data-driven leadership.
-                                    Over 11 years of experience in insider threat detection (ITD) and incident response
-                                    (IR)
-                                    with quantitative decision-making frameworks to drive strategic security
-                                    initiatives.
+                                    Over 11 years of experience in insider threat detection (ITD) and incident response (IR)
+                                    with quantitative decision-making frameworks to drive strategic security initiatives.
                                 </p>
                                 <p class="text-muted-foreground">
                                     Developed and scaled both ITD & IR programs across Amazon Devices Subsidiaries &
                                     Acquisitions
-                                    (Amazon Alexa, Blink, Eero, Ring, Key, & Zoox) through data-driven risk mitigation
-                                    and
+                                    (Amazon Alexa, Blink, Eero, Ring, Key, & Zoox) through data-driven risk mitigation and
                                     advanced detection capabilities.
                                 </p>
                             </div>
-
-                            <!-- CTA Buttons -->
+                        </div>
+                        
+                        <!-- Mobile Photo Placeholder (will be moved by JavaScript) -->
+                        <div id="mobile-photo-placeholder" style="display: none; text-align: center; margin: 2rem 0; width: 100%;"></div>
+                        
+                        <!-- CTA Buttons -->
                             <div class="mb-16 flex gap-6 items-center flex-wrap">
                                 <a href="https://github.com/crgomez"
-                                    class="text-2xl text-foreground hover:text-primary transition-colors"
-                                    target="_blank">
+                                    class="text-2xl text-foreground hover:text-primary transition-colors" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
                                 <a href="https://www.linkedin.com/in/cgomezsystemadmin/"
-                                    class="text-2xl text-foreground hover:text-primary transition-colors"
-                                    target="_blank">
+                                    class="text-2xl text-foreground hover:text-primary transition-colors" target="_blank">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                                 <a href="https://s3.us-west-2.amazonaws.com/crgomez.com/crgomez-security-engineer.pdf"
@@ -111,34 +123,26 @@ Version: 6.0 - Lovable Inspired
                                 </div>
                             </div>
                         </td>
-                        <td style="vertical-align: top; width: 40%; text-align: center; padding-top: 4rem;">
-                            <!-- Right Column - Interactive Photo -->
-                            <div id="interactive-photo"
-                                class="relative border border-border overflow-hidden cursor-none"
+                        <td class="desktop-photo-cell" style="vertical-align: top; width: 40%; text-align: center; padding-top: 4rem;">
+                            <div id="interactive-photo" class="relative border border-border overflow-hidden cursor-none"
                                 style="width: 314px; height: 418px; margin: 0 auto;">
-
-                                <!-- Blurred Background Layer (Always Visible) -->
                                 <div class="absolute inset-0">
-                                    <img src="https://s3.us-west-2.amazonaws.com/crgomez.com/IMG.png"
-                                        alt="Carlos R Gomez"
+                                    <img src="https://s3.us-west-2.amazonaws.com/crgomez.com/IMG.png" alt="Carlos R Gomez"
                                         style="width: 100%; height: 100%; object-fit: cover; filter: blur(20px);">
                                 </div>
-
-                                <!-- Clear Image Layer with Clip-Path (Visible on Hover) -->
-                                <div id="clear-layer" class="absolute inset-0"
-                                    style="opacity: 0; transition: opacity 0.3s;">
-                                    <img src="https://s3.us-west-2.amazonaws.com/crgomez.com/IMG.png"
-                                        alt="Carlos R Gomez" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div id="clear-layer" class="absolute inset-0" style="opacity: 0; transition: opacity 0.3s;">
+                                    <img src="https://s3.us-west-2.amazonaws.com/crgomez.com/IMG.png" alt="Carlos R Gomez"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
-
-                                <!-- Border Rectangle Cursor (Visible on Hover) -->
                                 <div id="cursor-border"
-                                    style="position: absolute; width: 150px; height: 300px; border: 2px solid var(--color-primary); opacity: 0.3; pointer-events: none; transition: transform 0.1s; display: none;">
+                                    style="position: absolute; width: 150px; height: 200px; border: 2px solid var(--color-primary); opacity: 0.3; pointer-events: none; transition: transform 0.1s; display: none;">
                                 </div>
                             </div>
                         </td>
                     </tr>
                 </table>
+                </table>
+
             </section>
 
             <!-- Experience Section -->
@@ -518,75 +522,138 @@ Version: 6.0 - Lovable Inspired
             }, 10);
         }
 
-        // Interactive Photo Effect
+        // Function to setup interactive photo for any container (global)
+        function setupPhotoInteraction(container, clearLayer, cursorBorder) {
+            console.log('Setting up photo interaction:', { container, clearLayer, cursorBorder });
+            if (!container || !clearLayer || !cursorBorder) {
+                console.log('Missing elements, skipping setup');
+                return;
+            }
+
+                let mousePosition = { x: 0, y: 0 };
+                let isHovering = false;
+
+                // Constants for spotlight window size
+                const rectWidth = 150;
+                const rectHeight = 200;
+
+                function handleMouseMove(e) {
+                    const rect = container.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    mousePosition = { x, y };
+
+                    if (isHovering) {
+                        updateSpotlight();
+                        updateCursor();
+                    }
+                }
+
+                function updateSpotlight() {
+                    const containerWidth = container.offsetWidth;
+                    const containerHeight = container.offsetHeight;
+
+                    // Calculate insets to create a window centered on cursor
+                    const top = Math.max(0, mousePosition.y - rectHeight / 2);
+                    const right = Math.max(0, containerWidth - mousePosition.x - rectWidth / 2);
+                    const bottom = Math.max(0, containerHeight - mousePosition.y - rectHeight / 2);
+                    const left = Math.max(0, mousePosition.x - rectWidth / 2);
+
+                    const clipPathValue = `inset(${top}px ${right}px ${bottom}px ${left}px round 8px)`;
+                    console.log('Setting clipPath:', clipPathValue);
+                    clearLayer.style.clipPath = clipPathValue;
+                }
+
+                function updateCursor() {
+                    cursorBorder.style.left = mousePosition.x + 'px';
+                    cursorBorder.style.top = mousePosition.y + 'px';
+                    cursorBorder.style.transform = 'translate(-50%, -50%)';
+                }
+
+                function handleMouseEnter() {
+                    isHovering = true;
+                    clearLayer.style.opacity = '1';
+                    cursorBorder.classList.remove('hidden');
+                }
+
+                function handleMouseLeave() {
+                    isHovering = false;
+                    clearLayer.style.opacity = '0';
+                    cursorBorder.classList.add('hidden');
+                }
+
+                // Add event listeners
+                container.addEventListener('mousemove', handleMouseMove);
+                container.addEventListener('mouseenter', handleMouseEnter);
+                container.addEventListener('mouseleave', handleMouseLeave);
+        }
+
+        // Initialize interactive photo
         function initInteractivePhoto() {
+            // Desktop photo
             const container = document.getElementById('interactive-photo');
             const clearLayer = document.getElementById('clear-layer');
             const cursorBorder = document.getElementById('cursor-border');
 
-            if (!container || !clearLayer || !cursorBorder) return;
+            console.log('Desktop elements:', { container, clearLayer, cursorBorder });
 
-            let mousePosition = { x: 0, y: 0 };
-            let isHovering = false;
-
-            // Constants for spotlight window size
-            const rectWidth = 150;
-            const rectHeight = 200;
-
-            function handleMouseMove(e) {
-                const rect = container.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-
-                mousePosition = { x, y };
-
-                if (isHovering) {
-                    updateSpotlight();
-                    updateCursor();
-                }
-            }
-
-            function updateSpotlight() {
-                const containerWidth = container.offsetWidth;
-                const containerHeight = container.offsetHeight;
-
-                // Calculate insets to create a window centered on cursor
-                const top = Math.max(0, mousePosition.y - rectHeight / 2);
-                const right = Math.max(0, containerWidth - mousePosition.x - rectWidth / 2);
-                const bottom = Math.max(0, containerHeight - mousePosition.y - rectHeight / 2);
-                const left = Math.max(0, mousePosition.x - rectWidth / 2);
-
-                clearLayer.style.clipPath = `inset(${top}px ${right}px ${bottom}px ${left}px round 8px)`;
-            }
-
-            function updateCursor() {
-                cursorBorder.style.left = mousePosition.x + 'px';
-                cursorBorder.style.top = mousePosition.y + 'px';
-                cursorBorder.style.transform = 'translate(-50%, -50%)';
-            }
-
-            function handleMouseEnter() {
-                isHovering = true;
-                clearLayer.style.opacity = '1';
-                cursorBorder.classList.remove('hidden');
-            }
-
-            function handleMouseLeave() {
-                isHovering = false;
-                clearLayer.style.opacity = '0';
-                cursorBorder.classList.add('hidden');
-            }
-
-            // Add event listeners
-            container.addEventListener('mousemove', handleMouseMove);
-            container.addEventListener('mouseenter', handleMouseEnter);
-            container.addEventListener('mouseleave', handleMouseLeave);
+            // Setup desktop photo
+            setupPhotoInteraction(container, clearLayer, cursorBorder);
         }
 
         // Add event listeners when DOM is loaded
         document.addEventListener('DOMContentLoaded', function () {
+            console.log('DOM loaded, initializing interactive photo...');
             // Initialize interactive photo
             initInteractivePhoto();
+            
+            // Handle mobile photo positioning
+            function handleMobilePhoto() {
+                const isMobile = window.innerWidth < 768;
+                const desktopPhoto = document.getElementById('interactive-photo');
+                const mobilePlaceholder = document.getElementById('mobile-photo-placeholder');
+                
+                console.log('handleMobilePhoto:', { isMobile, windowWidth: window.innerWidth, desktopPhoto, mobilePlaceholder });
+                
+                if (isMobile && desktopPhoto && mobilePlaceholder) {
+                    // Clone the desktop photo for mobile
+                    const mobilePhoto = desktopPhoto.cloneNode(true);
+                    mobilePhoto.id = 'mobile-interactive-photo';
+                    
+                    // Update IDs for mobile photo elements to avoid conflicts
+                    const mobileClearLayer = mobilePhoto.querySelector('#clear-layer');
+                    const mobileCursorBorder = mobilePhoto.querySelector('#cursor-border');
+                    
+                    if (mobileClearLayer) mobileClearLayer.id = 'mobile-clear-layer';
+                    if (mobileCursorBorder) mobileCursorBorder.id = 'mobile-cursor-border';
+                    
+                    // Clear placeholder and add mobile photo
+                    mobilePlaceholder.innerHTML = '';
+                    mobilePlaceholder.appendChild(mobilePhoto);
+                    mobilePlaceholder.style.display = 'block';
+                    
+                    // Hide desktop photo
+                    desktopPhoto.style.display = 'none';
+                    
+                    // Initialize interactive functionality for mobile photo
+                    setupPhotoInteraction(mobilePhoto, mobileClearLayer, mobileCursorBorder);
+                } else if (!isMobile && mobilePlaceholder) {
+                    // Hide mobile photo on desktop
+                    mobilePlaceholder.style.display = 'none';
+                    
+                    // Show desktop photo
+                    if (desktopPhoto) {
+                        desktopPhoto.style.display = 'block';
+                    }
+                }
+            }
+            
+            // Initial call
+            handleMobilePhoto();
+            
+            // Handle window resize
+            window.addEventListener('resize', handleMobilePhoto);
 
             // Add click handlers to project buttons
             const buttons = document.querySelectorAll('[data-project]');
