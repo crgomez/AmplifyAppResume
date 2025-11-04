@@ -620,7 +620,7 @@ Version: 6.0 - Lovable Inspired
 
             // Handle mobile photo positioning
             let mobilePhotoSetup = false; // Prevent multiple setups
-            
+
             function handleMobilePhoto() {
                 const isMobile = window.innerWidth < 768;
                 const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -681,7 +681,7 @@ Version: 6.0 - Lovable Inspired
 
             // Handle window resize with debouncing
             let resizeTimeout;
-            window.addEventListener('resize', function() {
+            window.addEventListener('resize', function () {
                 clearTimeout(resizeTimeout);
                 resizeTimeout = setTimeout(handleMobilePhoto, 250);
             });
