@@ -7,7 +7,7 @@
 **Infrastructure & Architecture:**
 
 - Designed and implemented a serverless, multi-project analytics platform using AWS Lambda, S3, QuickSight, and EventBridge
-- Built modular Terraform infrastructure supporting multi-environment deployments (STG/PRD) across separate AWS accounts
+- Built modular Terraform infrastructure supporting multi-environment deployments (STG/PRD) across separate environments
 - Implemented comprehensive security controls including KMS encryption, IAM least-privilege access, and Secrets Manager integration
 
 **Data Engineering & Analytics:**
@@ -42,7 +42,7 @@
 - Automated daily data collection from 2 major APIs (Asana, Tickety)
 - Managed 365-day data retention with automated cleanup processes
 - Supported analytics across 15+ custom fields and 20+ core data attributes
-- Implemented cross-account deployment strategy supporting both staging and production environments
+- Implemented multi-environment deployment strategy supporting both staging and production environments
 
 This project demonstrates your ability to build enterprise-scale, secure, and maintainable data analytics solutions while solving complex technical challenges and delivering measurable business value to security operations teams.
 
@@ -57,10 +57,10 @@ graph TB
 
     %% Multi-Environment Setup
     subgraph "Multi-Environment Deployment"
-        subgraph "STG Environment<br/>(itd-sec-lab Account)"
+        subgraph "STG Environment"
             STG_INFRA[STG Infrastructure]
         end
-        subgraph "PRD Environment<br/>(DESS-Quick Account)"
+        subgraph "PRD Environment"
             PRD_INFRA[PRD Infrastructure]
         end
     end
@@ -146,12 +146,12 @@ graph TB
 
   ## Project Overview
 
-Centralized infrastructure-as-code CI/CD pipeline for AWS Web Application Firewall (WAF) management using Terraform, enabling automated deployment and validation of security rules across multiple AWS accounts.
+Centralized infrastructure-as-code CI/CD pipeline for AWS Web Application Firewall (WAF) management using Terraform, enabling automated deployment and validation of security rules across multiple environments.
 ## Technical Skills Demonstrated
 
-- **Infrastructure as Code**: Terraform, Terraform Stacks, multi-account AWS deployments
+- **Infrastructure as Code**: Terraform, Terraform Stacks, multi-environment AWS deployments
 
-- **Cloud Security**: AWS WAF, cross-account IAM roles, security automation
+- **Cloud Security**: AWS WAF, cross-environment IAM roles, security automation
 - **CI/CD**: Automated deployment pipelines, staging validation workflows
 - **Monitoring**: CloudWatch dashboards, alerting, log analysis
 - **AWS Services**: WAF, IAM, CloudWatch, SNS, S3, DynamoDB
@@ -160,11 +160,11 @@ Centralized infrastructure-as-code CI/CD pipeline for AWS Web Application Firewa
 
 ### For DevOps/Cloud Engineer Role
 
-- Designed and implemented a centralized AWS WAF management system using Terraform Stacks, enabling automated deployment and validation of security rules across multiple AWS accounts
+- Designed and implemented a centralized AWS WAF management system using Terraform Stacks, enabling automated deployment and validation of security rules across multiple environments
 
 - Built a staging environment that mirrors production architecture, reducing security rule deployment risks through audit mode testing and comprehensive monitoring
 
-- Developed cross-account IAM role architecture with least-privilege permissions for secure multi-account WAF rule deployment
+- Developed cross-environment IAM role architecture with least-privilege permissions for secure multi-environment WAF rule deployment
 
 - Created automated CI/CD pipelines with Terraform workspace isolation for staging and production environments
 
@@ -190,7 +190,7 @@ Centralized infrastructure-as-code CI/CD pipeline for AWS Web Application Firewa
 
 ### For Platform Engineer Role
 
-- Developed scalable multi-account AWS infrastructure platform for centralized security rule management across production environments
+- Developed scalable multi-environment AWS infrastructure platform for centralized security rule management across production environments
 
 - Built automated testing framework for infrastructure validation, reducing deployment failures and improving system reliability
 
@@ -201,7 +201,7 @@ Centralized infrastructure-as-code CI/CD pipeline for AWS Web Application Firewa
 
 ## Key Achievements & Metrics
 
-- **Multi-Account Support**: Enabled centralized management across staging and multiple production AWS accounts
+- **Multi-Environment Support**: Enabled centralized management across staging and multiple production environments
 
 - **Risk Reduction**: Implemented staging validation that prevents production security misconfigurations
 
@@ -219,7 +219,7 @@ Centralized infrastructure-as-code CI/CD pipeline for AWS Web Application Firewa
 
 - **Terraform Stacks**: Orchestrated multi-component deployments with proper dependency management
 
-- **Cross-Account Security**: Implemented secure role assumption patterns with external ID validation
+- **Cross-Environment Security**: Implemented secure role assumption patterns with external ID validation
 
 - **Audit Mode Testing**: Built validation framework that tests rules in count mode before enforcement
 
