@@ -107,7 +107,7 @@ The design draws inspiration from modern portfolio examples (Jessica Mangoni Mal
 {
   personalInfo: {
     name: "Carlos R Gomez",
-    title: "Manager, Security Engineering",
+    title: "Senior Security Engineer, Incident Response",
     location: "Los Angeles, CA",
     email: "crgomez167@gmail.com",
     phone: "+1.323.620.2277",
@@ -116,7 +116,7 @@ The design draws inspiration from modern portfolio examples (Jessica Mangoni Mal
   
   professionalSummary: {
     yearsExperience: 11,
-    currentRole: "Security Engineering Manager",
+    currentRole: "Senior Security Engineer, Incident Response",
     specializations: ["Insider Threat Detection", "Incident Response", "AI/ML Leadership"],
     keyAchievements: [
       "Scaled ITD & IR programs across Amazon subsidiaries",
