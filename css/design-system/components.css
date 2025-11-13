@@ -717,3 +717,156 @@
     transform: none;
   }
 }
+
+/* ===== VISUAL TIMELINE ===== */
+.timeline-container {
+  position: relative;
+  padding-left: 80px; /* Space for timeline on desktop */
+}
+
+/* Vertical timeline line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 40px;
+  bottom: 40px;
+  width: 3px;
+  background: linear-gradient(180deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 50%,
+    var(--color-primary) 100%);
+  border-radius: var(--radius-full);
+  opacity: 0.3;
+}
+
+/* Timeline dot/node for each experience card */
+.timeline-node {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.timeline-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px hsl(12 78% 57% / 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: var(--color-card);
+  border-radius: var(--radius-full);
+}
+
+/* Company icon inside timeline dot */
+.company-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Animate timeline dot on card hover */
+.experience-card:hover + .timeline-node .timeline-dot,
+.timeline-node:has(+ .experience-card:hover) .timeline-dot {
+  transform: scale(1.15);
+  box-shadow: 0 8px 24px hsl(12 78% 57% / 0.4);
+}
+
+/* Timeline animation when visible */
+.timeline-node {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-node.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger timeline dot animations */
+.timeline-node:nth-child(2) { transition-delay: 100ms; }
+.timeline-node:nth-child(4) { transition-delay: 200ms; }
+.timeline-node:nth-child(6) { transition-delay: 300ms; }
+.timeline-node:nth-child(8) { transition-delay: 400ms; }
+.timeline-node:nth-child(10) { transition-delay: 500ms; }
+
+/* Company icon badge on cards */
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: linear-gradient(135deg, hsl(12 78% 57% / 0.1) 0%, hsl(210 100% 60% / 0.1) 100%);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  color: var(--color-foreground);
+  transition: var(--transition-smooth);
+}
+
+.company-badge i {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: var(--font-size-lg);
+}
+
+.experience-card:hover .company-badge {
+  border-color: var(--color-primary);
+  background: linear-gradient(135deg, hsl(12 78% 57% / 0.15) 0%, hsl(210 100% 60% / 0.15) 100%);
+  transform: translateX(4px);
+}
+
+/* Mobile adjustments for timeline */
+@media (max-width: 768px) {
+  .timeline-container {
+    padding-left: 0;
+  }
+
+  .timeline-container::before {
+    left: 8px;
+    width: 2px;
+  }
+
+  .timeline-node {
+    left: -20px;
+    top: 24px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .timeline-dot {
+    width: 36px;
+    height: 36px;
+  }
+
+  .company-icon {
+    font-size: 18px;
+  }
+}
