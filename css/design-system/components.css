@@ -597,6 +597,97 @@
   }
 }
 
+/* ===== EXPERIENCE CARD ENHANCEMENTS ===== */
+/* Enhanced card with hover effects */
+.experience-card {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.experience-card:hover::before {
+  height: 100%;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px hsl(12 78% 57% / 0.15),
+              0 8px 16px -8px hsl(12 78% 57% / 0.1);
+  border-color: hsl(12 78% 57% / 0.2);
+}
+
+/* Add subtle background gradient on hover */
+.experience-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at center, hsl(12 78% 57% / 0.03) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.experience-card:hover::after {
+  opacity: 1;
+}
+
+/* Enhanced badge hover effects in experience cards */
+.experience-card .badge-secondary {
+  transition: var(--transition-smooth);
+}
+
+.experience-card:hover .badge-secondary {
+  background: hsl(210 100% 60% / 0.15);
+  transform: translateY(-1px);
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+/* Fade in from bottom animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay for multiple cards */
+.fade-in-up:nth-child(1) { transition-delay: 0ms; }
+.fade-in-up:nth-child(2) { transition-delay: 100ms; }
+.fade-in-up:nth-child(3) { transition-delay: 200ms; }
+.fade-in-up:nth-child(4) { transition-delay: 300ms; }
+.fade-in-up:nth-child(5) { transition-delay: 400ms; }
+.fade-in-up:nth-child(6) { transition-delay: 500ms; }
+
+/* Education section animation */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .gradient-text,
@@ -609,5 +700,20 @@
   .social-icon-enhanced::before,
   .tag-enhanced::before {
     transition: none;
+  }
+
+  .fade-in-up,
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .experience-card {
+    transition: none;
+  }
+
+  .experience-card:hover {
+    transform: none;
   }
 }
