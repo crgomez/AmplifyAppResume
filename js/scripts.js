@@ -37,14 +37,14 @@ jQuery(function ($) {
             }, observerOptions);
 
             // Observe all elements with animation classes
-            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in');
+            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in, .timeline-node');
             animatedElements.forEach(element => {
                 observer.observe(element);
             });
         } else {
             // Fallback for browsers that don't support Intersection Observer
             // Just show all elements immediately
-            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in');
+            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in, .timeline-node');
             animatedElements.forEach(element => {
                 element.classList.add('visible');
             });
