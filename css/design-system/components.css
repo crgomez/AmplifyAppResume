@@ -843,6 +843,169 @@
   transform: translateX(4px);
 }
 
+/* Ring branding styles */
+.ring-logo,
+.ring-icon {
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.company-badge-ring {
+  background: linear-gradient(135deg, hsl(214 100% 50% / 0.1) 0%, hsl(214 100% 40% / 0.1) 100%);
+}
+
+.company-badge-ring .ring-logo {
+  background: linear-gradient(135deg, hsl(214 100% 50%) 0%, hsl(214 100% 40%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.timeline-dot-ring {
+  background: linear-gradient(135deg, hsl(214 100% 50%) 0%, hsl(214 100% 40%) 100%);
+  box-shadow: 0 4px 12px hsl(214 100% 50% / 0.3);
+}
+
+.timeline-dot-ring:hover {
+  box-shadow: 0 8px 24px hsl(214 100% 50% / 0.4);
+}
+
+.ring-icon {
+  font-size: 0.75rem;
+}
+
+/* ===== EDUCATION & CERTIFICATION ENHANCEMENTS ===== */
+/* Enhanced education cards */
+.education-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.education-card:hover::before {
+  transform: scaleX(1);
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px hsl(12 78% 57% / 0.15);
+  border-color: hsl(12 78% 57% / 0.2);
+}
+
+.education-card h3 {
+  position: relative;
+  display: inline-block;
+}
+
+.education-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: var(--radius-full);
+}
+
+/* Enhanced certification cards */
+.certification-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-xl);
+  position: relative;
+}
+
+.certification-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at center, hsl(210 100% 60% / 0.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: 0 var(--radius-xl) 0 0;
+}
+
+.certification-card:hover::after {
+  opacity: 1;
+}
+
+.certification-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px hsl(210 100% 60% / 0.15);
+  border-color: hsl(210 100% 60% / 0.2);
+}
+
+.certification-card h4 {
+  color: var(--color-foreground);
+  position: relative;
+  display: inline-block;
+}
+
+.certification-card h4::before {
+  content: '🎓';
+  margin-right: var(--space-2);
+  font-size: 1.2em;
+}
+
+.certification-card a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.certification-card a:hover {
+  transform: translateX(4px);
+  color: var(--color-primary-hover);
+}
+
+/* Technical skills section enhancement */
+.technical-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+}
+
+.technical-skills-grid > div {
+  position: relative;
+  padding-left: var(--space-6);
+}
+
+.technical-skills-grid > div::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: var(--radius-full);
+}
+
+.technical-skills-grid h4 {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Mobile adjustments for timeline */
 @media (max-width: 768px) {
   .timeline-container {
@@ -868,5 +1031,14 @@
 
   .company-icon {
     font-size: 18px;
+  }
+
+  .ring-icon {
+    font-size: 0.6rem;
+  }
+
+  .technical-skills-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
   }
 }
