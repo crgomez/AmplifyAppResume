@@ -345,3 +345,700 @@
 .link-animated:hover::after {
   width: 100%;
 }
+
+/* ===== HERO SECTION ENHANCEMENTS ===== */
+/* Gradient text effect for hero headline */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Enhanced hero section background */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80%;
+  height: 150%;
+  background: radial-gradient(circle at center, hsl(12 78% 57% / 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced CTA buttons with gradient effects */
+.cta-button-enhanced {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: white;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-md);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-button-enhanced:hover::before {
+  left: 100%;
+}
+
+.cta-button-enhanced:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Enhanced social icons with gradient on hover */
+.social-icon-enhanced {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--color-card);
+  color: var(--color-foreground);
+  border-radius: var(--radius-xl);
+  font-size: var(--font-size-xl);
+  transition: var(--transition-smooth);
+  border: 2px solid var(--color-border);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon-enhanced::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.social-icon-enhanced i {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.social-icon-enhanced:hover::before {
+  opacity: 1;
+}
+
+.social-icon-enhanced:hover i {
+  color: white;
+}
+
+.social-icon-enhanced:hover {
+  transform: translateY(-4px) scale(1.05);
+  border-color: transparent;
+  box-shadow: var(--shadow-hover);
+}
+
+/* Role badge enhancement */
+.role-badge-enhanced {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: white;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-soft);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Expertise tags with enhanced hover effects */
+.tag-enhanced {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  background: var(--color-card);
+  color: var(--color-foreground);
+  border: 1.5px solid var(--color-border);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.tag-enhanced::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, hsl(12 78% 57% / 0.1) 0%, hsl(210 100% 60% / 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tag-enhanced:hover::before {
+  opacity: 1;
+}
+
+.tag-enhanced:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 767px) {
+  .hero-section {
+    padding-top: var(--space-16) !important; /* Add extra top padding on mobile */
+  }
+
+  .gradient-text {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-section::before {
+    right: -50%;
+    width: 120%;
+  }
+
+  .social-icon-enhanced {
+    width: 44px;
+    height: 44px;
+    font-size: var(--font-size-lg);
+  }
+
+  .cta-button-enhanced {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-sm);
+  }
+
+  .role-badge-enhanced {
+    font-size: 0.7rem;
+    padding: var(--space-2) var(--space-4);
+  }
+
+  /* Auto-reveal photo on mobile - no blur effect */
+  #mobile-interactive-photo #mobile-clear-layer {
+    opacity: 1 !important;
+    clip-path: none !important;
+  }
+
+  #mobile-interactive-photo .absolute.inset-0:first-child {
+    display: none; /* Hide the blurred layer on mobile */
+  }
+
+  #mobile-cursor-border {
+    display: none !important; /* Hide cursor border on mobile */
+  }
+}
+
+/* ===== EXPERIENCE CARD ENHANCEMENTS ===== */
+/* Enhanced card with hover effects */
+.experience-card {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.experience-card:hover::before {
+  height: 100%;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px hsl(12 78% 57% / 0.15),
+              0 8px 16px -8px hsl(12 78% 57% / 0.1);
+  border-color: hsl(12 78% 57% / 0.2);
+}
+
+/* Add subtle background gradient on hover */
+.experience-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at center, hsl(12 78% 57% / 0.03) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.experience-card:hover::after {
+  opacity: 1;
+}
+
+/* Enhanced badge hover effects in experience cards */
+.experience-card .badge-secondary {
+  transition: var(--transition-smooth);
+}
+
+.experience-card:hover .badge-secondary {
+  background: hsl(210 100% 60% / 0.15);
+  transform: translateY(-1px);
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+/* Fade in from bottom animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay for multiple cards */
+.fade-in-up:nth-child(1) { transition-delay: 0ms; }
+.fade-in-up:nth-child(2) { transition-delay: 100ms; }
+.fade-in-up:nth-child(3) { transition-delay: 200ms; }
+.fade-in-up:nth-child(4) { transition-delay: 300ms; }
+.fade-in-up:nth-child(5) { transition-delay: 400ms; }
+.fade-in-up:nth-child(6) { transition-delay: 500ms; }
+
+/* Education section animation */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text,
+  .hero-section::before,
+  .role-badge-enhanced {
+    animation: none;
+  }
+
+  .cta-button-enhanced::before,
+  .social-icon-enhanced::before,
+  .tag-enhanced::before {
+    transition: none;
+  }
+
+  .fade-in-up,
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .experience-card {
+    transition: none;
+  }
+
+  .experience-card:hover {
+    transform: none;
+  }
+}
+
+/* ===== VISUAL TIMELINE ===== */
+.timeline-container {
+  position: relative;
+  padding-left: 80px; /* Space for timeline on desktop */
+}
+
+/* Vertical timeline line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 40px;
+  bottom: 40px;
+  width: 3px;
+  background: linear-gradient(180deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 50%,
+    var(--color-primary) 100%);
+  border-radius: var(--radius-full);
+  opacity: 0.3;
+}
+
+/* Timeline dot/node for each experience card */
+.timeline-node {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.timeline-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px hsl(12 78% 57% / 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: var(--color-card);
+  border-radius: var(--radius-full);
+}
+
+/* Company icon inside timeline dot */
+.company-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Animate timeline dot on card hover */
+.experience-card:hover + .timeline-node .timeline-dot,
+.timeline-node:has(+ .experience-card:hover) .timeline-dot {
+  transform: scale(1.15);
+  box-shadow: 0 8px 24px hsl(12 78% 57% / 0.4);
+}
+
+/* Timeline animation when visible */
+.timeline-node {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-node.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger timeline dot animations */
+.timeline-node:nth-child(2) { transition-delay: 100ms; }
+.timeline-node:nth-child(4) { transition-delay: 200ms; }
+.timeline-node:nth-child(6) { transition-delay: 300ms; }
+.timeline-node:nth-child(8) { transition-delay: 400ms; }
+.timeline-node:nth-child(10) { transition-delay: 500ms; }
+
+/* Company icon badge on cards */
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: linear-gradient(135deg, hsl(12 78% 57% / 0.1) 0%, hsl(210 100% 60% / 0.1) 100%);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  color: var(--color-foreground);
+  transition: var(--transition-smooth);
+}
+
+.company-badge i {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: var(--font-size-lg);
+}
+
+.experience-card:hover .company-badge {
+  border-color: var(--color-primary);
+  background: linear-gradient(135deg, hsl(12 78% 57% / 0.15) 0%, hsl(210 100% 60% / 0.15) 100%);
+  transform: translateX(4px);
+}
+
+/* Ring branding styles */
+.ring-logo,
+.ring-icon {
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.company-badge-ring {
+  background: linear-gradient(135deg, hsl(214 100% 50% / 0.1) 0%, hsl(214 100% 40% / 0.1) 100%);
+}
+
+.company-badge-ring .ring-logo {
+  background: linear-gradient(135deg, hsl(214 100% 50%) 0%, hsl(214 100% 40%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.timeline-dot-ring {
+  background: linear-gradient(135deg, hsl(214 100% 50%) 0%, hsl(214 100% 40%) 100%);
+  box-shadow: 0 4px 12px hsl(214 100% 50% / 0.3);
+}
+
+.timeline-dot-ring:hover {
+  box-shadow: 0 8px 24px hsl(214 100% 50% / 0.4);
+}
+
+.ring-icon {
+  font-size: 0.75rem;
+}
+
+/* ===== EDUCATION & CERTIFICATION ENHANCEMENTS ===== */
+/* Enhanced education cards */
+.education-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.education-card:hover::before {
+  transform: scaleX(1);
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px hsl(12 78% 57% / 0.15);
+  border-color: hsl(12 78% 57% / 0.2);
+}
+
+.education-card h3 {
+  position: relative;
+  display: inline-block;
+}
+
+.education-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: var(--radius-full);
+}
+
+/* Enhanced certification cards */
+.certification-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-xl);
+  position: relative;
+}
+
+.certification-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at center, hsl(210 100% 60% / 0.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: 0 var(--radius-xl) 0 0;
+}
+
+.certification-card:hover::after {
+  opacity: 1;
+}
+
+.certification-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px hsl(210 100% 60% / 0.15);
+  border-color: hsl(210 100% 60% / 0.2);
+}
+
+.certification-card h4 {
+  color: var(--color-foreground);
+  position: relative;
+  display: inline-block;
+}
+
+.certification-card h4::before {
+  content: '🎓';
+  margin-right: var(--space-2);
+  font-size: 1.2em;
+}
+
+.certification-card a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.certification-card a:hover {
+  transform: translateX(4px);
+  color: var(--color-primary-hover);
+}
+
+/* Technical skills section enhancement */
+.technical-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+}
+
+.technical-skills-grid > div {
+  position: relative;
+  padding-left: var(--space-6);
+}
+
+.technical-skills-grid > div::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: var(--radius-full);
+}
+
+.technical-skills-grid h4 {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mobile adjustments for timeline */
+@media (max-width: 768px) {
+  .timeline-container {
+    padding-left: 0;
+  }
+
+  .timeline-container::before {
+    left: 8px;
+    width: 2px;
+  }
+
+  .timeline-node {
+    left: -20px;
+    top: 24px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .timeline-dot {
+    width: 36px;
+    height: 36px;
+  }
+
+  .company-icon {
+    font-size: 18px;
+  }
+
+  .ring-icon {
+    font-size: 0.6rem;
+  }
+
+  .technical-skills-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
