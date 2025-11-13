@@ -552,6 +552,10 @@
 
 /* Responsive adjustments for hero section */
 @media (max-width: 767px) {
+  .hero-section {
+    padding-top: var(--space-16) !important; /* Add extra top padding on mobile */
+  }
+
   .gradient-text {
     font-size: 2rem !important;
     line-height: 1.2 !important;
@@ -576,6 +580,20 @@
   .role-badge-enhanced {
     font-size: 0.7rem;
     padding: var(--space-2) var(--space-4);
+  }
+
+  /* Auto-reveal photo on mobile - no blur effect */
+  #mobile-interactive-photo #mobile-clear-layer {
+    opacity: 1 !important;
+    clip-path: none !important;
+  }
+
+  #mobile-interactive-photo .absolute.inset-0:first-child {
+    display: none; /* Hide the blurred layer on mobile */
+  }
+
+  #mobile-cursor-border {
+    display: none !important; /* Hide cursor border on mobile */
   }
 }
 
