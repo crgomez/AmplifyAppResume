@@ -961,8 +961,8 @@
 }
 
 .certification-card h4::before {
-  content: '🎓';
-  margin-right: var(--space-2);
+  content: '';
+  margin-right: 0;
   font-size: 1.2em;
 }
 
