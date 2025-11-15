@@ -44,7 +44,7 @@ Version: 6.0 - Lovable Inspired
         <!-- Modern Single-Column Layout inspired by Lovable -->
         <div class="min-h-screen">
             <!-- Hero Section - GitHub Project Layout -->
-            <section class="container py-20 md:py-32">
+            <section class="hero-section container py-20 md:py-32">
                 <style>
                     @media (max-width: 767px) {
 
@@ -69,13 +69,13 @@ Version: 6.0 - Lovable Inspired
                     <tr>
                         <td style="vertical-align: top; padding-right: 3rem; width: 60%;">
                             <!-- Role Badge -->
-                            <div class="highlight-box mb-6">
+                            <div class="role-badge-enhanced mb-6">
                                 Senior Security Engineer, Incident Response
                             </div>
 
                             <!-- Main Tagline -->
-                            <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-                                Driving quantitative insights in incident response for device subsidiaries & acquisitions
+                            <h1 class="gradient-text text-4xl md:text-6xl font-bold mb-8 leading-tight" style="font-size: 3.5rem; line-height: 1.15;">
+                                Driving quantitative insights in incident response for Amazon Device Subsidiaries & Acquisitions
                             </h1>
 
                             <!-- Introduction -->
@@ -95,16 +95,17 @@ Version: 6.0 - Lovable Inspired
 
         <!-- CTA Buttons -->
         <div class="mb-16 flex gap-6 items-center flex-wrap">
-            <a href="https://github.com/crgomez" class="text-2xl text-foreground hover:text-primary transition-colors"
+            <a href="https://github.com/crgomez" class="social-icon-enhanced"
                 target="_blank">
                 <i class="fab fa-github"></i>
             </a>
             <a href="https://www.linkedin.com/in/cgomezsystemadmin/"
-                class="text-2xl text-foreground hover:text-primary transition-colors" target="_blank">
+                class="social-icon-enhanced" target="_blank">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://s3.us-west-2.amazonaws.com/crgomez.com/crgomez-security-engineer.pdf" class="highlight-box"
+            <a href="https://s3.us-west-2.amazonaws.com/crgomez.com/crgomez-security-engineer.pdf" class="cta-button-enhanced"
                 target="_blank">
+                <i class="fas fa-download"></i>
                 Resume
             </a>
         </div>
@@ -113,13 +114,13 @@ Version: 6.0 - Lovable Inspired
         <div>
             <p class="text-xl font-semibold mb-6">Key areas of expertise:</p>
             <div class="flex flex-wrap gap-3">
-                <span class="tag">Insider Threat Detection</span>
-                <span class="tag">Incident Response</span>
-                <span class="tag">AI/ML & Data Science</span>
-                <span class="tag">Security Engineering</span>
-                <span class="tag">SOAR & SIEM</span>
-                <span class="tag">Digital Forensics</span>
-                <span class="tag">Leadership & Strategy</span>
+                <span class="tag-enhanced">Insider Threat Detection</span>
+                <span class="tag-enhanced">Incident Response</span>
+                <span class="tag-enhanced">AI/ML & Data Science</span>
+                <span class="tag-enhanced">Security Engineering</span>
+                <span class="tag-enhanced">SOAR & SIEM</span>
+                <span class="tag-enhanced">Digital Forensics</span>
+                <span class="tag-enhanced">Leadership & Strategy</span>
             </div>
         </div>
         </td>
@@ -148,14 +149,29 @@ Version: 6.0 - Lovable Inspired
         <!-- Experience Section -->
         <section class="container py-8">
             <!-- Experience Cards -->
-            <div class="space-y-16">
+            <div class="timeline-container space-y-16">
+                <!-- Amazon Timeline Node -->
+                <div class="timeline-node">
+                    <div class="timeline-dot">
+                        <div class="company-icon">
+                            <i class="fab fa-amazon"></i>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Amazon Devices - Senior Security Engineer -->
-                <article class="border border-border bg-card">
+                <article class="experience-card fade-in-up border border-border bg-card">
                     <div class="p-8 md:p-12">
                         <div class="flex flex-wrap gap-2 mb-4">
+                            <div class="company-badge">
+                                <i class="fab fa-amazon"></i>
+                                Amazon
+                            </div>
                             <span class="badge-secondary">Incident Response</span>
                             <span class="badge-secondary">Quantitative Insights</span>
                             <span class="badge-secondary">AI/ML</span>
+                            <span class="badge-secondary">AWS Infrastructure</span>
+                            <span class="badge-secondary">Terraform</span>
                         </div>
 
                         <p class="text-sm text-muted-foreground mb-4">
@@ -189,10 +205,23 @@ Version: 6.0 - Lovable Inspired
                     </div>
                 </article>
 
+                <!-- Amazon Timeline Node -->
+                <div class="timeline-node">
+                    <div class="timeline-dot">
+                        <div class="company-icon">
+                            <i class="fab fa-amazon"></i>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Amazon Devices - Manager (Previous Role) -->
-                <article class="border border-border bg-card">
+                <article class="experience-card fade-in-up border border-border bg-card">
                     <div class="p-8 md:p-12">
                         <div class="flex flex-wrap gap-2 mb-4">
+                            <div class="company-badge">
+                                <i class="fab fa-amazon"></i>
+                                Amazon
+                            </div>
                             <span class="badge-secondary">Insider Threat</span>
                             <span class="badge-secondary">AI/ML</span>
                             <span class="badge-secondary">Leadership</span>
@@ -228,10 +257,22 @@ Version: 6.0 - Lovable Inspired
                     </div>
                 </article>
 
+                <!-- Ring Timeline Node -->
+                <div class="timeline-node">
+                    <div class="timeline-dot timeline-dot-ring">
+                        <div class="company-icon ring-icon">
+                            Ring
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Ring - Security Engineer III -->
-                <article class="border border-border bg-card">
+                <article class="experience-card fade-in-up border border-border bg-card">
                     <div class="p-8 md:p-12">
                         <div class="flex flex-wrap gap-2 mb-4">
+                            <div class="company-badge company-badge-ring">
+                                <span class="ring-logo">Ring</span>
+                            </div>
                             <span class="badge-secondary">Security Engineering</span>
                             <span class="badge-secondary">SOAR</span>
                         </div>
@@ -266,11 +307,22 @@ Version: 6.0 - Lovable Inspired
                     </div>
                 </article>
 
+                <!-- Ring Timeline Node -->
+                <div class="timeline-node">
+                    <div class="timeline-dot timeline-dot-ring">
+                        <div class="company-icon ring-icon">
+                            Ring
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Ring - Incident Response -->
-                <!-- Ring - Incident Response -->
-                <article class="border border-border bg-card">
+                <article class="experience-card fade-in-up border border-border bg-card">
                     <div class="p-8 md:p-12">
                         <div class="flex flex-wrap gap-2 mb-4">
+                            <div class="company-badge company-badge-ring">
+                                <span class="ring-logo">Ring</span>
+                            </div>
                             <span class="badge-secondary">Incident Response</span>
                             <span class="badge-secondary">Digital Forensics</span>
                         </div>
@@ -299,10 +351,23 @@ Version: 6.0 - Lovable Inspired
                     </div>
                 </article>
 
+                <!-- Google Timeline Node -->
+                <div class="timeline-node">
+                    <div class="timeline-dot">
+                        <div class="company-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Google - Previous Experience -->
-                <article class="border border-border bg-card">
+                <article class="experience-card fade-in-up border border-border bg-card">
                     <div class="p-8 md:p-12">
                         <div class="flex flex-wrap gap-2 mb-4">
+                            <div class="company-badge">
+                                <i class="fab fa-google"></i>
+                                Google
+                            </div>
                             <span class="badge-secondary">Cloud Platform</span>
                             <span class="badge-secondary">Full Stack</span>
                         </div>
@@ -328,7 +393,7 @@ Version: 6.0 - Lovable Inspired
         </section>
 
         <!-- Education & Professional Development Section -->
-        <section class="container py-16">
+        <section class="fade-in container py-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-12">Education & Professional Development</h2>
 
             <!-- Education Cards Side by Side -->

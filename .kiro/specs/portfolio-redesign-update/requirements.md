@@ -23,7 +23,7 @@ This document outlines the requirements for updating Carlos R Gomez's online CV 
 
 #### Acceptance Criteria
 
-1. WHEN a visitor lands on the homepage, THE Portfolio_System SHALL display Carlos's current title as "Manager, Security Engineering" prominently in the hero section
+1. WHEN a visitor lands on the homepage, THE Portfolio_System SHALL display Carlos's current title as "Senior Security Engineer, Incident Response" prominently in the hero section
 2. THE Portfolio_System SHALL present a concise professional summary highlighting his 11+ years of experience in insider threat detection and incident response
 3. THE Portfolio_System SHALL showcase his advanced training in AI/ML and data-driven leadership within the first viewport
 4. THE Portfolio_System SHALL display his key achievements including scaling ITD & IR programs across Amazon subsidiaries

@@ -15,7 +15,7 @@
     - _Requirements: 1.1, 1.2, 4.1, 7.3_
 
   - [x] 2.2 Update professional content throughout the site
-    - Update title to "Manager, Security Engineering" in hero section
+    - Update title to "Senior Security Engineer, Incident Response" in hero section
     - Replace background section with updated professional summary highlighting 11+ years experience
     - Add AI/ML and data-driven leadership training from Columbia and Stanford
     - Update work experience with current Amazon role and achievements
