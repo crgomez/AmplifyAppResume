@@ -165,8 +165,9 @@
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  background: hsl(210 100% 60% / 0.1);
-  color: var(--color-secondary);
+  background: hsl(from var(--color-primary) h s l / 0.12);
+  color: var(--color-primary);
+  border: 1px solid hsl(from var(--color-primary) h s l / 0.2);
 }
 
 .highlight-box {
@@ -380,7 +381,7 @@
   right: -20%;
   width: 80%;
   height: 150%;
-  background: radial-gradient(circle at center, hsl(12 78% 57% / 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle at center, hsl(from var(--color-primary) h s l / 0.08) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
   animation: pulseGlow 8s ease-in-out infinite;
@@ -623,9 +624,9 @@
 
 .experience-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -12px hsl(12 78% 57% / 0.15),
-              0 8px 16px -8px hsl(12 78% 57% / 0.1);
-  border-color: hsl(12 78% 57% / 0.2);
+  box-shadow: 0 20px 40px -12px hsl(from var(--color-primary) h s l / 0.15),
+              0 8px 16px -8px hsl(from var(--color-primary) h s l / 0.1);
+  border-color: hsl(from var(--color-primary) h s l / 0.2);
 }
 
 /* Add subtle background gradient on hover */
@@ -652,7 +653,8 @@
 }
 
 .experience-card:hover .badge-secondary {
-  background: hsl(210 100% 60% / 0.15);
+  background: hsl(from var(--color-primary) h s l / 0.18);
+  border-color: hsl(from var(--color-primary) h s l / 0.3);
   transform: translateY(-1px);
 }
 
@@ -761,7 +763,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px hsl(12 78% 57% / 0.3);
+  box-shadow: 0 4px 12px hsl(from var(--color-primary) h s l / 0.3);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
@@ -791,7 +793,7 @@
 .experience-card:hover + .timeline-node .timeline-dot,
 .timeline-node:has(+ .experience-card:hover) .timeline-dot {
   transform: scale(1.15);
-  box-shadow: 0 8px 24px hsl(12 78% 57% / 0.4);
+  box-shadow: 0 8px 24px hsl(from var(--color-primary) h s l / 0.4);
 }
 
 /* Timeline animation when visible */

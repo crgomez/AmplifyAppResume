@@ -5,14 +5,14 @@
 
 :root {
   /* ===== COLOR PALETTE ===== */
-  /* Primary Colors - Warm coral/orange signature */
-  --color-primary: hsl(12, 78%, 57%);
-  --color-primary-hover: hsl(12, 78%, 52%);
-  --color-primary-light: hsl(12, 78%, 67%);
+  /* Primary Colors - Deep burgundy (distinctive & professional) */
+  --color-primary: hsl(345, 47%, 39%);
+  --color-primary-hover: hsl(345, 47%, 34%);
+  --color-primary-light: hsl(345, 47%, 49%);
   
-  /* Secondary Colors - Soft blue for accents */
-  --color-secondary: hsl(210, 100%, 60%);
-  --color-secondary-hover: hsl(210, 100%, 55%);
+  /* Secondary Colors - Complementary warm gray */
+  --color-secondary: hsl(15, 8%, 50%);
+  --color-secondary-hover: hsl(15, 8%, 45%);
   
   /* Neutral Colors - Warm minimalist palette */
   --color-background: hsl(30, 20%, 96%);
@@ -86,9 +86,9 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-soft: 0 4px 24px -4px hsl(12 78% 57% / 0.12);
+  --shadow-soft: 0 4px 24px -4px hsl(from var(--color-primary) h s l / 0.12);
   --shadow-card: 0 2px 16px -2px hsl(0 0% 0% / 0.06);
-  --shadow-hover: 0 8px 32px -8px hsl(12 78% 57% / 0.2);
+  --shadow-hover: 0 8px 32px -8px hsl(from var(--color-primary) h s l / 0.2);
   
   /* ===== TRANSITIONS ===== */
   --transition-fast: 150ms ease-in-out;
@@ -113,6 +113,15 @@
   /* 2xl: 1536px */
 }
 
+/* Light mode - richer burgundy for better contrast */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-primary: hsl(345, 55%, 35%);        /* Richer, more saturated burgundy */
+    --color-primary-hover: hsl(345, 55%, 30%);
+    --color-primary-light: hsl(345, 55%, 45%);
+  }
+}
+
 /* Dark mode support (if needed in future) */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -123,5 +132,9 @@
     --color-muted-foreground: hsl(0, 0%, 60%);
     --color-border: hsl(0, 0%, 20%);
     --shadow-card: 0 2px 16px -2px hsl(0 0% 0% / 0.4);
+    /* Keep original burgundy for dark mode - it looks rich already */
+    --color-primary: hsl(345, 47%, 39%);
+    --color-primary-hover: hsl(345, 47%, 34%);
+    --color-primary-light: hsl(345, 47%, 49%);
   }
 }
