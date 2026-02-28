@@ -15,12 +15,18 @@
 }
 
 .nav-container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: var(--space-4) var(--space-6);
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  .nav-container {
+    padding: var(--space-4) var(--space-8);
+  }
 }
 
 .nav-logo {
@@ -205,41 +211,8 @@
   color: var(--color-foreground);
   border: 1px solid var(--color-border);
 }
-  background: hsl(210 100% 60% / 0.1);
-  color: var(--color-secondary);
-  transition: var(--transition-smooth);
-}
 
-.tag:hover {
-  background: hsl(210 100% 60% / 0.2);
-  transform: translateY(-1px);
-}
-
-.badge-secondary {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  background: hsl(from var(--color-primary) h s l / 0.12);
-  color: var(--color-primary);
-  border: 1px solid hsl(from var(--color-primary) h s l / 0.2);
-}
-
-.highlight-box {
-  display: inline-block;
-  padding: var(--space-2) var(--space-4);
-  background: var(--color-primary);
-  color: white;
-  font-weight: var(--font-weight-semibold);
-  border-radius: var(--radius-md);
-}
-
-/* ===== PROGRESS BARS - REMOVED ===== */
-/* Minimalist design doesn't use progress bars */
-
-/* ===== SOCIAL ICONS ===== */
+/* ===== PRELOADER ===== */
 .social-icon {
   display: flex;
   justify-content: center;
@@ -305,15 +278,6 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-/* ===== ANIMATIONS - REMOVED ===== */
-/* Minimalist design uses no animations */
-
-/* ===== SMOOTH TRANSITIONS - REMOVED ===== */
-/* Minimalist design uses minimal transitions */
-
-/* ===== LINK ANIMATIONS - REMOVED ===== */
-/* Minimalist design uses simple opacity changes */
 
 /* ===== HERO SECTION - Minimalist ===== */
 .hero-section {
@@ -474,6 +438,47 @@
   transition: none;
   border-radius: var(--radius-lg);
   overflow: visible;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Experience Grid Layout */
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .experience-grid {
+    gap: 2.5rem;
+  }
+}
+
+/* Education Grid Layout - Reused for Certifications & Skills */
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .education-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.education-item {
+  padding: 0;
 }
 
 /* Company badge - Simplified */
@@ -481,12 +486,12 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 6px 16px;
+  padding: 4px 12px;
   background: transparent;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-weight: var(--font-weight-normal);
-  font-size: var(--font-size-xs);
+  font-size: 0.75rem;
   color: var(--color-foreground);
   transition: opacity 0.2s ease;
 }
@@ -497,11 +502,20 @@
 
 .company-badge i {
   color: var(--color-foreground);
-  font-size: var(--font-size-sm);
+  font-size: 0.875rem;
 }
 
-/* ===== SCROLL ANIMATIONS - REMOVED ===== */
-/* Minimalist design uses no animations */
+/* Ring branding styles */
+.ring-logo {
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.company-badge-ring {
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
 
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
@@ -511,327 +525,62 @@
   }
 }
 
-/* ===== VISUAL TIMELINE ===== */
-.timeline-container {
-  position: relative;
-  padding-left: 80px; /* Space for timeline on desktop */
+/* ===== FOOTER - Minimalist ===== */
+.footer {
+  background: var(--color-background-dark) !important;
+  border-top: 1px solid var(--color-background-dark);
+  margin-top: 8rem;
 }
 
-/* Vertical timeline line */
-.timeline-container::before {
-  content: '';
-  position: absolute;
-  left: 28px;
-  top: 40px;
-  bottom: 40px;
-  width: 3px;
-  background: linear-gradient(180deg,
-    var(--color-primary) 0%,
-    var(--color-secondary) 50%,
-    var(--color-primary) 100%);
-  border-radius: var(--radius-full);
-  opacity: 0.3;
+.footer h3,
+.footer h4 {
+  color: var(--color-foreground-light) !important;
+  font-weight: 600;
 }
 
-/* Timeline dot/node for each experience card */
-.timeline-node {
-  position: absolute;
-  left: 0;
-  top: 40px;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
+.footer p {
+  margin: 0;
+  color: var(--color-foreground-light) !important;
+  opacity: 0.8;
 }
 
-.timeline-dot {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px hsl(from var(--color-primary) h s l / 0.3);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
+/* Footer navigation links */
+.footer a:hover {
+  opacity: 1 !important;
 }
 
-.timeline-dot::before {
-  content: '';
-  position: absolute;
-  inset: 4px;
-  background: var(--color-card);
-  border-radius: var(--radius-full);
-}
-
-/* Company icon inside timeline dot */
-.company-icon {
-  position: relative;
-  z-index: 1;
-  font-size: 24px;
-  font-weight: bold;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-
-/* Animate timeline dot on card hover */
-.experience-card:hover + .timeline-node .timeline-dot,
-.timeline-node:has(+ .experience-card:hover) .timeline-dot {
-  transform: scale(1.15);
-  box-shadow: 0 8px 24px hsl(from var(--color-primary) h s l / 0.4);
-}
-
-/* Timeline animation when visible */
-.timeline-node {
-  opacity: 0;
-  transform: scale(0.5);
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.timeline-node.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Stagger timeline dot animations */
-.timeline-node:nth-child(2) { transition-delay: 100ms; }
-.timeline-node:nth-child(4) { transition-delay: 200ms; }
-.timeline-node:nth-child(6) { transition-delay: 300ms; }
-.timeline-node:nth-child(8) { transition-delay: 400ms; }
-.timeline-node:nth-child(10) { transition-delay: 500ms; }
-
-/* Company icon badge on cards */
-.company-badge {
+/* Footer social icons - light style for dark background */
+.footer-social-icon {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
-  background: linear-gradient(135deg, hsl(12 78% 57% / 0.1) 0%, hsl(210 100% 60% / 0.1) 100%);
-  border: 1.5px solid var(--color-border);
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-foreground-light) !important;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  border: 1px solid rgba(245, 241, 232, 0.3);
   border-radius: var(--radius-lg);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-sm);
-  color: var(--color-foreground);
-  transition: var(--transition-smooth);
 }
 
-.company-badge i {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: var(--font-size-lg);
+.footer-social-icon i {
+  color: var(--color-foreground-light) !important;
 }
 
-.experience-card:hover .company-badge {
-  border-color: var(--color-primary);
-  background: linear-gradient(135deg, hsl(12 78% 57% / 0.15) 0%, hsl(210 100% 60% / 0.15) 100%);
-  transform: translateX(4px);
-}
-
-/* Ring branding styles */
-.ring-logo,
-.ring-icon {
-  font-weight: 700;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
-}
-
-.company-badge-ring {
-  background: linear-gradient(135deg, hsl(214 100% 50% / 0.1) 0%, hsl(214 100% 40% / 0.1) 100%);
-}
-
-.company-badge-ring .ring-logo {
-  background: linear-gradient(135deg, hsl(214 100% 50%) 0%, hsl(214 100% 40%) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.timeline-dot-ring {
-  background: linear-gradient(135deg, hsl(214 100% 50%) 0%, hsl(214 100% 40%) 100%);
-  box-shadow: 0 4px 12px hsl(214 100% 50% / 0.3);
-}
-
-.timeline-dot-ring:hover {
-  box-shadow: 0 8px 24px hsl(214 100% 50% / 0.4);
-}
-
-.ring-icon {
-  font-size: 0.75rem;
-}
-
-/* ===== EDUCATION & CERTIFICATION ENHANCEMENTS ===== */
-/* Enhanced education cards */
-.education-card {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: var(--radius-xl);
-  position: relative;
-  overflow: hidden;
-}
-
-.education-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.education-card:hover::before {
-  transform: scaleX(1);
-}
-
-.education-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px -8px hsl(12 78% 57% / 0.15);
-  border-color: hsl(12 78% 57% / 0.2);
-}
-
-.education-card h3 {
-  position: relative;
-  display: inline-block;
-}
-
-.education-card h3::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  border-radius: var(--radius-full);
-}
-
-/* Enhanced certification cards */
-.certification-card {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: var(--radius-xl);
-  position: relative;
-}
-
-.certification-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle at center, hsl(210 100% 60% / 0.08) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-  border-radius: 0 var(--radius-xl) 0 0;
-}
-
-.certification-card:hover::after {
+.footer-social-icon:hover {
   opacity: 1;
+  border-color: var(--color-foreground-light);
 }
 
-.certification-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px -8px hsl(210 100% 60% / 0.15);
-  border-color: hsl(210 100% 60% / 0.2);
+.footer .container > div > div:last-child {
+  border-top: 1px solid rgba(245, 241, 232, 0.2);
 }
 
-.certification-card h4 {
-  color: var(--color-foreground);
-  position: relative;
-  display: inline-block;
-}
-
-.certification-card h4::before {
-  content: '';
-  margin-right: 0;
-  font-size: 1.2em;
-}
-
-.certification-card a {
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.certification-card a:hover {
-  transform: translateX(4px);
-  color: var(--color-primary-hover);
-}
-
-/* Technical skills section enhancement */
-.technical-skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-8);
-}
-
-.technical-skills-grid > div {
-  position: relative;
-  padding-left: var(--space-6);
-}
-
-.technical-skills-grid > div::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  border-radius: var(--radius-full);
-}
-
-.technical-skills-grid h4 {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Mobile adjustments for timeline */
+/* Responsive footer */
 @media (max-width: 768px) {
-  .timeline-container {
-    padding-left: 0;
-  }
-
-  .timeline-container::before {
-    left: 8px;
-    width: 2px;
-  }
-
-  .timeline-node {
-    left: -20px;
-    top: 24px;
-    width: 40px;
-    height: 40px;
-  }
-
-  .timeline-dot {
-    width: 36px;
-    height: 36px;
-  }
-
-  .company-icon {
-    font-size: 18px;
-  }
-
-  .ring-icon {
-    font-size: 0.6rem;
-  }
-
-  .technical-skills-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+  .footer > div > div:first-child > div:first-child {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
   }
 }
