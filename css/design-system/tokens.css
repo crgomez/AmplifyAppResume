@@ -4,58 +4,55 @@
  * =================================== */
 
 :root {
-  /* ===== COLOR PALETTE ===== */
-  /* Primary Colors - Deep burgundy (distinctive & professional) */
-  --color-primary: hsl(345, 47%, 39%);
-  --color-primary-hover: hsl(345, 47%, 34%);
-  --color-primary-light: hsl(345, 47%, 49%);
+  /* ===== COLOR PALETTE - Caladan Bio Inspired ===== */
+  /* Nature-inspired green palette for sophisticated minimalism */
+  --color-primary: #0F2306;
+  --color-primary-hover: #1a3a0d;
+  --color-primary-light: #2d5015;
   
-  /* Secondary Colors - Complementary warm gray */
-  --color-secondary: hsl(15, 8%, 50%);
-  --color-secondary-hover: hsl(15, 8%, 45%);
+  /* Background Colors */
+  --color-background: #eaf2e7;        /* Light sage green - main background */
+  --color-background-dark: #0F2306;   /* Dark green for contrast sections */
+  --color-background-accent: #d0e5e6; /* Pale mint for variety */
   
-  /* Neutral Colors - Warm minimalist palette */
-  --color-background: hsl(30, 20%, 96%);
-  --color-foreground: hsl(0, 0%, 0%);
-  --color-muted: hsl(30, 20%, 92%);
-  --color-muted-foreground: hsl(0, 0%, 45%);
+  /* Text Colors */
+  --color-foreground: #0F2306;        /* Deep forest green - primary text */
+  --color-foreground-light: #f5f1e8;  /* Light cream for dark backgrounds */
+  --color-muted-foreground: #6b6456;  /* Muted text */
   
   /* Surface Colors */
-  --color-card: hsl(0, 0%, 100%);
-  --color-border: hsl(30, 15%, 88%);
-  --color-border-light: hsl(30, 15%, 92%);
+  --color-card: #ffffff;              /* White cards */
+  --color-card-accent: #cde8ba;       /* Soft sage green cards */
+  --color-border: #d0e5e6;            /* Pale mint borders */
+  --color-border-light: #e5ede4;
   
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
-  --font-family-primary: 'Inter', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
   
-  /* Font Sizes - Fluid Typography */
+  /* Font Sizes - Larger, more readable scale */
   --font-size-xs: 0.75rem;    /* 12px */
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-lg: 1.125rem;   /* 18px */
-  --font-size-xl: 1.25rem;    /* 20px */
-  --font-size-2xl: 1.5rem;    /* 24px */
-  --font-size-3xl: 1.875rem;  /* 30px */
-  --font-size-4xl: 2.25rem;   /* 36px */
-  --font-size-5xl: 3rem;      /* 48px */
-  --font-size-6xl: 3.75rem;   /* 60px */
-  --font-size-7xl: 4.5rem;    /* 72px */
+  --font-size-sm: 1rem;       /* 16px */
+  --font-size-base: 1.25rem;  /* 20px - larger body text */
+  --font-size-lg: 1.375rem;   /* 22px */
+  --font-size-xl: 1.5rem;     /* 24px */
+  --font-size-2xl: 1.875rem;  /* 30px */
+  --font-size-3xl: 2.5rem;    /* 40px */
+  --font-size-4xl: 3rem;      /* 48px */
+  --font-size-5xl: 4rem;      /* 64px */
+  --font-size-6xl: 5rem;      /* 80px - hero size */
+  --font-size-7xl: 6rem;      /* 96px */
   
-  /* Font Weights */
-  --font-weight-light: 300;
+  /* Font Weights - Simplified to 2 weights */
   --font-weight-normal: 400;
-  --font-weight-medium: 500;
   --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
   
-  /* Line Heights */
-  --line-height-tight: 1.25;
-  --line-height-snug: 1.375;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.625;
+  /* Line Heights - More generous spacing */
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.3;
+  --line-height-normal: 1.7;
+  --line-height-relaxed: 1.8;
   --line-height-loose: 2;
   
   /* ===== SPACING SCALE ===== */
@@ -74,21 +71,19 @@
   --space-32: 8rem;     /* 128px */
   
   /* ===== BORDER RADIUS ===== */
-  --radius-sm: 0.125rem;   /* 2px */
-  --radius-md: 0.375rem;   /* 6px */
-  --radius-lg: 0.5rem;     /* 8px */
-  --radius-xl: 0.75rem;    /* 12px */
-  --radius-2xl: 1rem;      /* 16px */
+  --radius-sm: 0.5rem;     /* 8px */
+  --radius-md: 0.75rem;    /* 12px */
+  --radius-lg: 1rem;       /* 16px - Caladan Bio style */
+  --radius-xl: 1.5rem;     /* 24px - for buttons */
+  --radius-2xl: 2rem;      /* 32px */
   --radius-full: 9999px;   /* Full rounded */
   
-  /* ===== SHADOWS ===== */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-soft: 0 4px 24px -4px hsl(from var(--color-primary) h s l / 0.12);
-  --shadow-card: 0 2px 16px -2px hsl(0 0% 0% / 0.06);
-  --shadow-hover: 0 8px 32px -8px hsl(from var(--color-primary) h s l / 0.2);
+  /* ===== SHADOWS - Minimal ===== */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  --shadow-md: 0 2px 4px -1px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 4px 8px -2px rgb(0 0 0 / 0.08);
+  --shadow-card: none; /* Minimalist - no shadows on cards */
+  --shadow-hover: 0 2px 8px -2px rgb(0 0 0 / 0.1);
   
   /* ===== TRANSITIONS ===== */
   --transition-fast: 150ms ease-in-out;
@@ -113,28 +108,19 @@
   /* 2xl: 1536px */
 }
 
-/* Light mode - richer burgundy for better contrast */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-primary: hsl(345, 55%, 35%);        /* Richer, more saturated burgundy */
-    --color-primary-hover: hsl(345, 55%, 30%);
-    --color-primary-light: hsl(345, 55%, 45%);
-  }
-}
+/* Light mode is default - no changes needed */
 
-/* Dark mode support (if needed in future) */
+/* Dark mode support - maintain green palette */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: hsl(0, 0%, 8%);
-    --color-foreground: hsl(0, 0%, 95%);
-    --color-card: hsl(0, 0%, 12%);
-    --color-muted: hsl(0, 0%, 16%);
-    --color-muted-foreground: hsl(0, 0%, 60%);
-    --color-border: hsl(0, 0%, 20%);
-    --shadow-card: 0 2px 16px -2px hsl(0 0% 0% / 0.4);
-    /* Keep original burgundy for dark mode - it looks rich already */
-    --color-primary: hsl(345, 47%, 39%);
-    --color-primary-hover: hsl(345, 47%, 34%);
-    --color-primary-light: hsl(345, 47%, 49%);
+    --color-background: #0F2306;
+    --color-background-dark: #1a3a0d;
+    --color-background-accent: #2d5015;
+    --color-foreground: #f5f1e8;
+    --color-foreground-light: #f5f1e8;
+    --color-card: #1a3a0d;
+    --color-card-accent: #2d5015;
+    --color-border: #2d5015;
+    --color-muted-foreground: #a8b5a0;
   }
 }

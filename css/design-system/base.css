@@ -22,7 +22,7 @@ html {
 body {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-base);
-  line-height: var(--line-height-relaxed);
+  line-height: var(--line-height-normal);
   color: var(--color-foreground);
   background: var(--color-background);
   font-weight: var(--font-weight-normal);
@@ -35,19 +35,19 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 var(--space-4);
   color: var(--color-foreground);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-extrabold);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-semibold);
 }
 
 h2 {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
 }
 
 h3 {
@@ -73,21 +73,15 @@ h6 {
 /* Responsive Typography */
 @media (min-width: 768px) {
   h1 {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-6xl);
   }
   
   h2 {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-3xl);
   }
   
   h3 {
-    font-size: var(--font-size-3xl);
-  }
-}
-
-@media (min-width: 1024px) {
-  h1 {
-    font-size: var(--font-size-6xl);
+    font-size: var(--font-size-xl);
   }
 }
 
@@ -102,18 +96,17 @@ p:last-child {
   margin-bottom: 0;
 }
 
-/* Links */
+/* Links - Minimalist style */
 a {
-  color: var(--color-primary);
+  color: var(--color-foreground);
   text-decoration: none;
-  transition: var(--transition-fast);
+  transition: opacity 0.2s ease;
   border-radius: var(--radius-sm);
 }
 
 a:hover,
 a:focus {
-  color: var(--color-primary-hover);
-  text-decoration: none;
+  opacity: 0.6;
   outline: none;
 }
 
