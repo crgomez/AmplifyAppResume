@@ -31,6 +31,14 @@ Transform the current burgundy-themed portfolio into a Caladan Bio-inspired mini
 - [x] Use simple border style
 
 ## Phase 3: Layout Restructuring (NEXT)
+### Navigation (NEW)
+- [ ] Add minimalist top navigation bar
+- [ ] Include: Name/Logo, Experience, Education, Contact links
+- [ ] Sticky navigation on scroll (optional)
+- [ ] Simple underline on active section
+- [ ] Mobile: Hamburger menu or keep visible
+- [ ] Match Caladan Bio's clean nav style
+
 ### Hero Section
 - [ ] Increase headline size to 80px (5rem)
 - [ ] Simplify intro to 2 sentences max
@@ -88,6 +96,17 @@ Transform the current burgundy-themed portfolio into a Caladan Bio-inspired mini
 3. **Generous Whitespace** - 10-12rem between sections
 4. **Soft & Organic** - Rounded corners, nature colors
 5. **Content-First** - Let content breathe, minimal decoration
+6. **Clear Navigation** - Simple, unobtrusive wayfinding
+
+## Navigation Design Notes
+Inspired by Caladan Bio's approach:
+- Minimal, clean top bar
+- Text-only links (no icons)
+- Simple hover states (underline or opacity)
+- Optional: Sticky on scroll with subtle background
+- Mobile: Keep simple, avoid complex hamburger menus if possible
+- Consider: Name on left, nav links on right
+- Anchor links to sections: #experience, #education, #contact
 
 ## Color Palette Reference
 - **#0F2306** - Deep forest green (text, dark backgrounds)
