@@ -1,5 +1,6 @@
 /* ===================================
  * BASE STYLES - Reset & Typography
+ * Vast-inspired minimalist dark theme
  * =================================== */
 
 /* Modern CSS Reset */
@@ -23,7 +24,7 @@ body {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
-  color: var(--color-foreground);
+  color: var(--color-muted-foreground);
   background: var(--color-background);
   font-weight: var(--font-weight-normal);
   -webkit-font-smoothing: antialiased;
@@ -37,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-foreground);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
-  letter-spacing: -0.025em;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 h1 {
@@ -57,7 +58,7 @@ h3 {
 
 h4 {
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
 }
 
 h5 {
@@ -72,29 +73,19 @@ h6 {
 
 /* Responsive Typography */
 @media (min-width: 768px) {
-  h1 {
-    font-size: var(--font-size-5xl);
-  }
-  
-  h2 {
-    font-size: var(--font-size-4xl);
-  }
-  
-  h3 {
-    font-size: var(--font-size-3xl);
-  }
+  h1 { font-size: var(--font-size-5xl); }
+  h2 { font-size: var(--font-size-4xl); }
+  h3 { font-size: var(--font-size-3xl); }
 }
 
 @media (min-width: 1024px) {
-  h1 {
-    font-size: var(--font-size-6xl);
-  }
+  h1 { font-size: var(--font-size-6xl); }
 }
 
-/* Paragraphs and Text */
+/* Paragraphs */
 p {
   margin: 0 0 var(--space-5);
-  color: var(--color-foreground);
+  color: var(--color-muted-foreground);
   line-height: var(--line-height-relaxed);
 }
 
@@ -102,24 +93,23 @@ p:last-child {
   margin-bottom: 0;
 }
 
-/* Links */
+/* Links — Solar Orange, no underline by default */
 a {
   color: var(--color-primary);
   text-decoration: none;
-  transition: var(--transition-fast);
-  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
 }
 
 a:hover,
 a:focus {
   color: var(--color-primary-hover);
-  text-decoration: none;
   outline: none;
 }
 
 a:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  outline: 1px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }
 
 /* Lists */
@@ -129,28 +119,17 @@ ul, ol {
   list-style: none;
 }
 
-ul.styled-list,
-ol.styled-list {
-  list-style: initial;
-  padding-left: var(--space-6);
-  margin-bottom: var(--space-5);
-}
-
-ul.styled-list li,
-ol.styled-list li {
-  margin-bottom: var(--space-2);
-  color: var(--color-foreground);
-}
-
 /* Small text */
 small {
-  font-size: var(--font-size-sm);
-  color: var(--color-muted-foreground);
+  font-size: var(--font-size-xs);
+  color: var(--color-subtle);
+  letter-spacing: var(--letter-spacing-wide);
 }
 
-/* Strong and emphasis */
+/* Strong */
 strong {
   font-weight: var(--font-weight-semibold);
+  color: var(--color-foreground);
 }
 
 em {
@@ -162,8 +141,9 @@ code {
   font-family: var(--font-family-mono);
   font-size: 0.875em;
   background: var(--color-muted);
-  padding: 0.125rem 0.25rem;
-  border-radius: var(--radius-sm);
+  color: var(--color-primary-light);
+  padding: 0.15rem 0.35rem;
+  border-radius: var(--radius-md);
 }
 
 /* Images */
@@ -173,13 +153,13 @@ img {
   display: block;
 }
 
-/* Focus styles for accessibility */
+/* Global focus */
 *:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  outline: 1px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
-/* Reduced motion support */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -188,7 +168,7 @@ img {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   html {
     scroll-behavior: auto;
   }
