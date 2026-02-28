@@ -63,455 +63,356 @@ Version: 6.0 - Lovable Inspired
             </div>
         </div>
 
-        <!-- Modern Single-Column Layout inspired by Lovable -->
-        <div class="min-h-screen">
-            <!-- Hero Section - GitHub Project Layout -->
-            <section class="hero-section container py-20 md:py-32">
-                <style>
-                    @media (max-width: 767px) {
-
-                        .responsive-table,
-                        .responsive-table tr,
-                        .responsive-table td {
-                            display: block !important;
-                            width: 100% !important;
-                        }
-
-                        .responsive-table td {
-                            padding: 0 !important;
-                            margin-bottom: 2rem;
-                        }
-
-                        .desktop-photo-cell {
-                            display: none !important;
-                        }
-                    }
-                </style>
-                <table class="responsive-table" style="width: 100%; border-collapse: collapse;">
-                    <tr>
-                        <td style="vertical-align: top; padding-right: 3rem; width: 60%;">
-                            <!-- Role Badge -->
-                            <div class="role-badge-enhanced mb-6">
-                                Senior Security Engineer, Incident Response
-                            </div>
-
-                            <!-- Main Tagline -->
-                            <h1 class="gradient-text text-4xl md:text-6xl font-bold mb-8 leading-tight"
-                                style="font-size: 3.5rem; line-height: 1.15;">
-                                Driving quantitative insights in incident response for Amazon Device Subsidiaries &
-                                Acquisitions
-                            </h1>
-
-                            <!-- Introduction -->
-                            <div class="space-y-6 text-lg md:text-xl mb-12">
-                                <p class="text-foreground">
-                                    <strong>Hi! I'm Carlos,</strong> a Senior Security Engineer specializing in incident
-                                    response for Device Subsidiaries & Acquisitions with advanced training in AI/ML and
-                                    quantitative decision-making frameworks. Over 11 years of experience transforming
-                                    security operations through data-driven insights and AI-augmented analysis.
-                                </p>
-                                <p class="text-muted-foreground">
-                                    Currently leading quantitative insights initiatives using IWIKS methodology and
-                                    precision questioning techniques. Expertise in making critical decisions with
-                                    incomplete information through contextual analysis and synthesis, bridging
-                                    traditional analytics with AI-augmented judgment for enhanced incident response
-                                    across Amazon's device ecosystem.
-                                </p>
-                            </div>
-        </div>
-
-        <!-- Mobile Photo Placeholder (will be moved by JavaScript) -->
-        <div id="mobile-photo-placeholder" style="display: none; text-align: center; margin: 2rem 0; width: 100%;">
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="mb-16 flex gap-6 items-center flex-wrap">
-            <a href="https://github.com/crgomez" class="social-icon-enhanced" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/cgomezsystemadmin/" class="social-icon-enhanced" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://s3.us-west-2.amazonaws.com/crgomez.com/crgomez-seceng-ir.pdf"
-                class="cta-button-enhanced" target="_blank">
-                <i class="fas fa-download"></i>
-                Resume
-            </a>
-        </div>
-
-        <!-- Key Areas of Expertise -->
-        <div>
-            <p class="text-xl font-semibold mb-6">Key areas of expertise:</p>
-            <div class="flex flex-wrap gap-3">
-                <span class="tag-enhanced">Insider Threat Detection</span>
-                <span class="tag-enhanced">Incident Response</span>
-                <span class="tag-enhanced">AI/ML & Data Science</span>
-                <span class="tag-enhanced">Security Engineering</span>
-                <span class="tag-enhanced">SOAR & SIEM</span>
-                <span class="tag-enhanced">Digital Forensics</span>
-                <span class="tag-enhanced">Leadership & Strategy</span>
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">Carlos R. Gomez</a>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li><a href="https://s3.us-west-2.amazonaws.com/crgomez.com/crgomez-security-engineer.pdf" class="nav-link" target="_blank">Resume</a></li>
+                </ul>
             </div>
-        </div>
-        </td>
-        <td class="desktop-photo-cell" style="vertical-align: top; width: 40%; text-align: center; padding-top: 4rem;">
-            <div id="interactive-photo" class="relative border border-border overflow-hidden cursor-none"
-                style="width: 314px; height: 418px; margin: 0 auto;">
-                <div class="absolute inset-0">
-                    <img src="https://s3.us-west-2.amazonaws.com/crgomez.com/IMG.png" alt="Carlos R Gomez"
-                        style="width: 100%; height: 100%; object-fit: cover; filter: blur(20px);">
-                </div>
-                <div id="clear-layer" class="absolute inset-0" style="opacity: 0; transition: opacity 0.3s;">
-                    <img src="https://s3.us-west-2.amazonaws.com/crgomez.com/IMG.png" alt="Carlos R Gomez"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div id="cursor-border"
-                    style="position: absolute; width: 150px; height: 200px; border: 2px solid var(--color-primary); opacity: 0.3; pointer-events: none; transition: transform 0.1s; display: none;">
-                </div>
-            </div>
-        </td>
-        </tr>
-        </table>
-        </table>
+        </nav>
 
-        </section>
+        <!-- Modern Single-Column Layout -->
+        <div class="min-h-screen" style="padding-top: 80px;">
+            <!-- Hero Section -->
+            <section class="hero-section container py-20 md:py-32" style="max-width: 1200px; padding-bottom: 4rem;">
+                <!-- Role Badge -->
+                <p class="role-badge-enhanced mb-6" style="background: #d0e5e6; border-color: #d0e5e6;">
+                    Senior Security Engineer, Incident Response
+                </p>
 
-        <!-- Experience Section -->
-        <section class="container py-16 pb-24 md:pb-16">
-            <!-- Experience Cards -->
-            <div class="space-y-16">
-                <!-- Amazon Devices - Senior Security Engineer -->
-                <article class="experience-card fade-in-up border border-border bg-card">
-                    <div class="p-8 md:p-12">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <div class="company-badge">
+                <!-- Main Headline -->
+                <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight" style="font-size: 4rem; line-height: 1.1; letter-spacing: -0.02em; max-width: 900px;">
+                    Driving quantitative insights in incident response for Amazon Device Subsidiaries
+                </h1>
+
+                <!-- Introduction - Condensed to 2 sentences -->
+                <p class="text-lg md:text-xl mb-12" style="font-size: 1.375rem; line-height: 1.7; max-width: 800px;">
+                    Hi! I'm Carlos, a Senior Security Engineer with 11+ years transforming security operations through 
+                    data-driven insights and AI-augmented analysis. I specialize in making critical decisions with 
+                    incomplete information using IWIKS methodology and quantitative frameworks from Columbia Business School.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="mb-16 flex gap-6 items-center flex-wrap" style="gap: 1rem;">
+                    <a href="https://github.com/crgomez" class="social-icon-enhanced" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/cgomezsystemadmin/" class="social-icon-enhanced" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://s3.us-west-2.amazonaws.com/crgomez.com/crgomez-security-engineer.pdf"
+                        class="cta-button-enhanced" target="_blank">
+                        <i class="fas fa-download"></i>
+                        Resume
+                    </a>
+                </div>
+
+                <!-- Key Areas of Expertise -->
+                <div style="max-width: 800px;">
+                    <p class="text-xl font-semibold mb-6" style="font-size: 1.25rem; margin-bottom: 1rem;">Key areas of expertise:</p>
+                    <div class="flex flex-wrap gap-3" style="gap: 0.625rem;">
+                        <span class="tag-enhanced" style="background: #d0e5e6; border-color: #d0e5e6;">Incident Response</span>
+                        <span class="tag-enhanced" style="background: #d0e5e6; border-color: #d0e5e6;">AI/ML & Data Science</span>
+                        <span class="tag-enhanced" style="background: #d0e5e6; border-color: #d0e5e6;">Security Engineering</span>
+                        <span class="tag-enhanced" style="background: #d0e5e6; border-color: #d0e5e6;">Insider Threat Detection</span>
+                        <span class="tag-enhanced" style="background: #d0e5e6; border-color: #d0e5e6;">Leadership & Strategy</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="container py-16" style="max-width: 1200px; padding-top: 4rem; padding-bottom: 4rem;">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Professional Experience</h2>
+                
+                <!-- Experience Cards Grid -->
+                <div class="experience-grid">
+                    <!-- 01: Amazon Devices - Senior Security Engineer -->
+                    <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="flex: 1;">
+                                <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-muted-foreground); margin-bottom: 0.5rem;">01</div>
+                                <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.75rem 0;">Senior Security Engineer, Incident Response</h3>
+                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; margin: 0 0 1rem 0;">2024 - Present</p>
+                            </div>
+                            <div class="company-badge" style="flex-shrink: 0;">
                                 <i class="fab fa-amazon"></i>
                                 Amazon
                             </div>
-                            <span class="badge-secondary">Incident Response</span>
-                            <span class="badge-secondary">Quantitative Insights</span>
-                            <span class="badge-secondary">AI/ML</span>
-                            <span class="badge-secondary">AWS Infrastructure</span>
-                            <span class="badge-secondary">Terraform</span>
                         </div>
+                        <div>
+                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6;">
+                                Leading quantitative insights initiatives using IWIKS methodology and AI-augmented frameworks.
+                            </p>
 
-                        <p class="text-sm text-muted-foreground mb-4">
-                            2024 - Present • Amazon • Devices Subsidiaries & Acquisitions
-                        </p>
-
-                        <h2 class="mb-6">Senior Security Engineer, Incident Response</h2>
-
-                        <p class="text-lg text-muted-foreground mb-6">
-                            Leading quantitative insights initiatives and technical infrastructure projects for incident
-                            response across Amazon's device ecosystem using IWIKS™ methodology, AI-augmented
-                            decision-making frameworks, and enterprise-scale security analytics platforms.
-                        </p>
-
-                        <div class="text-4xl font-bold mb-2 text-primary">IWIKS™</div>
-                        <p class="text-muted-foreground mb-8">
-                            Proprietary Data Collection Plan framework enabling precision questioning, contextual
-                            analysis, and synthesis for decision-making with incomplete information
-                        </p>
-
-                        <ul class="space-y-3 text-muted-foreground mb-6">
-                            <li>• Applied IWIKS™ methodology and Quantitative Intuition (QI™) from Columbia Business
-                                School to frame problems, conduct data collection, and develop business/product
-                                requirement documents with peer and leadership buy-in, enabling strategic project
-                                execution across all initiatives</li>
-                            <li>• Trained QuickSight Flow Agent as AI-augmented researcher surfacing risk mitigation
-                                strategies, coverage gaps, and MITRE TTP-based detection recommendations for engineers,
-                                achieving 44% increase in discovery rates and 79% reduction in collaborative overhead
-                            </li>
-                            <li>• Built click-to-deploy serverless analytics platform enabling TPMs and leadership to
-                                generate weekly security reports in minutes (vs 8+ hours), surfacing month-over-month
-                                TTP coverage across subsidiaries, high-severity events, and risk mitigation
-                                recommendations for Amazon Monthly Business Reviews</li>
-                            <li>• Implemented AI-augmented WAF management using Terraform Stacks & Workspaces, analyzing
-                                traffic patterns, surfacing risks, and proposing Terraform-formatted rules for human
-                                decision-making, enabling sub-5 minute threat deployments while maintaining responder
-                                judgment</li>
-                        </ul>
-
-                        <div class="pt-4">
-                            <button data-project="amazon-senior"
-                                class="text-primary hover:text-primary-hover underline hover:no-underline transition-colors text-sm font-medium cursor-pointer bg-transparent border-none p-0">
-                                View Quantitative Insights Framework →
-                            </button>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.5;">
+                                <li style="padding-left: 1rem; position: relative; margin-bottom: 0.5rem;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
+                                    44% increase in discovery rates with AI-augmented research
+                                </li>
+                                <li style="padding-left: 1rem; position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
+                                    Built serverless analytics platform reducing report time from 8+ hours to minutes
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Amazon Devices - Manager (Previous Role) -->
-                <article class="experience-card fade-in-up border border-border bg-card">
-                    <div class="p-8 md:p-12">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <div class="company-badge">
+                    <!-- 02: Amazon Manager -->
+                    <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="flex: 1;">
+                                <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-muted-foreground); margin-bottom: 0.5rem;">02</div>
+                                <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.75rem 0;">Manager, Insider Threat Program</h3>
+                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; margin: 0 0 1rem 0;">2022 - 2024</p>
+                            </div>
+                            <div class="company-badge" style="flex-shrink: 0;">
                                 <i class="fab fa-amazon"></i>
                                 Amazon
                             </div>
-                            <span class="badge-secondary">Insider Threat</span>
-                            <span class="badge-secondary">AI/ML</span>
-                            <span class="badge-secondary">Leadership</span>
                         </div>
+                        <div>
+                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6;">
+                                Led cross-functional team developing enterprise-scale insider threat detection capabilities.
+                            </p>
 
-                        <p class="text-sm text-muted-foreground mb-4">
-                            2022 - 2024 • Amazon • Devices Subsidiaries & Acquisitions
-                        </p>
-
-                        <h2 class="mb-6">Manager, Insider Threat Program</h2>
-
-                        <p class="text-lg text-muted-foreground mb-6">
-                            Led cross-functional team developing enterprise-scale insider threat detection
-                            capabilities across Amazon's hardware subsidiaries (Ring, Blink, Eero) and autonomous
-                            vehicle division (Zoox).
-                        </p>
-
-                        <div class="text-4xl font-bold mb-2 text-primary">4k+</div>
-                        <p class="text-muted-foreground mb-8">
-                            AWS accounts monitored with centralized security analytics platform processing
-                            CloudTrail telemetry
-                        </p>
-
-                        <ul class="space-y-3 text-muted-foreground mb-6">
-                            <li>• Architected 50+ custom threat indicators and automated correlation algorithms for
-                                real-time risk assessment</li>
-                            <li>• Implemented orchestration middleware security controls protecting Ring's ~40M
-                                Monthly Active Users</li>
-                            <li>• Reduced MTTD and MTTR through comprehensive Threat Lifecycle Management Framework
-                            </li>
-                        </ul>
-
-                        <div class="pt-4">
-                            <button data-project="amazon-manager"
-                                class="text-primary hover:text-primary-hover underline hover:no-underline transition-colors text-sm font-medium cursor-pointer bg-transparent border-none p-0">
-                                View Technical Implementation Details →
-                            </button>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.5;">
+                                <li style="padding-left: 1rem; position: relative; margin-bottom: 0.5rem;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
+                                    Architected 50+ custom threat indicators and correlation algorithms
+                                </li>
+                                <li style="padding-left: 1rem; position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
+                                    Security controls protecting Ring's 40M Monthly Active Users
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Ring - Security Engineer III -->
-                <article class="experience-card fade-in-up border border-border bg-card">
-                    <div class="p-8 md:p-12">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <div class="company-badge company-badge-ring">
+                    <!-- 03: Ring - Security Engineer III -->
+                    <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="flex: 1;">
+                                <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-muted-foreground); margin-bottom: 0.5rem;">03</div>
+                                <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.75rem 0;">Security Engineer III</h3>
+                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; margin: 0 0 1rem 0;">2020 - 2022</p>
+                            </div>
+                            <div class="company-badge company-badge-ring" style="flex-shrink: 0;">
                                 <span class="ring-logo">Ring</span>
                             </div>
-                            <span class="badge-secondary">Security Engineering</span>
-                            <span class="badge-secondary">SOAR</span>
                         </div>
+                        <div>
+                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6;">
+                                Engineered security automation and log management solutions for Ring's cloud infrastructure.
+                            </p>
 
-                        <p class="text-sm text-muted-foreground mb-4">
-                            2020 - 2022 • Amazon • Ring (RBKS)
-                        </p>
-
-                        <h2 class="mb-6">Security Engineer III, Lead Insider Threat Program</h2>
-
-                        <p class="text-lg text-muted-foreground mb-6">
-                            Conducted case-studies highlighting security & privacy risks, gaining stakeholder
-                            sponsorship to develop Ring's Insider Threat Program under Defensive Security.
-                        </p>
-
-                        <div class="text-4xl font-bold mb-2 text-primary">35.8M</div>
-                        <p class="text-muted-foreground mb-8">
-                            customer accounts protected through Two Person Authorization (2PA) security controls
-                            implementation
-                        </p>
-
-                        <ul class="space-y-3 text-muted-foreground mb-6">
-                            <li>• Reduced AWS CloudWatch log onboarding from 3-4 weeks to 30 minutes</li>
-                            <li>• Implemented automated SOAR pipeline for enhanced threat response</li>
-                            <li>• Mitigated internal threat vectors for account takeover attacks</li>
-                        </ul>
-
-                        <div class="pt-4">
-                            <button data-project="ring-engineer"
-                                class="text-primary hover:text-primary-hover underline hover:no-underline transition-colors text-sm font-medium cursor-pointer bg-transparent border-none p-0">
-                                View Security Architecture Details →
-                            </button>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.5;">
+                                <li style="padding-left: 1rem; position: relative; margin-bottom: 0.5rem;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
+                                    Reduced AWS CloudWatch log onboarding from 3-4 weeks to 30 minutes
+                                </li>
+                                <li style="padding-left: 1rem; position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
+                                    Implemented automated SOAR pipeline for threat response
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Ring - Incident Response -->
-                <article class="experience-card fade-in-up border border-border bg-card">
-                    <div class="p-8 md:p-12">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <div class="company-badge company-badge-ring">
+                    <!-- 04: Ring - Incident Response -->
+                    <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="flex: 1;">
+                                <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-muted-foreground); margin-bottom: 0.5rem;">04</div>
+                                <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.75rem 0;">Security Engineer II, Incident Response</h3>
+                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; margin: 0 0 1rem 0;">2018 - 2020</p>
+                            </div>
+                            <div class="company-badge company-badge-ring" style="flex-shrink: 0;">
                                 <span class="ring-logo">Ring</span>
                             </div>
-                            <span class="badge-secondary">Incident Response</span>
-                            <span class="badge-secondary">Digital Forensics</span>
                         </div>
+                        <div>
+                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6;">
+                                Established incident response capabilities and security protocols for Ring's growing platform.
+                            </p>
 
-                        <p class="text-sm text-muted-foreground mb-4">
-                            2018 - 2020 • Ring • Security Engineering
-                        </p>
-
-                        <h2 class="mb-6">Security Engineer II, Incident Response</h2>
-
-                        <p class="text-lg text-muted-foreground mb-6">
-                            Authored Ring's Incident Response Protocols/Procedures built on F3EAD framework and NIST
-                            Computer Security Incident Response Guide. Led Engineering, Legal, PR, and Stakeholders
-                            through Intelligence-Driven Incident Response Cycle.
-                        </p>
-
-                        <div class="pt-4">
-                            <button data-project="ring-incident"
-                                class="text-primary hover:text-primary-hover underline hover:no-underline transition-colors text-sm font-medium cursor-pointer bg-transparent border-none p-0">
-                                View Framework Documentation →
-                            </button>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.5;">
+                                <li style="padding-left: 1rem; position: relative; margin-bottom: 0.5rem;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
+                                    Authored Ring's Incident Response Protocols built on F3EAD framework
+                                </li>
+                                <li style="padding-left: 1rem; position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
+                                    Developed security runbooks and playbooks for incident handling
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Google - Previous Experience -->
-                <article class="experience-card fade-in-up border border-border bg-card">
-                    <div class="p-8 md:p-12">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <div class="company-badge">
+                    <!-- 05: Google -->
+                    <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="flex: 1;">
+                                <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-muted-foreground); margin-bottom: 0.5rem;">05</div>
+                                <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.75rem 0;">IT Operations & Full Stack Engineer</h3>
+                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; margin: 0 0 1rem 0;">2016 - 2018</p>
+                            </div>
+                            <div class="company-badge" style="flex-shrink: 0;">
                                 <i class="fab fa-google"></i>
                                 Google
                             </div>
-                            <span class="badge-secondary">Cloud Platform</span>
-                            <span class="badge-secondary">Full Stack</span>
                         </div>
+                        <div>
+                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6;">
+                                Supported global IT operations and developed analytics solutions for Google's infrastructure.
+                            </p>
 
-                        <p class="text-sm text-muted-foreground mb-4">
-                            2016 - 2018 • Google • IT Operations & Cloud Platform
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.5;">
+                                <li style="padding-left: 1rem; position: relative; margin-bottom: 0.5rem;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
+                                    Provided technical support to 130K+ Googlers worldwide
+                                </li>
+                                <li style="padding-left: 1rem; position: relative;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
+                                    Built data analytics platform for cloud infrastructure optimization
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Education & Professional Development Section -->
+            <div style="background: #d0e5e6; padding: 4rem 0 0 0; margin-top: 4rem; margin-bottom: 0;">
+                <section id="education" class="container" style="max-width: 1200px; padding-bottom: 4rem;">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-12">Education & Certifications</h2>
+
+                <!-- Education Grid -->
+                <div class="education-grid" style="margin-bottom: 4rem;">
+                    <div class="education-item">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">MS Homeland Security</h3>
+                        <p style="color: var(--color-muted-foreground); font-size: 0.9rem;">Penn State University • InfoSec & Forensics</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Leading in a Data-Driven World</h3>
+                        <p style="color: var(--color-muted-foreground); font-size: 0.9rem;">Columbia Business School Executive Education</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Demystifying AI</h3>
+                        <p style="color: var(--color-muted-foreground); font-size: 0.9rem;">Stanford Continuous Studies</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">BS Information Systems Security</h3>
+                        <p style="color: var(--color-muted-foreground); font-size: 0.9rem;">Azusa Pacific University</p>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div id="certifications">
+                    <h3 class="text-2xl font-semibold mb-8" style="font-size: 1.75rem; padding-top: 8rem; margin-top: -8rem;">Professional Certifications</h3>
+                    <div class="education-grid" style="margin-bottom: 4rem;">
+                    <div class="education-item">
+                        <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Large Language Models for Business with Python</h4>
+                        <p style="color: var(--color-muted-foreground); font-size: 0.875rem;">Stanford Continuing Studies • Feb 2026</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Professional Negotiation</h4>
+                        <p style="color: var(--color-muted-foreground); font-size: 0.875rem;">CBS Executive Fonden • Jan 2026</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Leading in a Data-Driven World: Quantitative Intuition</h4>
+                        <p style="color: var(--color-muted-foreground); font-size: 0.875rem;">Columbia Business School Executive Education • Sep 2025</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Navigate the Workplace: Managing Up, Down, and Across</h4>
+                        <p style="color: var(--color-muted-foreground); font-size: 0.875rem;">Stanford Continuing Studies • Sep 2025</p>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <h3 class="text-2xl font-semibold mb-8" style="font-size: 1.75rem;">Technical Skills</h3>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Security Engineering</h4>
+                        <p style="color: var(--color-muted-foreground); font-size: 0.875rem;">Threat Hunting, Incident Response, Digital Forensics, SOAR, SIEM Platforms</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">AI/ML & Data Science</h4>
+                        <p style="color: var(--color-muted-foreground); font-size: 0.875rem;">Business Intelligence, Risk Modeling, Predictive Analytics, Machine Learning, Anomaly Detection</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Leadership & Strategy</h4>
+                        <p style="color: var(--color-muted-foreground); font-size: 0.875rem;">Conflict Resolution, Operational Planning, Talent Management, Resource Budgeting</p>
+                    </div>
+                </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="container" style="max-width: 1200px;">
+                        <div style="display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem 0;">
+                    <!-- Footer Content -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; align-items: start;">
+                        <!-- About -->
+                        <div>
+                            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem;">Carlos R. Gomez</h3>
+                            <p style="color: var(--color-foreground-light); font-size: 0.8125rem; opacity: 0.8; line-height: 1.4;">Senior Security Engineer</p>
+                        </div>
+                        
+                        <!-- Navigation Links -->
+                        <div>
+                            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-foreground-light); text-transform: uppercase; letter-spacing: 0.05em;">Navigation</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.375rem;">
+                                <li><a href="#experience" style="color: var(--color-foreground-light); opacity: 0.8; text-decoration: none; font-size: 0.8125rem; transition: opacity 0.2s ease;">Experience</a></li>
+                                <li><a href="#education" style="color: var(--color-foreground-light); opacity: 0.8; text-decoration: none; font-size: 0.8125rem; transition: opacity 0.2s ease;">Education</a></li>
+                                <li><a href="#certifications" style="color: var(--color-foreground-light); opacity: 0.8; text-decoration: none; font-size: 0.8125rem; transition: opacity 0.2s ease;">Certifications</a></li>
+                                <li><a href="https://s3.us-west-2.amazonaws.com/crgomez.com/crgomez-security-engineer.pdf" target="_blank" style="color: var(--color-foreground-light); opacity: 0.8; text-decoration: none; font-size: 0.8125rem; transition: opacity 0.2s ease;">Resume</a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div>
+                            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-foreground-light); text-transform: uppercase; letter-spacing: 0.05em;">Connect</h4>
+                            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                <a href="https://github.com/crgomez" class="footer-social-icon" target="_blank" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/cgomezsystemadmin/" class="footer-social-icon" target="_blank" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Copyright -->
+                    <div style="border-top: 1px solid rgba(245, 241, 232, 0.2); padding-top: 1rem; text-align: center;">
+                        <p style="color: var(--color-foreground-light); font-size: 0.8125rem; margin: 0; opacity: 0.8;">
+                            © 2026 Carlos R. Gomez. All rights reserved.
                         </p>
-
-                        <h2 class="mb-6">IT Operations & Full Stack Engineer (Rotation)</h2>
-
-                        <p class="text-lg text-muted-foreground mb-6">
-                            Provided support to 130K+ Googlers and developed data analytics platform for cloud
-                            infrastructure optimization.
-                        </p>
-
-                        <div class="text-4xl font-bold mb-2 text-primary">80%</div>
-                        <p class="text-muted-foreground mb-8">
-                            reduction in Google Cloud Storage partner data tracking dashboard load times
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Education & Professional Development Section -->
-        <section class="fade-in container py-16" style="padding-top: 3.5rem;">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Education & Professional Development</h2>
-
-            <!-- Education Cards Side by Side -->
-            <div class="education-cards-container mb-16">
-                <div class="education-card border border-border p-6 bg-card">
-                    <h3 class="text-xl font-semibold mb-6">Academic Background</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-semibold text-foreground">MS Homeland Security</h4>
-                            <p class="text-muted-foreground">InfoSec & Forensics • Penn State University</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-foreground">BS Information Systems Security</h4>
-                            <p class="text-muted-foreground">Azusa Pacific University</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-foreground">AS Behavioral & Social Science</h4>
-                            <p class="text-muted-foreground">Los Angeles Southwest College</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="education-card border border-border p-6 bg-card">
-                    <h3 class="text-xl font-semibold mb-6">Executive Education</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-semibold text-foreground">Leading in a Data-Driven World</h4>
-                            <p class="text-muted-foreground">Columbia Business School Executive Education</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-foreground">Demystifying AI</h4>
-                            <p class="text-muted-foreground">Stanford Continuous Studies</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-foreground">The Mindful Manager</h4>
-                            <p class="text-muted-foreground">Stanford Continuous Studies</p>
-                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Certifications -->
-            <div class="certifications-container mb-16">
-                <h3 class="text-2xl font-bold mb-8">Certifications</h3>
-                <div class="certifications-cards-container">
-                    <div class="certification-card border border-border p-6 bg-card">
-                        <h4 class="text-lg font-semibold mb-4">Leadership & Data Science</h4>
-                        <div class="space-y-4">
-                            <div>
-                                <a href="https://www.credential.net/f8a0f143-17c4-42d2-9562-6596b49a32cd#acc.5OHiTI3J"
-                                    target="_blank" class="text-primary hover:underline font-semibold">
-                                    Leading in a Data-Driven World: Developing Quantitative Intuition
-                                </a>
-                                <p class="text-sm text-muted-foreground mt-1">Columbia Business School Executive
-                                    Education</p>
-                            </div>
-                            <div>
-                                <a href="https://www.coursera.org/account/accomplishments/certificate/U2N62CPNXH5U"
-                                    target="_blank" class="text-primary hover:underline font-semibold">
-                                    Big Data and Machine Learning Fundamentals
-                                </a>
-                                <p class="text-sm text-muted-foreground mt-1">Coursera</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="certification-card border border-border p-6 bg-card">
-                        <h4 class="text-lg font-semibold mb-4">Security & Operations</h4>
-                        <div class="space-y-4">
-                            <div>
-                                <a href="https://www.coursera.org/account/accomplishments/certificate/MGP6LY9QGGLU"
-                                    target="_blank" class="text-primary hover:underline font-semibold">
-                                    Real-Time Cyber Threat Detection and Mitigation
-                                </a>
-                                <p class="text-sm text-muted-foreground mt-1">Coursera</p>
-                            </div>
-                            <div>
-                                <a href="https://www.coursera.org/account/accomplishments/certificate/69J9U2AASWUV"
-                                    target="_blank" class="text-primary hover:underline font-semibold">
-                                    G Suite Administrator Fundamentals
-                                </a>
-                                <p class="text-sm text-muted-foreground mt-1">Coursera</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </footer>
             </div>
-
-            <!-- Technical Skills -->
-            <div class="border border-border p-8 md:p-10 bg-card">
-                <h3 class="text-2xl font-bold mb-8">Technical Skills</h3>
-                <div class="technical-skills-grid">
-                    <div>
-                        <h4 class="text-lg font-semibold text-foreground mb-3">Security Engineering</h4>
-                        <p class="text-muted-foreground">Threat Hunting, Incident Response, Digital Forensics, SOAR,
-                            SIEM Platforms</p>
-                    </div>
-
-                    <div>
-                        <h4 class="text-lg font-semibold text-foreground mb-3">AI/ML & Data Science</h4>
-                        <p class="text-muted-foreground">Business Intelligence, Risk Modeling, Predictive Analytics,
-                            Machine Learning, Anomaly Detection</p>
-                    </div>
-
-                    <div>
-                        <h4 class="text-lg font-semibold text-foreground mb-3">Leadership & Strategy</h4>
-                        <p class="text-muted-foreground">Conflict Resolution, Operational Planning, Talent
-                            Management, Resource Budgeting</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <!-- .min-h-screen -->
+        </div>
+        <!-- .min-h-screen -->
     </div>
     <!-- #main-wrapper -->
 
@@ -525,284 +426,6 @@ Version: 6.0 - Lovable Inspired
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
-
-    <!-- Project Details JavaScript -->
-    <script>
-        // Project detail data
-        const projectDetails = {
-            'amazon-senior': {
-                title: 'Quantitative Insights & Security Analytics Platform',
-                tech: ['IWIKS™ Methodology', 'AWS QuickSight Flow Agent', 'MITRE ATT&CK', 'AWS Lambda', 'Terraform', 'Python', 'AWS WAF', 'EventBridge', 'S3', 'KMS', 'IAM', 'AI-Powered Analytics'],
-                description: 'Leading quantitative insights initiatives and AI-augmented security research using IWIKS™ framework, applying academic research from Stanford\'s Demystifying AI and Columbia\'s Quantitative Intuition to transform security operations across Amazon Device Subsidiaries & Acquisitions.',
-                achievements: [
-                    'Applied IWIKS™ (Identify→When→Identify→Know→Status) and Columbia\'s QI™ frameworks to frame security problems and develop BRDs/PRDs with stakeholder buy-in',
-                    'Trained QuickSight Flow Agent using Stanford\'s Demystifying AI principles, integrating 7+ work management applications for automated research workflows',
-                    'Designed serverless analytics platform with AWS Lambda (Python), S3, EventBridge, and QuickSight supporting 365-day retention and click-to-deploy reporting',
-                    'Built Terraform Stacks & Workspaces-based WAF system with AI traffic analysis, automated risk surfacing, and staging validation for sub-5 minute deployments',
-                    'Achieved 44% increase in discovery rates and 79% reduction in collaborative overhead through AI-augmented research and reporting automation'
-                ],
-                metrics: 'AI-Powered MITRE Coverage • 7+ Work & Project Management Applications • Multi-Account AWS Infrastructure • IWIKS™ & QI™ Methodologies'
-            },
-            'amazon-manager': {
-                title: 'Enterprise Insider Threat Detection Platform',
-                tech: ['Python', 'AWS Lambda', 'CloudTrail', 'Machine Learning', 'ElasticSearch', 'Kibana'],
-                description: 'Architected and developed a comprehensive insider threat detection system processing CloudTrail telemetry from 4,000+ AWS accounts across Amazon\'s hardware subsidiaries.',
-                achievements: [
-                    'Built 50+ custom threat indicators using behavioral analytics and anomaly detection',
-                    'Implemented real-time correlation algorithms reducing MTTD by 75%',
-                    'Developed machine learning models for user behavior analysis and risk scoring',
-                    'Created automated alert triage system with 95% accuracy rate',
-                    'Integrated with SOAR platforms for automated incident response workflows'
-                ],
-                metrics: '4,000+ AWS accounts monitored • 50+ threat indicators • 75% MTTD reduction'
-            },
-            'ring-engineer': {
-                title: 'Security Orchestration Middleware',
-                tech: ['Node.js', 'AWS Lambda', 'API Gateway', 'DynamoDB', 'CloudFormation', 'TypeScript'],
-                description: 'Designed and implemented orchestration middleware security controls protecting Ring\'s 40M+ Monthly Active Users through automated security validation and Two Person Authorization.',
-                achievements: [
-                    'Implemented Two Person Authorization (2PA) for 35.8M customer accounts',
-                    'Built scalable API gateway solutions with 99.9% uptime SLA',
-                    'Created automated security validation pipelines with real-time monitoring',
-                    'Reduced security control deployment time from weeks to minutes',
-                    'Developed comprehensive audit logging and compliance reporting'
-                ],
-                metrics: '40M+ users protected • 35.8M accounts with 2PA • 99.9% uptime'
-            },
-            'ring-incident': {
-                title: 'Intelligence-Driven Incident Response Framework',
-                tech: ['Python', 'NIST Framework', 'F3EAD', 'Digital Forensics', 'MITRE ATT&CK', 'SIEM'],
-                description: 'Authored comprehensive incident response protocols built on F3EAD framework and NIST guidelines, creating standardized workflows for cross-functional incident management.',
-                achievements: [
-                    'Developed standardized incident classification and escalation procedures',
-                    'Created automated evidence collection and digital forensics workflows',
-                    'Established communication protocols for Engineering, Legal, PR, and executive teams',
-                    'Implemented post-incident analysis and lessons learned documentation',
-                    'Built threat intelligence integration for proactive threat hunting'
-                ],
-                metrics: 'Cross-functional framework • NIST compliant • F3EAD methodology'
-            }
-        };
-
-        // Toggle project details
-        function toggleProjectDetails(projectId) {
-            const existingDetails = document.getElementById(`details-${projectId}`);
-
-            if (existingDetails) {
-                // Hide details
-                existingDetails.style.maxHeight = '0px';
-                setTimeout(() => {
-                    existingDetails.remove();
-                }, 300);
-                return;
-            }
-
-            // Show details
-            const project = projectDetails[projectId];
-            const detailsHtml = `
-                <div id="details-${projectId}" class="project-details mt-6 p-6 bg-muted rounded-lg" style="max-height: 0px; overflow: hidden; transition: max-height 0.3s ease-out;">
-                    <h4 class="text-lg font-semibold mb-4 text-primary">${project.title}</h4>
-                    
-                    <div class="mb-4">
-                        <p class="text-sm font-medium mb-2">Technology Stack:</p>
-                        <div class="flex flex-wrap gap-2">
-                            ${project.tech.map(tech => `<span class="badge-secondary text-xs">${tech}</span>`).join('')}
-                        </div>
-                    </div>
-                    
-                    <p class="text-muted-foreground mb-4">${project.description}</p>
-                    
-                    <div class="mb-4">
-                        <p class="text-sm font-medium mb-2">Key Achievements:</p>
-                        <ul class="space-y-1 text-sm text-muted-foreground">
-                            ${project.achievements.map(achievement => `<li>• ${achievement}</li>`).join('')}
-                        </ul>
-                    </div>
-                    
-                    <div class="text-xs text-muted-foreground font-medium bg-background p-3 rounded">
-                        ${project.metrics}
-                    </div>
-                </div>
-            `;
-
-            // Find the button's parent article and insert details
-            const button = event.target;
-            const article = button.closest('article');
-            const buttonContainer = button.closest('.pt-4');
-
-            buttonContainer.insertAdjacentHTML('afterend', detailsHtml);
-
-            // Animate in
-            setTimeout(() => {
-                const details = document.getElementById(`details-${projectId}`);
-                details.style.maxHeight = details.scrollHeight + 'px';
-            }, 10);
-        }
-
-        // Function to setup interactive photo for any container (global)
-        function setupPhotoInteraction(container, clearLayer, cursorBorder) {
-            console.log('Setting up photo interaction:', { container, clearLayer, cursorBorder });
-            if (!container || !clearLayer || !cursorBorder) {
-                console.log('Missing elements, skipping setup');
-                return;
-            }
-
-            let mousePosition = { x: 0, y: 0 };
-            let isHovering = false;
-
-            // Constants for spotlight window size
-            const rectWidth = 150;
-            const rectHeight = 200;
-
-            function handleMouseMove(e) {
-                const rect = container.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-
-                mousePosition = { x, y };
-
-                if (isHovering) {
-                    updateSpotlight();
-                    updateCursor();
-                }
-            }
-
-            function updateSpotlight() {
-                const containerWidth = container.offsetWidth;
-                const containerHeight = container.offsetHeight;
-
-                // Calculate insets to create a window centered on cursor
-                const top = Math.max(0, mousePosition.y - rectHeight / 2);
-                const right = Math.max(0, containerWidth - mousePosition.x - rectWidth / 2);
-                const bottom = Math.max(0, containerHeight - mousePosition.y - rectHeight / 2);
-                const left = Math.max(0, mousePosition.x - rectWidth / 2);
-
-                const clipPathValue = `inset(${top}px ${right}px ${bottom}px ${left}px round 8px)`;
-                console.log('Setting clipPath:', clipPathValue);
-                clearLayer.style.clipPath = clipPathValue;
-            }
-
-            function updateCursor() {
-                cursorBorder.style.left = mousePosition.x + 'px';
-                cursorBorder.style.top = mousePosition.y + 'px';
-                cursorBorder.style.transform = 'translate(-50%, -50%)';
-            }
-
-            function handleMouseEnter() {
-                isHovering = true;
-                clearLayer.style.opacity = '1';
-                cursorBorder.classList.remove('hidden');
-            }
-
-            function handleMouseLeave() {
-                isHovering = false;
-                clearLayer.style.opacity = '0';
-                cursorBorder.classList.add('hidden');
-            }
-
-            // Add event listeners
-            container.addEventListener('mousemove', handleMouseMove);
-            container.addEventListener('mouseenter', handleMouseEnter);
-            container.addEventListener('mouseleave', handleMouseLeave);
-        }
-
-        // Initialize interactive photo
-        function initInteractivePhoto() {
-            // Desktop photo
-            const container = document.getElementById('interactive-photo');
-            const clearLayer = document.getElementById('clear-layer');
-            const cursorBorder = document.getElementById('cursor-border');
-
-            console.log('Desktop elements:', { container, clearLayer, cursorBorder });
-
-            // Setup desktop photo
-            setupPhotoInteraction(container, clearLayer, cursorBorder);
-        }
-
-        // Add event listeners when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function () {
-            console.log('DOM loaded, initializing interactive photo...');
-            // Initialize interactive photo
-            initInteractivePhoto();
-
-            // Handle mobile photo positioning
-            let mobilePhotoSetup = false; // Prevent multiple setups
-
-            function handleMobilePhoto() {
-                const isMobile = window.innerWidth < 768;
-                const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-                const shouldShowMobile = isMobile || isTouchDevice;
-                const desktopPhoto = document.getElementById('interactive-photo');
-                const mobilePlaceholder = document.getElementById('mobile-photo-placeholder');
-
-                console.log('handleMobilePhoto called:', {
-                    isMobile,
-                    isTouchDevice,
-                    shouldShowMobile,
-                    windowWidth: window.innerWidth,
-                    mobilePhotoSetup,
-                    desktopPhoto: !!desktopPhoto,
-                    mobilePlaceholder: !!mobilePlaceholder,
-                    placeholderDisplay: mobilePlaceholder ? mobilePlaceholder.style.display : 'null'
-                });
-
-                if (shouldShowMobile && desktopPhoto && mobilePlaceholder && !mobilePhotoSetup) {
-                    console.log('Setting up mobile photo...');
-                    mobilePhotoSetup = true;
-                    // Clone the desktop photo for mobile
-                    const mobilePhoto = desktopPhoto.cloneNode(true);
-                    mobilePhoto.id = 'mobile-interactive-photo';
-
-                    // Update IDs for mobile photo elements to avoid conflicts
-                    const mobileClearLayer = mobilePhoto.querySelector('#clear-layer');
-                    const mobileCursorBorder = mobilePhoto.querySelector('#cursor-border');
-
-                    if (mobileClearLayer) mobileClearLayer.id = 'mobile-clear-layer';
-                    if (mobileCursorBorder) mobileCursorBorder.id = 'mobile-cursor-border';
-
-                    // Clear placeholder and add mobile photo
-                    mobilePlaceholder.innerHTML = '';
-                    mobilePlaceholder.appendChild(mobilePhoto);
-                    mobilePlaceholder.style.display = 'block';
-
-                    // Hide desktop photo
-                    desktopPhoto.style.display = 'none';
-
-                    // Initialize interactive functionality for mobile photo
-                    setupPhotoInteraction(mobilePhoto, mobileClearLayer, mobileCursorBorder);
-                } else if (!shouldShowMobile && mobilePlaceholder && mobilePhotoSetup) {
-                    console.log('Switching to desktop mode...');
-                    mobilePhotoSetup = false;
-                    // Hide mobile photo on desktop
-                    mobilePlaceholder.style.display = 'none';
-
-                    // Show desktop photo
-                    if (desktopPhoto) {
-                        desktopPhoto.style.display = 'block';
-                    }
-                }
-            }
-
-            // Initial call
-            handleMobilePhoto();
-
-            // Handle window resize with debouncing
-            let resizeTimeout;
-            window.addEventListener('resize', function () {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(handleMobilePhoto, 250);
-            });
-
-            // Add click handlers to project buttons
-            const buttons = document.querySelectorAll('[data-project]');
-            buttons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const projectId = this.getAttribute('data-project');
-                    toggleProjectDetails(projectId);
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>
