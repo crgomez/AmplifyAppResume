@@ -63,121 +63,119 @@ Version: 6.0 - Lovable Inspired
             </div>
         </div>
 
-        <!-- Modern Single-Column Layout inspired by Lovable -->
-        <div class="min-h-screen">
-            <!-- Hero Section - GitHub Project Layout -->
-            <section class="hero-section container py-20 md:py-32">
-                <style>
-                    @media (max-width: 767px) {
-
-                        .responsive-table,
-                        .responsive-table tr,
-                        .responsive-table td {
-                            display: block !important;
-                            width: 100% !important;
-                        }
-
-                        .responsive-table td {
-                            padding: 0 !important;
-                            margin-bottom: 2rem;
-                        }
-
-                        .desktop-photo-cell {
-                            display: none !important;
-                        }
-                    }
-                </style>
-                <table class="responsive-table" style="width: 100%; border-collapse: collapse;">
-                    <tr>
-                        <td style="vertical-align: top; padding-right: 3rem; width: 60%;">
-                            <!-- Role Badge -->
-                            <div class="role-badge-enhanced mb-6">
-                                Senior Security Engineer, Incident Response
-                            </div>
-
-                            <!-- Main Tagline -->
-                            <h1 class="gradient-text text-4xl md:text-6xl font-bold mb-8 leading-tight"
-                                style="font-size: 3.5rem; line-height: 1.15;">
-                                Driving quantitative insights in incident response for Amazon Device Subsidiaries &
-                                Acquisitions
-                            </h1>
-
-                            <!-- Introduction -->
-                            <div class="space-y-6 text-lg md:text-xl mb-12">
-                                <p class="text-foreground">
-                                    <strong>Hi! I'm Carlos,</strong> a Senior Security Engineer specializing in incident
-                                    response for Device Subsidiaries & Acquisitions with advanced training in AI/ML and
-                                    quantitative decision-making frameworks. Over 11 years of experience transforming
-                                    security operations through data-driven insights and AI-augmented analysis.
-                                </p>
-                                <p class="text-muted-foreground">
-                                    Currently leading quantitative insights initiatives using IWIKS methodology and
-                                    precision questioning techniques. Expertise in making critical decisions with
-                                    incomplete information through contextual analysis and synthesis, bridging
-                                    traditional analytics with AI-augmented judgment for enhanced incident response
-                                    across Amazon's device ecosystem.
-                                </p>
-                            </div>
-        </div>
-
-        <!-- Mobile Photo Placeholder (will be moved by JavaScript) -->
-        <div id="mobile-photo-placeholder" style="display: none; text-align: center; margin: 2rem 0; width: 100%;">
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="mb-16 flex gap-6 items-center flex-wrap">
-            <a href="https://github.com/crgomez" class="social-icon-enhanced" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/cgomezsystemadmin/" class="social-icon-enhanced" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://s3.us-west-2.amazonaws.com/crgomez.com/crgomez-security-engineer.pdf"
-                class="cta-button-enhanced" target="_blank">
-                <i class="fas fa-download"></i>
-                Resume
-            </a>
-        </div>
-
-        <!-- Key Areas of Expertise -->
-        <div>
-            <p class="text-xl font-semibold mb-6">Key areas of expertise:</p>
-            <div class="flex flex-wrap gap-3">
-                <span class="tag-enhanced">Insider Threat Detection</span>
-                <span class="tag-enhanced">Incident Response</span>
-                <span class="tag-enhanced">AI/ML & Data Science</span>
-                <span class="tag-enhanced">Security Engineering</span>
-                <span class="tag-enhanced">SOAR & SIEM</span>
-                <span class="tag-enhanced">Digital Forensics</span>
-                <span class="tag-enhanced">Leadership & Strategy</span>
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">Carlos R. Gomez</a>
+                <ul class="nav-links">
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="https://s3.us-west-2.amazonaws.com/crgomez.com/crgomez-security-engineer.pdf" class="nav-link" target="_blank">Resume</a></li>
+                </ul>
             </div>
-        </div>
-        </td>
-        <td class="desktop-photo-cell" style="vertical-align: top; width: 40%; text-align: center; padding-top: 4rem;">
-            <div id="interactive-photo" class="relative border border-border overflow-hidden cursor-none"
-                style="width: 314px; height: 418px; margin: 0 auto;">
-                <div class="absolute inset-0">
-                    <img src="https://s3.us-west-2.amazonaws.com/crgomez.com/IMG.png" alt="Carlos R Gomez"
-                        style="width: 100%; height: 100%; object-fit: cover; filter: blur(20px);">
-                </div>
-                <div id="clear-layer" class="absolute inset-0" style="opacity: 0; transition: opacity 0.3s;">
-                    <img src="https://s3.us-west-2.amazonaws.com/crgomez.com/IMG.png" alt="Carlos R Gomez"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div id="cursor-border"
-                    style="position: absolute; width: 150px; height: 200px; border: 2px solid var(--color-primary); opacity: 0.3; pointer-events: none; transition: transform 0.1s; display: none;">
-                </div>
-            </div>
-        </td>
-        </tr>
-        </table>
-        </table>
+        </nav>
 
-        </section>
+        <!-- Modern Single-Column Layout -->
+        <div class="min-h-screen" style="padding-top: 80px;">
+            <!-- Hero Section -->
+            <section class="hero-section container py-20 md:py-32" style="max-width: 720px;">
+                <!-- Role Badge -->
+                <p class="role-badge-enhanced mb-6">
+                    Senior Security Engineer, Incident Response
+                </p>
 
-        <!-- Experience Section -->
-        <section class="container py-16 pb-24 md:pb-16">
-            <!-- Experience Cards -->
+                <!-- Main Headline -->
+                <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight" style="font-size: 4rem; line-height: 1.1; letter-spacing: -0.02em;">
+                    Driving quantitative insights in incident response for Amazon Device Subsidiaries
+                </h1>
+
+                <!-- Introduction - Condensed to 2 sentences -->
+                <p class="text-lg md:text-xl mb-12" style="font-size: 1.375rem; line-height: 1.7;">
+                    Hi! I'm Carlos, a Senior Security Engineer with 11+ years transforming security operations through 
+                    data-driven insights and AI-augmented analysis. I specialize in making critical decisions with 
+                    incomplete information using IWIKS methodology and quantitative frameworks from Columbia Business School.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="mb-16 flex gap-6 items-center flex-wrap">
+                    <a href="https://github.com/crgomez" class="social-icon-enhanced" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/cgomezsystemadmin/" class="social-icon-enhanced" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://s3.us-west-2.amazonaws.com/crgomez.com/crgomez-security-engineer.pdf"
+                        class="cta-button-enhanced" target="_blank">
+                        <i class="fas fa-download"></i>
+                        Resume
+                    </a>
+                </div>
+
+                <!-- Key Areas of Expertise -->
+                <div>
+                    <p class="text-xl font-semibold mb-6">Key areas of expertise:</p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tag-enhanced">Incident Response</span>
+                        <span class="tag-enhanced">AI/ML & Data Science</span>
+                        <span class="tag-enhanced">Security Engineering</span>
+                        <span class="tag-enhanced">Insider Threat Detection</span>
+                        <span class="tag-enhanced">Leadership & Strategy</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="container py-16" style="max-width: 900px; padding-top: 8rem;">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Professional Experience</h2>
+                
+                <!-- Experience Cards with Numbers -->
+                <div class="space-y-8">
+                    <!-- 01: Amazon Devices - Senior Security Engineer -->
+                    <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 3rem;">
+                        <div style="display: flex; gap: 2rem; align-items: flex-start;">
+                            <div style="font-size: 2rem; font-weight: 600; color: var(--color-foreground); min-width: 60px;">01</div>
+                            <div style="flex: 1;">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <div class="company-badge">
+                                        <i class="fab fa-amazon"></i>
+                                        Amazon
+                                    </div>
+                                    <span class="badge-secondary">Incident Response</span>
+                                    <span class="badge-secondary">AI/ML</span>
+                                    <span class="badge-secondary">AWS</span>
+                                </div>
+
+                                <p class="text-sm text-muted-foreground mb-4" style="color: var(--color-muted-foreground);">
+                                    2024 - Present • Amazon • Devices Subsidiaries & Acquisitions
+                                </p>
+
+                                <h3 class="mb-4" style="font-size: 1.5rem; font-weight: 600;">Senior Security Engineer, Incident Response</h3>
+
+                                <p class="text-lg mb-6" style="font-size: 1.125rem; line-height: 1.7;">
+                                    Leading quantitative insights initiatives and technical infrastructure projects for incident
+                                    response across Amazon's device ecosystem using IWIKS methodology and AI-augmented frameworks.
+                                </p>
+
+                                <ul class="space-y-3" style="list-style: none; padding: 0;">
+                                    <li style="padding-left: 1.5rem; position: relative; margin-bottom: 1rem;">
+                                        <span style="position: absolute; left: 0;">—</span>
+                                        Applied IWIKS methodology and Quantitative Intuition from Columbia Business School to frame 
+                                        problems and develop business requirement documents with stakeholder buy-in
+                                    </li>
+                                    <li style="padding-left: 1.5rem; position: relative; margin-bottom: 1rem;">
+                                        <span style="position: absolute; left: 0;">—</span>
+                                        Trained QuickSight Flow Agent as AI-augmented researcher, achieving 44% increase in discovery 
+                                        rates and 79% reduction in collaborative overhead
+                                    </li>
+                                    <li style="padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0;">—</span>
+                                        Built click-to-deploy serverless analytics platform enabling weekly security reports in minutes 
+                                        versus 8+ hours
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
             <div class="space-y-16">
                 <!-- Amazon Devices - Senior Security Engineer -->
                 <article class="experience-card fade-in-up border border-border bg-card">
