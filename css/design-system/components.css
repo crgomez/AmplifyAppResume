@@ -146,6 +146,24 @@
   }
 }
 
+/* Desktop Navigation - Ensure visibility */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+  
+  .nav-links {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+}
+
 /* ===== BUTTONS - Caladan Bio Style ===== */
 .btn {
   display: inline-flex;
