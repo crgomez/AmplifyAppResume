@@ -70,21 +70,25 @@ Transform the current burgundy-themed portfolio into a Caladan Bio-inspired mini
 - [x] Remove project detail data objects
 - [x] Finalize minimal codebase
 
-## Phase 5: Interaction Removal (NEXT)
-- [ ] Remove all hover animations
-- [ ] Remove fade-in-up animations
-- [ ] Remove carousel JavaScript (already not in branch)
-- [ ] Remove photo interaction JavaScript
-- [ ] Remove project detail toggle functionality
-- [ ] Simplify to opacity-only hover states
+## ✅ Phase 5: Interaction Removal (COMPLETED)
+- [x] Remove all hover animations
+- [x] Remove fade-in-up animations
+- [x] Remove carousel JavaScript (already done)
+- [x] Remove photo interaction JavaScript (already done)
+- [x] Remove project detail toggle functionality (already done)
+- [x] Simplify to opacity-only hover states
+- [x] Remove progress bar animations
+- [x] Remove link animated effects
 
-## Phase 6: Dark/Accent Sections (Optional Enhancement)
-- [ ] Add dark green section for "Why I do this" content
-- [ ] Add light mint accent sections for variety
-- [ ] Implement alternating background pattern
-- [ ] Update text colors for dark backgrounds
+## ✅ Phase 6: Dark/Accent Sections (COMPLETED)
+- [x] Add dark green section styles
+- [x] Add light mint accent section styles
+- [x] Implement alternating background pattern support
+- [x] Update text colors for dark backgrounds
+- [x] Update button styles for dark sections
+- [x] Full-width background sections
 
-## Phase 7: Polish & Testing
+## Phase 7: Polish & Testing (NEXT)
 - [ ] Test on mobile devices
 - [ ] Verify accessibility (contrast ratios)
 - [ ] Remove unused CSS
