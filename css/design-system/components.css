@@ -236,38 +236,8 @@
   border-radius: var(--radius-md);
 }
 
-/* ===== PROGRESS BARS ===== */
-.progress {
-  height: 8px;
-  background: var(--color-muted);
-  border-radius: var(--radius-full);
-  overflow: hidden;
-  position: relative;
-}
-
-.progress-bar {
-  height: 100%;
-  background: var(--color-primary);
-  border-radius: var(--radius-full);
-  transition: width 1.5s ease-in-out;
-  position: relative;
-}
-
-.progress-bar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
+/* ===== PROGRESS BARS - REMOVED ===== */
+/* Minimalist design doesn't use progress bars */
 
 /* ===== SOCIAL ICONS ===== */
 .social-icon {
@@ -336,78 +306,69 @@
   100% { transform: rotate(360deg); }
 }
 
-/* ===== ANIMATIONS ===== */
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-in-out;
-}
+/* ===== ANIMATIONS - REMOVED ===== */
+/* Minimalist design uses no animations */
 
-.animate-slide-up {
-  animation: slideUp 0.6s ease-out;
-}
+/* ===== SMOOTH TRANSITIONS - REMOVED ===== */
+/* Minimalist design uses minimal transitions */
 
-.animate-scale-in {
-  animation: scaleIn 0.4s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* ===== SMOOTH TRANSITIONS ===== */
-.smooth-transition {
-  transition: var(--transition-smooth);
-}
-
-/* ===== LINK ANIMATIONS ===== */
-.link-animated {
-  position: relative;
-  text-decoration: none;
-  color: var(--color-foreground);
-  transition: var(--transition-smooth);
-}
-
-.link-animated::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-primary);
-  transition: width 0.3s ease-in-out;
-}
-
-.link-animated:hover::after {
-  width: 100%;
-}
+/* ===== LINK ANIMATIONS - REMOVED ===== */
+/* Minimalist design uses simple opacity changes */
 
 /* ===== HERO SECTION - Minimalist ===== */
 .hero-section {
   position: relative;
   overflow: visible;
+}
+
+/* ===== DARK & ACCENT SECTIONS - Caladan Bio Style ===== */
+.section-dark {
+  background: var(--color-background-dark);
+  color: var(--color-foreground-light);
+  padding: 8rem 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4 {
+  color: var(--color-foreground-light);
+}
+
+.section-dark p {
+  color: var(--color-foreground-light);
+}
+
+.section-dark .metadata {
+  color: rgba(245, 241, 232, 0.7);
+}
+
+.section-accent {
+  background: var(--color-background-accent);
+  padding: 8rem 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+/* Buttons in dark sections */
+.section-dark .btn,
+.section-dark .social-icon-enhanced,
+.section-dark .cta-button-enhanced {
+  border-color: var(--color-foreground-light);
+  color: var(--color-foreground-light);
+}
+
+.section-dark .btn:hover,
+.section-dark .social-icon-enhanced:hover,
+.section-dark .cta-button-enhanced:hover {
+  background: var(--color-foreground-light);
+  color: var(--color-background-dark);
 }
 
 /* Enhanced CTA buttons - Minimalist style */
