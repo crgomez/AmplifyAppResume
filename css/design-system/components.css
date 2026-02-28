@@ -529,7 +529,7 @@
 .footer {
   background: var(--color-background-dark) !important;
   border-top: 1px solid var(--color-background-dark);
-  margin-top: 8rem;
+  margin-top: 0;
 }
 
 .footer h3,
