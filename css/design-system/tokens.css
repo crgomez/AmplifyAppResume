@@ -108,19 +108,4 @@
   /* 2xl: 1536px */
 }
 
-/* Light mode is default - no changes needed */
-
-/* Dark mode support - maintain green palette */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #0F2306;
-    --color-background-dark: #1a3a0d;
-    --color-background-accent: #2d5015;
-    --color-foreground: #f5f1e8;
-    --color-foreground-light: #f5f1e8;
-    --color-card: #1a3a0d;
-    --color-card-accent: #2d5015;
-    --color-border: #2d5015;
-    --color-muted-foreground: #a8b5a0;
-  }
-}
+/* Light mode only - dark mode disabled for brand consistency */
