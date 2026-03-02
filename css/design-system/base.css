@@ -13,10 +13,16 @@
   margin: 0;
 }
 
+/* Force light mode - override system dark mode preference */
+:root {
+  color-scheme: light only;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
   height: 100%;
+  color-scheme: light only;
 }
 
 body {
@@ -28,6 +34,7 @@ body {
   font-weight: var(--font-weight-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color-scheme: light only;
   min-height: 100%;
 }
 
