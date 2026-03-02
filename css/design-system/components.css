@@ -747,6 +747,10 @@
     font-size: 0.6875rem !important;
     padding: 6px 14px !important;
     margin-bottom: 1rem !important;
+    display: block !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    word-wrap: break-word !important;
   }
   
   /* CTA buttons container */
