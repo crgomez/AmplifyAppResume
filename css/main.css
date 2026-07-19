@@ -19,7 +19,13 @@
    texture shows through; the sage base color is provided by <body>. */
 #main-wrapper {
   background: transparent;
-  overflow-x: hidden;
+  /* `clip` (not `hidden`) prevents horizontal overflow without forcing a
+     scroll container: per the CSS Overflow spec the visibility-coupling rule
+     coerces `overflow-y: visible` to `auto` only when the other axis is
+     hidden/scroll/auto, not when it is `clip`. This keeps overflow-y truly
+     visible so #main-wrapper does not form its own nested vertical scrollbar. */
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 /* Modern Single-Column Layout */
