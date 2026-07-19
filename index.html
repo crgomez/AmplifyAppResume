@@ -96,11 +96,9 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
                     I build ML/AI that transforms security operations
                 </h1>
 
-                <!-- Introduction - Condensed to 2 sentences -->
+                <!-- Introduction - Responder→Builder Narrative -->
                 <p class="text-lg md:text-xl mb-12" style="font-size: 1.375rem; line-height: 1.7; max-width: 800px;">
-                    Hi! I'm Carlos, a Senior Security Engineer with 11+ years transforming security operations through 
-                    data-driven insights and AI-augmented analysis. I specialize in making critical decisions with 
-                    incomplete information using quantitative frameworks from Columbia Business School.
+                    Starting as an incident responder on a lean team, the focus shifted to building systems that stop the problems instead of just responding to them. Today that means owning and operating a production ML platform that turns fragmented incident data into one clear operational picture, queryable in plain language by peers, managers, and leadership. The work spans both halves: the technical craft, and the decision-making and influence that turns a finding into action.
                 </p>
 
                 <!-- CTA Buttons -->
@@ -131,19 +129,39 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
                 </div>
             </section>
 
+            <!-- How I Work Section -->
+            <section class="container py-16" style="max-width: 1200px; padding-top: 2rem; padding-bottom: 4rem;">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8" style="font-size: 2.5rem;">How I Work</h2>
+                
+                <div style="max-width: 900px;">
+                    <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        The approach starts from the decision that needs to be made and works backward to the data that informs it — the "I Wish I Knew" questions first, the engineering second. This methodology comes from executive training at Columbia Business School and Copenhagen Business School, where the focus was learning that understanding the threat perfectly means nothing without the ability to bring stakeholders along.
+                    </p>
+                    
+                    <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        In practice, this means building systems that answer the questions leaders actually ask, not just collecting data. The ML platform doesn't exist because machine learning is interesting — it exists because "what patterns are we seeing across teams?" is a question that gets asked every week, and raw dashboards can't answer it. The natural-language interface exists because waiting on someone to build a custom report is how decisions get delayed.
+                    </p>
+                    
+                    <p style="font-size: 1.125rem; line-height: 1.8;">
+                        The work applies the OODA loop — Observe, Orient, Decide, Act — to security operations. Detection is Observe. Classification and threat mapping is Orient. Response orchestration is Decide and Act. The ML platform that turns incident fragments into operational intelligence accelerates the Orient phase, helping teams understand patterns faster and make better decisions under pressure.
+                    </p>
+                </div>
+            </section>
+
             <!-- Experience Section -->
             <section id="experience" class="container py-16" style="max-width: 1200px; padding-top: 4rem; padding-bottom: 4rem;">
                 <h2 class="text-3xl md:text-4xl font-bold mb-12">Professional Experience</h2>
                 
                 <!-- Experience Cards Grid -->
                 <div class="experience-grid">
-                    <!-- 01: Amazon Devices - Senior Security Engineer -->
+                    <!-- 01: Amazon Devices - Senior Security Engineer (REBUILT - Most Detailed) -->
                     <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
                             <div style="flex: 1;">
                                 <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-muted-foreground); margin-bottom: 0.5rem;">01</div>
                                 <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.75rem 0;">Senior Security Engineer, Incident Response</h3>
                                 <p style="color: var(--color-muted-foreground); font-size: 0.875rem; margin: 0 0 1rem 0;">2024 - Present</p>
+                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; font-style: italic; margin: 0 0 1rem 0;">Devices Subsidiaries & Acquisitions — Ring, Blink, eero, Zoox</p>
                             </div>
                             <div class="company-badge" style="flex-shrink: 0;">
                                 <i class="fab fa-amazon"></i>
@@ -151,24 +169,40 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
                             </div>
                         </div>
                         <div>
-                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6;">
-                                Leading quantitative insights initiatives using decision-driven frameworks and AI-augmented analysis.
+                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                                Coming into this role as an incident responder, the work evolved toward building systems that prevent incidents rather than just responding to them. On a flat, lean team, this builder approach became the primary focus as the business invested in it.
                             </p>
 
-                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.5;">
-                                <li style="padding-left: 1rem; position: relative; margin-bottom: 0.5rem;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
-                                    44% increase in discovery rates with AI-augmented research
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.7;">
+                                <li style="padding-left: 1rem; position: relative; margin-bottom: 1rem;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground); font-weight: 600;">—</span>
+                                    <strong>Built and own a production security-intelligence platform</strong> that aggregates fragmented incident data across the device portfolio and applies machine learning — semantic embeddings, clustering, and dimensionality reduction — to surface operational patterns raw dashboards miss, mapping incidents to the MITRE ATT&CK framework. A GenAI summarization layer, with deterministic status fields and human review guardrails, turns a multi-day reporting cycle into minutes.
+                                </li>
+                                <li style="padding-left: 1rem; position: relative; margin-bottom: 1rem;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground); font-weight: 600;">—</span>
+                                    <strong>Shipped a natural-language interface</strong> (Model Context Protocol) so peers, managers, and leadership can query the platform directly in plain language — read-only, identity-scoped, fully audit-logged — instead of waiting on a hand-built report.
+                                </li>
+                                <li style="padding-left: 1rem; position: relative; margin-bottom: 1rem;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground); font-weight: 600;">—</span>
+                                    <strong>Own and operate these services end-to-end</strong> — building and running them in production, which on a lean team is the job.
+                                </li>
+                                <li style="padding-left: 1rem; position: relative; margin-bottom: 1rem;">
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground); font-weight: 600;">—</span>
+                                    <strong>Piloting automated incident triage</strong>, extending the platform toward an orchestration/SOAR capability with its own team-facing interface (MCP) for Incident Response and Vulnerability Management Response to build on.
                                 </li>
                                 <li style="padding-left: 1rem; position: relative;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
-                                    Built serverless analytics platform reducing report time from 8+ hours to minutes
+                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground); font-weight: 600;">—</span>
+                                    <strong>Foundation: live incident response.</strong> Leading end-to-end incident response across the device ecosystem — coordinating across engineering, legal, and stakeholders. Responding to real incidents is why the systems built are effective: building detection from lived experience of the detection problem.
                                 </li>
                             </ul>
+
+                            <p style="font-size: 0.85rem; color: var(--color-muted-foreground); margin-top: 1.5rem; font-style: italic;">
+                                Stack: Python, scikit-learn, SageMaker, AWS Lambda, S3, QuickSight, Terraform, BERT embeddings, MCP
+                            </p>
                         </div>
                     </article>
 
-                    <!-- 02: Amazon Manager -->
+                    <!-- 02: Amazon Manager (LIGHTENED) -->
                     <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
                             <div style="flex: 1;">
@@ -183,7 +217,7 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
                         </div>
                         <div>
                             <p class="mb-3" style="font-size: 1rem; line-height: 1.6;">
-                                Led cross-functional team developing enterprise-scale insider threat detection capabilities.
+                                Led cross-functional team developing enterprise-scale insider threat detection capabilities across Amazon's hardware subsidiaries.
                             </p>
 
                             <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.5;">
