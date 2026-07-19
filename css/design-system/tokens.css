@@ -18,7 +18,7 @@
   /* Text Colors */
   --color-foreground: #0F2306;        /* Deep forest green - primary text */
   --color-foreground-light: #f5f1e8;  /* Light cream for dark backgrounds */
-  --color-muted-foreground: #6b6456;  /* Muted text */
+  --color-muted-foreground: #665f50;  /* Muted text - AA-compliant on mint band (4.83:1) */
   
   /* Surface Colors */
   --color-card: #ffffff;              /* White cards */
