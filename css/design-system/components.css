@@ -630,6 +630,45 @@
   padding: 0;
 }
 
+/* Impact Metrics Strip - headline stats, visually distinct from education cards */
+.impact-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .impact-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.impact-stat-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.impact-stat-label {
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .impact-stats {
+    gap: 1.5rem;
+  }
+
+  .impact-stat-value {
+    font-size: 1.5rem;
+  }
+}
+
 /* Company badge - Simplified */
 .company-badge {
   display: inline-flex;
