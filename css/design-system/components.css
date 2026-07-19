@@ -712,42 +712,6 @@
   }
 }
 
-/* Company badge - Simplified */
-.company-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: 4px 12px;
-  background: transparent;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  font-weight: var(--font-weight-normal);
-  font-size: 0.75rem;
-  color: var(--color-foreground);
-  transition: opacity 0.2s ease;
-}
-
-.company-badge:hover {
-  opacity: 0.7;
-}
-
-.company-badge i {
-  color: var(--color-foreground);
-  font-size: 0.875rem;
-}
-
-/* Ring branding styles */
-.ring-logo {
-  font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
-}
-
-.company-badge-ring {
-  background: transparent;
-  border: 1px solid var(--color-border);
-}
-
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -935,21 +899,6 @@
   h2 {
     font-size: 1.75rem !important;
     margin-bottom: 2rem !important;
-  }
-  
-  /* Experience cards - ensure proper stacking */
-  .experience-card {
-    padding: 1.5rem !important;
-  }
-  
-  .experience-card h3 {
-    font-size: 1.125rem !important;
-  }
-  
-  /* Company badge - smaller on mobile */
-  .company-badge {
-    font-size: 0.6875rem !important;
-    padding: 3px 10px !important;
   }
   
   /* Education section - reduce padding */
