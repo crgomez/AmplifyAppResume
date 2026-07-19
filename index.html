@@ -53,6 +53,10 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
     <!-- Style CSS - New Modular Architecture -->
     <link href="css/main.css?v=8.0" rel="stylesheet">
 
+    <!-- Scroll-reveal guard: only hide-then-reveal when JS is available.
+         Without this class the .reveal elements stay fully visible. -->
+    <script>document.documentElement.classList.add('reveal-enabled');</script>
+
 </head>
 
 <body id="page-top">
@@ -85,7 +89,7 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
         <!-- Modern Single-Column Layout -->
         <div class="min-h-screen" style="padding-top: 80px;">
             <!-- Hero Section -->
-            <section class="hero-section container py-20 md:py-32" style="max-width: 1200px; padding-bottom: 4rem;">
+            <section class="hero-section hero-reveal container py-20 md:py-32" style="max-width: 1200px; padding-bottom: 4rem;">
                 <!-- Role Badge -->
                 <p class="role-badge-enhanced mb-6" style="background: #d0e5e6; border-color: #d0e5e6;">
                     Senior Security Engineer, Incident Response
@@ -131,20 +135,20 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
 
             <!-- Impact Metrics Strip -->
             <section class="container py-12" style="max-width: 1200px; padding-top: 0; padding-bottom: 3rem;">
-                <div class="impact-stats">
-                    <div class="impact-stat">
+                <div class="impact-stats reveal-stagger">
+                    <div class="impact-stat reveal">
                         <p class="impact-stat-value">Multi-day → Minutes</p>
                         <p class="impact-stat-label">Incident reporting via AI-augmented summaries with human review guardrails</p>
                     </div>
-                    <div class="impact-stat">
+                    <div class="impact-stat reveal">
                         <p class="impact-stat-value">50+ Custom Indicators</p>
                         <p class="impact-stat-label">Insider threat detection protecting ~40M monthly active users</p>
                     </div>
-                    <div class="impact-stat">
+                    <div class="impact-stat reveal">
                         <p class="impact-stat-value">3–4 Weeks → ~30 Min</p>
                         <p class="impact-stat-label">AWS CloudWatch log onboarding through reusable automation</p>
                     </div>
-                    <div class="impact-stat">
+                    <div class="impact-stat reveal">
                         <p class="impact-stat-value">130K+ Employees</p>
                         <p class="impact-stat-label">Global IT operations and infrastructure support at Google</p>
                     </div>
@@ -153,7 +157,7 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
 
             <!-- How I Work Section -->
             <section class="container py-16" style="max-width: 1200px; padding-top: 2rem; padding-bottom: 4rem;">
-                <div class="flow-section">
+                <div class="flow-section reveal">
                     <h2 class="flow-label text-3xl md:text-4xl font-bold" style="font-size: 2.5rem;">How I Work</h2>
                     <div class="flow-content flow-content--columns">
                         <div>
@@ -181,12 +185,12 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
             <!-- Experience Section -->
             <section id="experience" class="container py-16" style="max-width: 1200px; padding-top: 4rem; padding-bottom: 4rem;">
                 <div class="flow-section">
-                    <h2 class="flow-label text-3xl md:text-4xl font-bold">Professional Experience</h2>
+                    <h2 class="flow-label text-3xl md:text-4xl font-bold reveal">Professional Experience</h2>
                     <div class="flow-content">
                 <!-- Experience Narrative Sections -->
-                <div class="experience-narrative">
+                <div class="experience-narrative reveal-stagger">
                     <!-- Act 4: Quantitative, AI-Augmented Incident Response -->
-                    <details class="experience-act" open>
+                    <details class="experience-act reveal" open>
                         <summary class="act-summary">
                             <h3 class="act-title">Quantitative, AI-Augmented Incident Response</h3>
                             <div class="act-meta">
@@ -228,7 +232,7 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
                     </details>
 
                     <!-- Act 3: Insider Risk at Scale -->
-                    <details class="experience-act">
+                    <details class="experience-act reveal">
                         <summary class="act-summary">
                             <h3 class="act-title">Insider Risk at Scale</h3>
                             <div class="act-meta">
@@ -257,7 +261,7 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
                     </details>
 
                     <!-- Act 2: Building Repeatable IR -->
-                    <details class="experience-act">
+                    <details class="experience-act reveal">
                         <summary class="act-summary">
                             <h3 class="act-title">Building Repeatable IR</h3>
                             <div class="act-meta">
@@ -287,7 +291,7 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
                     </details>
 
                     <!-- Act 1: Infrastructure and Scale -->
-                    <details class="experience-act">
+                    <details class="experience-act reveal">
                         <summary class="act-summary">
                             <h3 class="act-title">Infrastructure and Scale</h3>
                             <div class="act-meta">
@@ -321,7 +325,7 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
 
             <!-- Education & Professional Development Section -->
             <div style="background: #d0e5e6; padding: 4rem 0 0 0; margin-top: 4rem; margin-bottom: 0;">
-                <section id="education" class="container" style="max-width: 1200px; padding-bottom: 4rem;">
+                <section id="education" class="container reveal" style="max-width: 1200px; padding-bottom: 4rem;">
                     <h2 class="text-3xl md:text-4xl font-bold mb-12">Education & Certifications</h2>
 
                 <!-- Education Grid -->
@@ -395,7 +399,7 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
                 </section>
 
                 <!-- Footer -->
-                <footer class="footer">
+                <footer class="footer reveal">
                     <div class="container" style="max-width: 1200px;">
                         <div style="display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem 0;">
                     <!-- Footer Content -->
@@ -448,6 +452,53 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
 
     <!-- Scripts -->
     <script src="js/scripts.js?v=7.0" defer></script>
+
+    <!-- Scroll-reveal: fade/slide sections in on first scroll-into-view.
+         Inline (no external dependency) so a failed script load can never
+         leave content hidden — the .reveal-enabled gate is the only hider. -->
+    <script>
+    (function () {
+        'use strict';
+        var reveals = document.querySelectorAll('.reveal');
+        if (!reveals.length) return;
+
+        var prefersReduced = window.matchMedia &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // No IntersectionObserver support, or reduced motion requested:
+        // show everything immediately in its final state, no animation.
+        if (prefersReduced || !('IntersectionObserver' in window)) {
+            for (var i = 0; i < reveals.length; i++) {
+                reveals[i].classList.add('is-visible');
+            }
+            return;
+        }
+
+        // Apply a small stagger to reveal items inside a stagger group.
+        var groups = document.querySelectorAll('.reveal-stagger');
+        for (var g = 0; g < groups.length; g++) {
+            var items = groups[g].querySelectorAll('.reveal');
+            for (var j = 0; j < items.length; j++) {
+                items[j].style.transitionDelay = (j * 80) + 'ms';
+            }
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Reveal once, then stop watching — never re-trigger
+                    // (keeps <details> accordion toggles from re-animating).
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
+
+        for (var k = 0; k < reveals.length; k++) {
+            observer.observe(reveals[k]);
+        }
+    }());
+    </script>
 </body>
 
 </html>

@@ -357,8 +357,60 @@
   .container {
     padding: 0 var(--space-4);
   }
-  
+
   .section {
     padding: var(--space-16) 0;
+  }
+}
+
+/* ===================================
+ * SCROLL-REVEAL ANIMATIONS
+ * IntersectionObserver-driven section entrances.
+ * The `.reveal-enabled` gate is added to <html> by a small inline
+ * head script, so if JS never runs the content stays fully visible.
+ * =================================== */
+
+/* Base hidden state — only applied when JS is available */
+.reveal-enabled .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Revealed state — set once on first scroll-into-view, then left in place */
+.reveal-enabled .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Above-the-fold hero: one-time fade-in on load (not scroll-triggered) */
+.reveal-enabled .hero-section.hero-reveal {
+  animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Accessibility: honor reduced-motion — show final state instantly, no motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-enabled .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .reveal-enabled .hero-section.hero-reveal {
+    animation: none !important;
   }
 }
