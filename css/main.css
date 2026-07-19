@@ -15,8 +15,10 @@
  * =================================== */
 
 /* Main Wrapper */
+/* Background intentionally transparent so the fixed body::after dot-grid
+   texture shows through; the sage base color is provided by <body>. */
 #main-wrapper {
-  background: var(--color-background);
+  background: transparent;
   overflow-x: hidden;
 }
 
@@ -413,4 +415,38 @@
   .reveal-enabled .hero-section.hero-reveal {
     animation: none !important;
   }
+}
+
+/* ===================================
+ * BACKGROUND DOT-GRID TEXTURE
+ * Faint, fixed radial-dot wallpaper behind the light-background sections.
+ * Implemented independently of the scroll-reveal system (never touches
+ * `.reveal`), so it is always visible immediately and never animates.
+ * =================================== */
+
+/* Single viewport-fixed layer behind all content. `#main-wrapper` is
+   transparent (see above) so this shows through the sage sections; the
+   opaque footer sits above it and stays dot-free. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(circle, var(--color-primary) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.08;
+}
+
+/* The Education & Certifications band has an opaque inline mint background,
+   so the body layer can't show through it. Layer the same dot texture onto
+   the band's own background — viewport-fixed so it stays static and phase-
+   aligned with the body grid. Backgrounds always paint behind content, so
+   dots sit behind the section text; the dark footer nested inside covers its
+   own region and stays dot-free. `!important` is required to override the
+   element's inline `background` shorthand. */
+.min-h-screen > div[style*="#d0e5e6"] {
+  background-image: radial-gradient(circle, rgba(15, 35, 6, 0.08) 1px, transparent 1px) !important;
+  background-size: 28px 28px !important;
+  background-attachment: fixed !important;
 }
