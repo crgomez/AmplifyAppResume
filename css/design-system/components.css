@@ -571,10 +571,64 @@
 
 /* All acts have same white background */
 
-.act-header {
+.experience-act > summary.act-summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;
+  outline-offset: 4px;
+}
+
+.experience-act > summary.act-summary::-webkit-details-marker {
+  display: none;
+}
+
+.experience-act > summary.act-summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--color-muted-foreground);
+  flex-shrink: 0;
+}
+
+.experience-act[open] > summary.act-summary::after {
+  content: '\2212'; /* minus sign */
+}
+
+.experience-act[open] > summary.act-summary {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--color-border);
+}
+
+.act-summary .act-title {
+  margin: 0;
+}
+
+.act-summary .act-meta {
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .experience-act > summary.act-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .act-summary .act-meta {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .experience-act > summary.act-summary::after {
+    display: none;
+  }
 }
 
 .act-title {
