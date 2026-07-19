@@ -152,175 +152,106 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
             <section id="experience" class="container py-16" style="max-width: 1200px; padding-top: 4rem; padding-bottom: 4rem;">
                 <h2 class="text-3xl md:text-4xl font-bold mb-12">Professional Experience</h2>
                 
-                <!-- Experience Cards Grid -->
-                <div class="experience-grid">
-                    <!-- 01: Amazon Devices - Senior Security Engineer (REBUILT - Most Detailed) -->
-                    <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                            <div style="flex: 1;">
-                                <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-muted-foreground); margin-bottom: 0.5rem;">01</div>
-                                <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.75rem 0;">Senior Security Engineer, Incident Response</h3>
-                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; margin: 0 0 1rem 0;">2024 - Present</p>
-                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; font-style: italic; margin: 0 0 1rem 0;">Devices Subsidiaries & Acquisitions — Ring, Blink, eero, Zoox</p>
-                            </div>
-                            <div class="company-badge" style="flex-shrink: 0;">
-                                <i class="fab fa-amazon"></i>
-                                Amazon
+                <!-- Experience Narrative Sections -->
+                <div class="experience-narrative">
+                    <!-- Section 1: Building Systems (2024-Present) -->
+                    <article class="experience-section">
+                        <div class="section-divider"></div>
+                        
+                        <div class="section-header">
+                            <h3 class="section-title">Building Systems</h3>
+                            <div class="section-meta">
+                                <span class="section-period">2024 - Present</span>
+                                <span class="section-org">Amazon Device Subsidiaries — Ring, Blink, eero, Zoox</span>
                             </div>
                         </div>
-                        <div>
-                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+
+                        <div class="section-content">
+                            <p class="section-intro">
                                 Coming into this role as an incident responder, the work evolved toward building systems that prevent incidents rather than just responding to them. On a flat, lean team, this builder approach became the primary focus as the business invested in it.
                             </p>
 
-                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.7;">
-                                <li style="padding-left: 1rem; position: relative; margin-bottom: 1rem;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground); font-weight: 600;">—</span>
+                            <ul class="section-list">
+                                <li>
                                     <strong>Built and own a production security-intelligence platform</strong> that aggregates fragmented incident data across the device portfolio and applies machine learning — semantic embeddings, clustering, and dimensionality reduction — to surface operational patterns raw dashboards miss, mapping incidents to the MITRE ATT&CK framework. A GenAI summarization layer, with deterministic status fields and human review guardrails, turns a multi-day reporting cycle into minutes.
                                 </li>
-                                <li style="padding-left: 1rem; position: relative; margin-bottom: 1rem;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground); font-weight: 600;">—</span>
+                                <li>
                                     <strong>Shipped a natural-language interface</strong> (Model Context Protocol) so peers, managers, and leadership can query the platform directly in plain language — read-only, identity-scoped, fully audit-logged — instead of waiting on a hand-built report.
                                 </li>
-                                <li style="padding-left: 1rem; position: relative; margin-bottom: 1rem;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground); font-weight: 600;">—</span>
+                                <li>
                                     <strong>Own and operate these services end-to-end</strong> — building and running them in production, which on a lean team is the job.
                                 </li>
-                                <li style="padding-left: 1rem; position: relative; margin-bottom: 1rem;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground); font-weight: 600;">—</span>
+                                <li>
                                     <strong>Piloting automated incident triage</strong>, extending the platform toward an orchestration/SOAR capability with its own team-facing interface (MCP) for Incident Response and Vulnerability Management Response to build on.
                                 </li>
-                                <li style="padding-left: 1rem; position: relative;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground); font-weight: 600;">—</span>
+                                <li>
                                     <strong>Foundation: live incident response.</strong> Leading end-to-end incident response across the device ecosystem — coordinating across engineering, legal, and stakeholders. Responding to real incidents is why the systems built are effective: building detection from lived experience of the detection problem.
                                 </li>
                             </ul>
 
-                            <p style="font-size: 0.85rem; color: var(--color-muted-foreground); margin-top: 1.5rem; font-style: italic;">
+                            <p class="section-stack">
                                 Stack: Python, scikit-learn, SageMaker, AWS Lambda, S3, QuickSight, Terraform, BERT embeddings, MCP
                             </p>
                         </div>
                     </article>
 
-                    <!-- 02: Amazon Manager (LIGHTENED) -->
-                    <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                            <div style="flex: 1;">
-                                <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-muted-foreground); margin-bottom: 0.5rem;">02</div>
-                                <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.75rem 0;">Manager, Insider Threat Program</h3>
-                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; margin: 0 0 1rem 0;">2022 - 2024</p>
-                            </div>
-                            <div class="company-badge" style="flex-shrink: 0;">
-                                <i class="fab fa-amazon"></i>
-                                Amazon
+                    <!-- Section 2: Leading Programs (2022-2024) -->
+                    <article class="experience-section">
+                        <div class="section-divider"></div>
+                        
+                        <div class="section-header">
+                            <h3 class="section-title">Leading Programs</h3>
+                            <div class="section-meta">
+                                <span class="section-period">2022 - 2024</span>
+                                <span class="section-org">Amazon</span>
                             </div>
                         </div>
-                        <div>
-                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6;">
+
+                        <div class="section-content">
+                            <p class="section-intro">
                                 Led cross-functional team developing enterprise-scale insider threat detection capabilities across Amazon's hardware subsidiaries.
                             </p>
 
-                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.5;">
-                                <li style="padding-left: 1rem; position: relative; margin-bottom: 0.5rem;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
-                                    Architected 50+ custom threat indicators and correlation algorithms
-                                </li>
-                                <li style="padding-left: 1rem; position: relative;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
-                                    Security controls protecting Ring's 40M Monthly Active Users
-                                </li>
+                            <ul class="section-list section-list-condensed">
+                                <li>Architected 50+ custom threat indicators and correlation algorithms</li>
+                                <li>Security controls protecting Ring's 40M Monthly Active Users</li>
                             </ul>
                         </div>
                     </article>
 
-                    <!-- 03: Ring - Security Engineer III -->
-                    <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                            <div style="flex: 1;">
-                                <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-muted-foreground); margin-bottom: 0.5rem;">03</div>
-                                <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.75rem 0;">Security Engineer III</h3>
-                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; margin: 0 0 1rem 0;">2020 - 2022</p>
-                            </div>
-                            <div class="company-badge company-badge-ring" style="flex-shrink: 0;">
-                                <span class="ring-logo">Ring</span>
+                    <!-- Section 3: The Responder Years (2016-2022) -->
+                    <article class="experience-section">
+                        <div class="section-divider"></div>
+                        
+                        <div class="section-header">
+                            <h3 class="section-title">The Responder Years</h3>
+                            <div class="section-meta">
+                                <span class="section-period">2016 - 2022</span>
+                                <span class="section-org">Ring & Google</span>
                             </div>
                         </div>
-                        <div>
-                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6;">
-                                Engineered security automation and log management solutions for Ring's cloud infrastructure.
+
+                        <div class="section-content">
+                            <p class="section-intro">
+                                Building incident response capabilities at Ring while establishing the operational foundation at Google.
                             </p>
 
-                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.5;">
-                                <li style="padding-left: 1rem; position: relative; margin-bottom: 0.5rem;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
-                                    Reduced AWS CloudWatch log onboarding from 3-4 weeks to 30 minutes
-                                </li>
-                                <li style="padding-left: 1rem; position: relative;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
-                                    Implemented automated SOAR pipeline for threat response
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- 04: Ring - Incident Response -->
-                    <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                            <div style="flex: 1;">
-                                <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-muted-foreground); margin-bottom: 0.5rem;">04</div>
-                                <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.75rem 0;">Security Engineer II, Incident Response</h3>
-                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; margin: 0 0 1rem 0;">2018 - 2020</p>
+                            <div class="subsection">
+                                <h4 class="subsection-title">Ring (2018-2022)</h4>
+                                <ul class="section-list section-list-condensed">
+                                    <li>Authored IR protocols built on F3EAD framework</li>
+                                    <li>Implemented automated SOAR pipeline for threat response</li>
+                                    <li>Reduced AWS CloudWatch log onboarding from 3-4 weeks to 30 minutes</li>
+                                </ul>
                             </div>
-                            <div class="company-badge company-badge-ring" style="flex-shrink: 0;">
-                                <span class="ring-logo">Ring</span>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6;">
-                                Established incident response capabilities and security protocols for Ring's growing platform.
-                            </p>
 
-                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.5;">
-                                <li style="padding-left: 1rem; position: relative; margin-bottom: 0.5rem;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
-                                    Authored Ring's Incident Response Protocols built on F3EAD framework
-                                </li>
-                                <li style="padding-left: 1rem; position: relative;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
-                                    Developed security runbooks and playbooks for incident handling
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- 05: Google -->
-                    <article class="experience-card border border-border bg-card" style="border-radius: var(--radius-lg); padding: 2rem;">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                            <div style="flex: 1;">
-                                <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-muted-foreground); margin-bottom: 0.5rem;">05</div>
-                                <h3 style="font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.75rem 0;">IT Operations & Full Stack Engineer</h3>
-                                <p style="color: var(--color-muted-foreground); font-size: 0.875rem; margin: 0 0 1rem 0;">2016 - 2018</p>
+                            <div class="subsection">
+                                <h4 class="subsection-title">Google (2016-2018)</h4>
+                                <ul class="section-list section-list-condensed">
+                                    <li>Provided technical support to 130K+ Googlers worldwide</li>
+                                    <li>Built data analytics platform for cloud infrastructure optimization</li>
+                                </ul>
                             </div>
-                            <div class="company-badge" style="flex-shrink: 0;">
-                                <i class="fab fa-google"></i>
-                                Google
-                            </div>
-                        </div>
-                        <div>
-                            <p class="mb-3" style="font-size: 1rem; line-height: 1.6;">
-                                Supported global IT operations and developed analytics solutions for Google's infrastructure.
-                            </p>
-
-                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.5;">
-                                <li style="padding-left: 1rem; position: relative; margin-bottom: 0.5rem;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
-                                    Provided technical support to 130K+ Googlers worldwide
-                                </li>
-                                <li style="padding-left: 1rem; position: relative;">
-                                    <span style="position: absolute; left: 0; color: var(--color-muted-foreground);">—</span>
-                                    Built data analytics platform for cloud infrastructure optimization
-                                </li>
-                            </ul>
                         </div>
                     </article>
                 </div>
