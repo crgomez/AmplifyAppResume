@@ -514,6 +514,46 @@
   }
 }
 
+/* ===== NATURAL-FLOW LAYOUT - LABEL + CONTENT GRID ===== */
+.flow-section {
+  display: grid;
+  grid-template-columns: minmax(160px, 240px) 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.flow-label {
+  margin: 0;
+  position: sticky;
+  top: 3rem;
+}
+
+.flow-content {
+  min-width: 0;
+}
+
+.flow-content--columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 860px) {
+  .flow-section {
+    display: block;
+  }
+  .flow-label {
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+  .flow-content--columns {
+    display: block;
+  }
+  .flow-content--columns > div:first-child {
+    margin-bottom: 1.5rem;
+  }
+}
+
 /* ===== EXPERIENCE NARRATIVE - ACT STRUCTURE ===== */
 .experience-narrative {
   display: flex;
@@ -527,9 +567,6 @@
   background: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* All acts have same white background */
