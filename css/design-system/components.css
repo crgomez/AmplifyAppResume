@@ -584,6 +584,45 @@
   border-top: 1px solid var(--color-border);
 }
 
+/* Selected outcomes list - echoes the .act-stack divider treatment */
+.act-outcomes {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.act-outcomes-heading {
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  margin-bottom: 0.75rem;
+}
+
+.act-outcomes ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.act-outcomes li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-foreground);
+}
+
+.act-outcomes li:last-child {
+  margin-bottom: 0;
+}
+
+.act-outcomes li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-muted-foreground);
+}
+
 /* Mobile adjustments for act structure */
 @media (max-width: 767px) {
   .experience-narrative {
@@ -609,6 +648,10 @@
 
   .act-stack {
     font-size: 0.8125rem;
+  }
+
+  .act-outcomes li {
+    font-size: 0.9375rem;
   }
 }
 
