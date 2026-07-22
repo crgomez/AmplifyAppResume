@@ -282,19 +282,28 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
 
                         <div class="act-content">
                             <p class="act-narrative">
-                                This is where I turned ad-hoc investigation work into structured, repeatable pipelines. At Ring, I took on responsibility for incident response protecting millions of device customers. My problem was speed and consistency: incidents needed response protocols, not just talented responders improvising each time.
+                                I joined Ring and was pulled out of a team meeting within my first hour on the job — an active security event, all hands on deck. What I found was a giant Slack thread, too many service owners in the room, and no real structure: every step lived in a coworker's head. We didn't even have a clear map of who owned which service or who was on-call. My first task at Ring was building the Incident Response Program from scratch, on the NIST framework.
                             </p>
 
                             <p class="act-narrative">
-                                I built incident response protocols on the F3EAD framework, implemented automated SOAR pipelines for threat response, and cut AWS CloudWatch log onboarding from 3–4 weeks to roughly 30 minutes through reusable patterns and automation. The result was IR that was faster and more consistent: structured workflows that compress manual investigation tasks from days to minutes, so the team could scale without growing linearly.
+                                That structure got tested fast. Account-takeover incidents were escalating into swatting — real danger at a customer's home, not an abstract severity rating. Our partnership with Customer Service made the first signal: CS started fielding complaints and engaged Incident Response quickly, and within 20 minutes of that first escalation it was clear this was an ATO. The tabletops paid off — having the right runbooks in place meant we already knew the right points of contact, which cut response time instead of costing it.
+                            </p>
+
+                            <p class="act-narrative">
+                                The open question that came out of it was how to measure containment when bad actors keep shifting tactics and the indicators of compromise change under you. That pushed a broader defense-in-depth conversation with stakeholders — including investment in web application firewalls — so containment wasn't just about closing one account, but raising the cost of the next attempt.
+                            </p>
+
+                            <p class="act-narrative">
+                                From there, I formalized what worked: automated SOAR pipelines for threat response, and cutting AWS CloudWatch log onboarding from 3–4 weeks to roughly 30 minutes through reusable patterns and automation. The outcome was IR that scaled — structured workflows that compressed manual investigation tasks from days to minutes, so the team could grow without growing linearly.
                             </p>
 
                             <div class="act-outcomes">
                                 <p class="act-outcomes-heading"><strong>Selected outcomes:</strong></p>
                                 <ul>
-                                    <li>Built IR protocols on the F3EAD framework and automated SOAR pipelines for threat response</li>
-                                    <li>Cut AWS CloudWatch log onboarding from 3–4 weeks to roughly 30 minutes</li>
-                                    <li>Compressed manual investigation tasks from days to minutes through structured, reusable workflows</li>
+                                    <li>Built Ring's Incident Response Program from scratch on the NIST framework, starting within my first week on the job</li>
+                                    <li>Partnered with Customer Service to cut account-takeover triage to ~20 minutes from first escalation</li>
+                                    <li>Automated SOAR pipelines and cut AWS CloudWatch log onboarding from 3–4 weeks to roughly 30 minutes</li>
+                                    <li>Drove defense-in-depth investment, including WAFs, in response to shifting attacker tactics and IOCs</li>
                                 </ul>
                             </div>
                         </div>
