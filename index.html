@@ -201,19 +201,19 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
 
                         <div class="act-content">
                             <p class="act-narrative">
-                                Three investigations into a slow week, I closed a case and realized I'd solved the exact same pattern before — the answer was sitting in a report nobody remembered to open. There was no platform team on a flat org to build that memory for me. So building it became the job.
+                                This started as a simple way to help leadership visualize operations — ticket counts, open, closed, pending, SLA data. Flat. It wasn't until Columbia's IWIK framing — start from the decision, not the data — that a different question surfaced: not what data do we have, but what actually needs to be known. On a flat team with no dedicated platform group, answering that became the job.
                             </p>
 
                             <p class="act-narrative">
-                                I built a security-intelligence platform that clusters fragmented incident data across devices and cloud services into patterns raw dashboards miss — semantic embeddings, dimensionality reduction, mapped to MITRE ATT&CK — then layered GenAI summarization on top: deterministic status fields, human review guardrails, and incident reporting that dropped from multi-day manual workflows to minutes, without cutting corners on rigor.
+                                I turned that reframe into an enrichment pipeline: semantic embeddings and clustering that give flat ticket data the threat-framework context it never had, mapped to MITRE ATT&CK. On top of that, a GenAI summarization layer — deterministic status fields, human review guardrails — cut incident reporting from multi-day manual workflows to minutes, without cutting corners on rigor.
                             </p>
 
                             <p class="act-narrative">
-                                Then I opened it up: a natural-language interface on Model Context Protocol so any peer, manager, or exec can ask a scoped, audit-logged question in plain language instead of waiting on a hand-built report. I'm extending that same foundation into orchestration now, piloting automated incident triage that IR and Vulnerability Management can build on.
+                                Then I opened it up: a natural-language interface on Model Context Protocol so any peer, manager, or exec can ask a scoped, audit-logged question in plain language instead of waiting on a hand-built report. I'm extending that same foundation into orchestration now, piloting automated incident triage that other security teams can build on.
                             </p>
 
                             <p class="act-narrative">
-                                All of it sits on top of live incident response work — leading investigations end-to-end, coordinating with engineering, legal, and product. The through-line is the same one from Columbia and Copenhagen: start from the decision, work backward to the data. A dashboard nobody checks is just noise with better formatting.
+                                All of it sits on top of live incident response work — leading investigations end-to-end, coordinating with engineering, legal, and product. The through-line is the same one Columbia gave me: start from the decision, work backward to the data. A dashboard nobody checks is just noise with better formatting.
                             </p>
 
                             <div class="act-outcomes">
@@ -243,18 +243,28 @@ Version: 8.0 - Content Refresh 2026: Phase 1 Foundation
 
                         <div class="act-content">
                             <p class="act-narrative">
-                                This is where detection design met consumer scale. I led a cross-functional team developing enterprise-scale insider threat capabilities across Amazon's hardware subsidiaries. My challenge was balancing rigor with speed: what does an insider-threat case look like when it has to work across a user base of over 40 million monthly active users?
+                                When an insider-threat incident at another company hit the news, we ran a tabletop: if we faced the same thing, what would our response capability actually look like? The honest answer was that we could probably identify a bad actor — eventually — but getting there meant untangling weeks of legal and privacy process first. I pitched a rapid prototype for an insider threat program to leadership. Even working through that same red tape early on, it went well enough that leadership told me to build out the team and grow it.
                             </p>
 
                             <p class="act-narrative">
-                                I architected 50+ custom threat indicators and correlation algorithms that protect Ring's device customers and internal systems. The real win was building security controls that could operate at that scale without drowning responders in false positives — designing the signals that matter, not just collecting more logs.
+                                The program scaled across five business units — Ring, Blink, Amazon Key, Sidewalk, and eero — around a threat-narrative framework: for each service, I work with the team that owns it to map what it does, how a threat could actually materialize, who the realistic adversaries are, and whether execs are prioritizing that risk. Those narratives drove 50+ bespoke risk indicators, tailored to each team rather than copy-pasted across all of them — so when an indicator fired, we knew exactly what it meant to that builder team and what it implied for the business, instead of it being just another alert lost in the noise.
+                            </p>
+
+                            <p class="act-narrative">
+                                Embedding in the AppSec intake process meant catching insider-risk gaps in the planning conversation, before a service shipped — often leading builder teams to refactor or add preventative controls for day one instead of bolting them on after an incident. That work drove org-wide adoption of two-person authorization for access to critical customer data, and thin-client endpoint enrollment for all customer service agents, first- and third-party.
+                            </p>
+
+                            <p class="act-narrative">
+                                To make readiness measurable, I built an Insider Threat Posture Matrix — a scalable way to score a business unit's security capability and gaps. The same narratives and indicators are now informing how Customer Service, Loss Prevention, and Fraud think about their own insider risk. A threat you can name in plain language is a threat a builder team can design around before it becomes an incident.
                             </p>
 
                             <div class="act-outcomes">
                                 <p class="act-outcomes-heading"><strong>Selected outcomes:</strong></p>
                                 <ul>
-                                    <li>Architected 50+ custom threat indicators and correlation algorithms across Amazon's hardware subsidiaries</li>
-                                    <li>Built detection tuned to operate at consumer scale without drowning responders in false positives</li>
+                                    <li>Built and scaled an insider threat program across five business units (Ring, Blink, Amazon Key, Sidewalk, eero) from a rapid prototype leadership asked to extend</li>
+                                    <li>Drove org-wide adoption of two-person authorization for critical customer data access and thin-client endpoint enrollment for all CS agents (1st and 3rd party)</li>
+                                    <li>Developed the Insider Threat Posture Matrix, a scalable framework for measuring business-unit security readiness</li>
+                                    <li>Extended threat-narrative methodology and risk indicators to the Customer Service, Loss Prevention, and Fraud teams</li>
                                 </ul>
                             </div>
                         </div>
