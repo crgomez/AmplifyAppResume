@@ -57,7 +57,7 @@ Each finding is cited and applied in the section named. Content was rephrased fo
 | ID | Decision | Rationale | Alternative |
 | --- | --- | --- | --- |
 | O-1 | Define both Spacelift stacks, integrations, and the context **in the UI**, with the configuration recorded in [Spacelift configuration](#spacelift-configuration) | No third stack on the Free plan; the stack that would manage stacks would itself need an admin credential and its own bootstrap | An administrative stack using the `spacelift` provider gives drift visibility and reviewable diffs at the cost of a third stack and a Spacelift API credential in it |
-| O-2 | Workflow tool **Terraform FOSS 1.5.7** | Requirements are written against Terraform; 1.5.7 supports `import` and `moved` | OpenTofu vendor (supports `removed` blocks), at the cost of renaming every `terraform` command in the requirements |
+| O-2 | Workflow tool **Terraform FOSS 1.5.7**. Confirmed by the owner on 2026-11-23T07:15:51Z (task 4.2): Terraform FOSS 1.5.7 with the `moved` block in CU-A1; OpenTofu rejected | Requirements are written against Terraform; 1.5.7 supports `import` and `moved` | OpenTofu vendor (supports `removed` blocks), at the cost of renaming every `terraform` command in the requirements |
 | O-3 | Negative_Access_Test lives **outside the repository** as an Operator tool; its full source is in this document | Phase 0 runs it before any pull request exists, and Requirement 16 criterion 2 admits no other path in infrastructure Change_Units. No amendment needed | Commit it under `tf-files/tests/`, which is inside the infrastructure path but would trigger no-op AWS_Stack runs |
 | O-4 | Negative_Access_Test in **Python 3 standard library** | CIDR membership (Requirement 11 criterion 7) and header assertions are awkward in POSIX shell; `urllib` never reads AWS credentials | `curl` plus POSIX shell |
 | O-5 | The Published_Document list and Cloudflare_Range_Allowlist are **JSON files under `tf-files/`** read by Terraform with `jsondecode(file())` | One source of truth read by Terraform, the Synthetic_Check, the Range_Drift_Workflow, and the Negative_Access_Test; a script can rewrite JSON safely | HCL `locals`, which a workflow cannot edit safely |
@@ -70,13 +70,15 @@ Each finding is cited and applied in the section named. Content was rephrased fo
 | O-12 | Cache purges use the Cloudflare dashboard or a separate local token holding only `Cache Purge` on the zone | Keeps purge authority out of Spacelift | Add Cache Purge to the Spacelift token (requires amending Requirement 15 criterion 20) |
 | O-13 | Identifiers are variables with a live account guard. Terraform_AWS declares `var.aws_account_id` (exactly 12 digits, no default), builds every account-bearing ARN from it, and sets `allowed_account_ids = [var.aws_account_id]` in the `aws` provider, so the provider refuses to plan or apply against any other account. AWS_Stack supplies it as the non-secret environment variable `TF_VAR_aws_account_id`; local `terraform validate` and `plan` take it from `~/crgomez-ops/config.env`. Spacelift's AWS principal is `var.spacelift_aws_account_id` with no default, read from the Spacelift integration screen. Operator scripts source `config.env` (`EXPECTED_ACCOUNT_ID`, `EXPECTED_CANONICAL_ID`, `AWS_PROFILE_NAME`, `AWS_REGION`), which is written from live reads and confirmed by the owner before Phase 0; `lib.sh` aborts unless the live `sts get-caller-identity` account equals `EXPECTED_ACCOUNT_ID` | The repository is public and indexed by a third party (Greptile), so it carries no literal account ID or canonical user ID. The target is still named at approval time: it is read live and checked against an expected value the owner confirmed, and a guard is only meaningful because a human confirmed what it expects | Literals in the repository, which name the target without a lookup but publish the identifiers |
 
-### Owner decisions still open (pending)
+### Owner decisions D-1 to D-3 (decided)
 
-| ID | Question | Proposed default | Status |
+This section was titled "Owner decisions still open (pending)" until DOC-1. The owner decided all three on 2026-11-23 (task 4.4). D-2 and D-3 keep the proposed default; D-1 adds one exclusion to it.
+
+| ID | Question | Decision | Status |
 | --- | --- | --- | --- |
-| D-1 | Scanner_Gate composition beyond the required-zero list | Observed results on the planned configuration are in [Scanner_Gate](#scanner_gate-observed-and-predicted-results): the final-state configuration produces exactly the permitted set (`AWS-0132` on both buckets with SSE, `AWS-0089` and `AWS-0320` on Legacy_Bucket). Remediate `CKV_AWS_300` (O-10); accept nothing else new; re-run both scanners on the CU-A3 and CU-A4 plans and record the observed result | **Pending** |
-| D-2 | `AWS-0089` on Log_Bucket | Accept, scoped to Log_Bucket, with the reason that logging the log bucket needs another log bucket. trivy 0.76.2 does not raise it today, so this is a standing pre-approval | **Pending** |
-| D-3 | IAM read on Apply_Role | Keep "no `iam:*`". Spacelift uploads the planned workspace and applies it after confirmation, and Terraform applies a saved plan without refreshing unchanged resources, so the imported roles are not read during apply. If the first confirmed apply after CU-A2 fails on an IAM read, grant the four IAM read actions on the two role ARNs to Apply_Role and amend criterion 9 from "no `iam:*`" to "no IAM write action" | **Pending** |
+| D-1 | Scanner_Gate composition beyond the required-zero list | Observed results on the planned configuration are in [Scanner_Gate](#scanner_gate-observed-and-predicted-results): the final-state configuration produces exactly the permitted set (`AWS-0132` on both buckets with SSE, `AWS-0089` and `AWS-0320` on Legacy_Bucket). Remediate `CKV_AWS_300` (O-10; done in CU-A3). Accept one new exclusion, checkov `CKV_AWS_70` on `aws_s3_bucket_policy.content` only, which fires in plan-JSON scanning because that policy uses `Principal: "*"`. Reason: the anonymous grant names exactly three keys and is conditioned on the Cloudflare IPv4 ranges, an explicit Deny covers every other key and `s3:GetObjectVersion`, and Requirement 5 criterion 1 requires `Principal: "*"`, so the check cannot be remediated without breaking the design. Accept nothing else new beyond `CKV_AWS_70`. The interim Legacy PAB findings (`CKV_AWS_54`, `CKV_AWS_56`, `AWS-0087`, `AWS-0093`) expire at CU-A5, and the CU-A5 authoring scan no longer raises them. Still open: confirm the `CKV_AWS_70` exclusion against the CU-A4 Proposed_Run plan JSON produced by Spacelift, re-run both scanners on the CU-A3 and CU-A4 plans, and record the observed result (RL-SCAN) | **Decided** 2026-11-23T07:16:55Z, with the `CKV_AWS_70` exclusion; confirmation on the CU-A4 Proposed_Run plan JSON pending |
+| D-2 | `AWS-0089` on Log_Bucket | Accept, scoped to Log_Bucket, with the reason that logging the log bucket needs another log bucket. trivy 0.76.2 does not raise it today, so this is a standing pre-approval | **Decided** 2026-11-23T07:16:55Z, default accepted |
+| D-3 | IAM read on Apply_Role | Keep "no `iam:*`". Spacelift uploads the planned workspace and applies it after confirmation, and Terraform applies a saved plan without refreshing unchanged resources, so the imported roles are not read during apply. If the first confirmed apply after CU-A2 fails on an IAM read, grant the four IAM read actions on the two role ARNs to Apply_Role and amend criterion 9 from "no `iam:*`" to "no IAM write action" (open item A-11, folded by DOC-2 only if this contingency triggers) | **Decided** 2026-11-23T07:16:55Z, default accepted |
 
 ## Architecture
 
@@ -303,7 +305,7 @@ These are the statements the requirements delegate to the design document.
 
 **R-9: allowlist lag.** If Cloudflare adds a range, fetches from it receive 403 until a Change_Unit lands (Requirement 5 criterion 10). Detection: Range_Drift_Workflow daily and the Synthetic_Check daily.
 
-**R-10: branch protection on the private repository** needs a paid GitHub plan (open item A-3).
+**R-10: branch protection on the private repository** needs a paid GitHub plan (open item A-3). Resolved: the owner upgraded the account to GitHub Pro on 2026-11-23T07:15:44Z (task 4.1), so branch protection is available on `Terraform-CF-WAF` and Requirement 15 criterion 23 applies to both repositories as written.
 
 **R-11: the owner is an administrator.** Classic branch protection does not bind administrators unless "Do not allow bypassing the above settings" is enabled. It is enabled on both branches.
 
@@ -2475,6 +2477,7 @@ Interpretation:
 | `CKV_AWS_144` | Content_Bucket, Log_Bucket | Accept: the published content is reproducible from Legacy_Bucket and Operator Records; a second region doubles cost for no availability requirement |
 | `CKV2_AWS_62` | Content_Bucket, Log_Bucket | Accept: no consumer exists for object events; the Synthetic_Check covers delivery |
 | `CKV_AWS_18`, `AWS-0089` | Log_Bucket | Accept (decision D-2): logging the log bucket needs a further log bucket |
+| `CKV_AWS_70` | `aws_s3_bucket_policy.content` only | Accept (decision D-1): fires on plan JSON because Requirement 5 criterion 1 requires `Principal: "*"`; the grant names three keys, is conditioned on the Cloudflare IPv4 ranges, and an explicit Deny covers everything else. To be confirmed on the CU-A4 Proposed_Run plan JSON |
 | `CKV_AWS_18`, `AWS-0089` | Legacy_Bucket | Already permitted (Requirement 13 criterion 7) |
 | `CKV_AWS_21` (versioning) | any | Should not fire: all buckets are versioned. Remediate if it does |
 | `CKV2_AWS_61` (lifecycle) | Legacy_Bucket | Accept: Requirement 2 criterion 6 forbids a noncurrent-expiry rule for 90 days, and the archive keeps history afterwards |
@@ -2504,24 +2507,24 @@ Recommendation: run both scanners in the CU-A3 Proposed_Run review (Operator wor
 
 ## Open items requiring a requirements amendment
 
-Each item names the research result or design constraint, the criterion it conflicts with, and the proposed amendment. None blocks Phase 0.
+Each item names the research result or design constraint, the criterion it conflicts with, and the proposed amendment. None blocks Phase 0. DOC-1 folded A-1 to A-10 and A-12 to A-14 into requirements.md; A-11 stays deferred.
 
-| ID | Conflict | Criterion | Proposed amendment |
-| --- | --- | --- | --- |
-| A-1 | Spacelift's Terraform FOSS tool stops at 1.5.7, and `removed` blocks need 1.7. The design uses a `moved` block in CU-A1 that re-addresses the legacy policy and declares the interim policy, so CU-A2 imports no policy | R16.7 names "the `removed` block"; R16.5 lists the interim policy among CU-A2's imports | R16.7: "the `removed` block, or the equivalent declarative construct, in Requirement 13 criterion 12". R16.5: drop the interim policy from the import set when that construct already declares it. Alternative: switch to the OpenTofu vendor (O-2) |
-| A-2 | No Spacelift status for ignored pushes on Free, so the gate needs `.github/workflows/tf-gate.yml`, a file outside both permitted Change_Unit paths | R16.2, R16.6 step 5 | Add a Phase 1 Change_Unit CU-G1 that adds only `.github/workflows/tf-gate.yml`, gated by the R15.25 test pull requests |
-| A-3 | Branch protection on the private `Terraform-CF-WAF` requires GitHub Pro or higher | R15.23 | If the account is on GitHub Free: upgrade to Pro, or make the repository public after review, or amend R15.23 to accept Spacelift run confirmation as the only gate for `Terraform-CF-WAF` |
-| A-4 | `cloudflare_zone_settings_override` needs Zone Read; the DNS group is named "DNS Write" in the reference | R15.20 ("only" the listed groups) | Add "Zone Read"; name the DNS group "DNS Write (Edit in the UI)" |
-| A-5 | No Spacelift setting or policy governs fork runs on Free (the behavior is a default), and a user cannot fork their own repository into the same account | R15.13 | Accept as evidence a citation of the documented default together with a record that no push policy with `allow_fork` is attached; or a fork made from a second account or an organization the owner controls |
-| A-6 | Managed state is chosen only at stack creation, so creating AWS_Stack with the imported state, and hardening the state bucket, happen in P1-1 before CU-A1 | R16.6 step 1 lists only the Free-plan check and the role bootstrap | Add AWS_Stack creation with state import and R15.18 hardening to step 1 |
-| A-7 | The interim PAB values that R1.2 mandates produce `AWS-0087`, `AWS-0093`, `CKV_AWS_54`, `CKV_AWS_56` until CU-A5. R13.7 calls the permitted set closed while R13.9 allows recorded exclusions | R13.6, R13.7, R13.9 | State that the Scanner_Gate is evaluated on the CU-A5 configuration, and that R13.9 exclusions extend the R13.7 set. Add `AWS-0089` scoped to Log_Bucket if D-2 is accepted |
-| A-8 | Amplify serves repository files outside the Site file set (at least one file under `tf-files/` returned 200), so a `tf-files/`-only commit changes some served bytes | R15.4 | Scope R15.4 to the Site files, or add a separate change that restricts Amplify's published artifacts |
-| A-9 | Run Log entries live in this file, and every file change after Phase 0 must be a Change_Unit | R16.1 | Allow documentation-only Change_Units under `.kiro/` outside the step sequence, batched as convenient |
-| A-10 | The dependency does not order changes that start in `Terraform-CF-WAF`; the step gates do | R15.2 ("so that … enforces the AWS-then-Cloudflare ordering") | Restate the purpose as a Cloudflare re-plan after each AWS apply; ordering stays with R16.9 |
-| A-11 | Conditional on D-3: only if an apply needs IAM reads. Deferred: DOC-1 does not fold it; it is folded in DOC-2 only if the first confirmed AWS_Stack apply fails on an IAM read | R15.9 ("no `iam:*`") | "no IAM write action", plus the four IAM read actions on the two role ARNs |
-| A-12 | Spacelift reports through check runs as well as commit statuses, and by default posts PR comments and GitHub Deployments; the design disables comments and deployments with labels | R15.14 ("only commit status checks") | "status checks (commit statuses or check runs)" |
-| A-13 | Restoring the baseline ACL fails while `BlockPublicAcls` is `true`, so restoration deletes the PAB first | R1.7 | "restore the captured baseline Public_Access_Block absence, policy, and ACL, in that order" |
-| A-14 | Without anonymous list permission, S3 answers a version-specific GET for a nonexistent version with 403, not 404. The "HTTP 404 is a separate archive-integrity failure" branch of R11.5 and R11.13 can therefore never fire, and a purged or mistyped version ID passes as a refusal. The design moves archive-existence verification into the authenticated Owner_Access_Check (`head-object --version-id` for every recorded version, mode `archive`), which also runs at `post-phase0`, before Content_Bucket exists | R11.5, R11.13 (404 as archive-integrity failure in the unauthenticated test); R11.17 and R11.18 (Owner_Access_Check scope and timing: canary only, from the Content_Bucket policy Change_Unit on) | R11.5 and R11.13: report any status other than 403 as a failure, and verify that each recorded version still exists by an authenticated `head-object` naming that version ID in the Owner_Access_Check. Add an Owner_Access_Check criterion covering that archive check at every Negative_Access_Test run, including the post-Phase-0 run |
+| ID | Conflict | Criterion | Proposed amendment | Status |
+| --- | --- | --- | --- | --- |
+| A-1 | Spacelift's Terraform FOSS tool stops at 1.5.7, and `removed` blocks need 1.7. The design uses a `moved` block in CU-A1 that re-addresses the legacy policy and declares the interim policy, so CU-A2 imports no policy | R16.7 names "the `removed` block"; R16.5 lists the interim policy among CU-A2's imports | R16.7: "the `removed` block, or the equivalent declarative construct, in Requirement 13 criterion 12". R16.5: drop the interim policy from the import set when that construct already declares it. Alternative: switch to the OpenTofu vendor (O-2) | Folded into requirements.md by DOC-1. Task 4.2: Terraform FOSS 1.5.7 with the `moved` block (default kept) |
+| A-2 | No Spacelift status for ignored pushes on Free, so the gate needs `.github/workflows/tf-gate.yml`, a file outside both permitted Change_Unit paths | R16.2, R16.6 steps 5 and 6 (DOC-1 inserted the tf-gate Change_Unit as step 5; the branch protection procedure, step 5 before DOC-1, is now step 6) | Add a Phase 1 Change_Unit CU-G1 that adds only `.github/workflows/tf-gate.yml`, gated by the R15.25 test pull requests | Folded into requirements.md by DOC-1. Task 4.3: CU-G1 accepted (default kept) |
+| A-3 | Branch protection on the private `Terraform-CF-WAF` requires GitHub Pro or higher | R15.23 | If the account is on GitHub Free: upgrade to Pro, or make the repository public after review, or amend R15.23 to accept Spacelift run confirmation as the only gate for `Terraform-CF-WAF` | Folded into requirements.md by DOC-1. Task 4.1: the owner upgraded to GitHub Pro, so R15.23 stays as written |
+| A-4 | `cloudflare_zone_settings_override` needs Zone Read; the DNS group is named "DNS Write" in the reference | R15.20 ("only" the listed groups) | Add "Zone Read"; name the DNS group "DNS Write (Edit in the UI)" | Folded into requirements.md by DOC-1 |
+| A-5 | No Spacelift setting or policy governs fork runs on Free (the behavior is a default), and a user cannot fork their own repository into the same account | R15.13 | Accept as evidence a citation of the documented default together with a record that no push policy with `allow_fork` is attached; or a fork made from a second account or an organization the owner controls | Folded into requirements.md by DOC-1 |
+| A-6 | Managed state is chosen only at stack creation, so creating AWS_Stack with the imported state, and hardening the state bucket, happen in P1-1 before CU-A1 | R16.6 step 1 lists only the Free-plan check and the role bootstrap | Add AWS_Stack creation with state import and R15.18 hardening to step 1 | Folded into requirements.md by DOC-1 |
+| A-7 | The interim PAB values that R1.2 mandates produce `AWS-0087`, `AWS-0093`, `CKV_AWS_54`, `CKV_AWS_56` until CU-A5. R13.7 calls the permitted set closed while R13.9 allows recorded exclusions | R13.6, R13.7, R13.9 | State that the Scanner_Gate is evaluated on the CU-A5 configuration, and that R13.9 exclusions extend the R13.7 set. Add `AWS-0089` scoped to Log_Bucket if D-2 is accepted | Folded into requirements.md by DOC-1. D-1 and D-2 decided (task 4.4) |
+| A-8 | Amplify serves repository files outside the Site file set (at least one file under `tf-files/` returned 200), so a `tf-files/`-only commit changes some served bytes | R15.4 | Scope R15.4 to the Site files, or add a separate change that restricts Amplify's published artifacts | Folded into requirements.md by DOC-1 |
+| A-9 | Run Log entries live in this file, and every file change after Phase 0 must be a Change_Unit | R16.1 | Allow documentation-only Change_Units under `.kiro/` outside the step sequence, batched as convenient | Folded into requirements.md by DOC-1 |
+| A-10 | The dependency does not order changes that start in `Terraform-CF-WAF`; the step gates do | R15.2 ("so that … enforces the AWS-then-Cloudflare ordering") | Restate the purpose as a Cloudflare re-plan after each AWS apply; ordering stays with R16.9 | Folded into requirements.md by DOC-1 |
+| A-11 | Conditional on D-3: only if an apply needs IAM reads. Deferred: DOC-1 does not fold it; it is folded in DOC-2 only if the first confirmed AWS_Stack apply fails on an IAM read | R15.9 ("no `iam:*`") | "no IAM write action", plus the four IAM read actions on the two role ARNs | Deferred: not folded by DOC-1; DOC-2 folds it only if the D-3 contingency triggers |
+| A-12 | Spacelift reports through check runs as well as commit statuses, and by default posts PR comments and GitHub Deployments; the design disables comments and deployments with labels | R15.14 ("only commit status checks") | "status checks (commit statuses or check runs)" | Folded into requirements.md by DOC-1 |
+| A-13 | Restoring the baseline ACL fails while `BlockPublicAcls` is `true`, so restoration deletes the PAB first | R1.7 | "restore the captured baseline Public_Access_Block absence, policy, and ACL, in that order" | Folded into requirements.md by DOC-1 |
+| A-14 | Without anonymous list permission, S3 answers a version-specific GET for a nonexistent version with 403, not 404. The "HTTP 404 is a separate archive-integrity failure" branch of R11.5 and R11.13 can therefore never fire, and a purged or mistyped version ID passes as a refusal. The design moves archive-existence verification into the authenticated Owner_Access_Check (`head-object --version-id` for every recorded version, mode `archive`), which also runs at `post-phase0`, before Content_Bucket exists | R11.5, R11.13 (404 as archive-integrity failure in the unauthenticated test); R11.17 and R11.18 (Owner_Access_Check scope and timing: canary only, from the Content_Bucket policy Change_Unit on) | R11.5 and R11.13: report any status other than 403 as a failure, and verify that each recorded version still exists by an authenticated `head-object` naming that version ID in the Owner_Access_Check. Add an Owner_Access_Check criterion covering that archive check at every Negative_Access_Test run, including the post-Phase-0 run | Folded into requirements.md by DOC-1 |
 
 Not a conflict, recorded for completeness: Cloud Connector arrived in provider 4.41.0 and the latest v4 is 4.52.10, both consistent with the R6.2 constraint `>= 4.52, < 5.0`; the S3 restriction that keeps `ExpiredObjectDeleteMarker` out of an Expiration element that has `Days` is handled with two rules and still meets R3.10.
 
@@ -2580,7 +2583,7 @@ nat.py SHA-256:
 Assertions / failed:
 Report SHA-256 (private):
 Exit status:
-Owner_Access_Check: pass | fail | n/a (post-phase0)
+Owner_Access_Check: pass | fail (archive mode at post-phase0, open item A-14; full mode from CU-A4 on)
 ```
 
 **RL-SSL: SSL pre-check (Requirement 6 criteria 14 and 15)**
@@ -2709,4 +2712,36 @@ access logs cannot substitute because they count only Edge cache misses.
 
 ### Entries
 
-No entries yet. Phase 0 has not started.
+**Phase 0: completed, gate passed (Requirement 16 criterion 4)**
+
+```text
+Completed at (UTC): 2026-11-23T07:00:09Z (the archive Owner_Access_Check, the last gate item, finished)
+R1.6 verification: passed at all three verification points (after PAB, after policy, after ACL)
+R2.3 record: exists for all five deleted Unreferenced_Objects
+First Negative_Access_Test (post-phase0): exit 0, RL-NAT-001
+Owner_Access_Check archive: pass, exit 0
+Gate: pass
+```
+
+**RL-NAT-001**
+
+```text
+ID: RL-NAT-001
+Run label: post-phase0
+Started (UTC): 2026-11-23T06:59:50Z
+nat.py SHA-256: 2c4c165649be68b0e840a8ea1ce5d2ce1bc76111bd824bdbfe4be3e91400f458
+Assertions / failed: 19 / 0
+Report SHA-256 (private): a47d78cfb48f54d120bd0c8f29ca0bc86127fa82597489063d1c639a5463e8b6
+Exit status: 0
+Owner_Access_Check: pass (archive mode, 6/6 recorded noncurrent versions exist, exit 0, completed by 2026-11-23T07:00:09Z)
+Per-assertion summary (pass / fail):
+  R11.2  Legacy_Bucket ListBucket refused (403): 1 / 0
+  R11.3  Legacy_Bucket ListBucketVersions refused (403): 1 / 0
+  R11.4  Legacy_Bucket GetObject of the Unreferenced_Object keys refused (403): 6 / 0
+  R11.5  input check, exactly 5 deleted-object versions recorded: 1 / 0
+  R11.13 input check, at least 1 pre-existing noncurrent version recorded: 1 / 0
+  R11.5  noncurrent-version GET of the deleted objects refused (403): 5 / 0
+  R11.13 pre-existing noncurrent-version GET refused (403): 1 / 0
+  R1.6   interim GetObject of the Retained_Objects (200, type, length): 3 / 0
+  Content_Bucket assertions: not run (R11.9; Content_Bucket does not exist at post-phase0)
+```
