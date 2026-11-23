@@ -1294,7 +1294,7 @@ jobs:
         run: |
           set -euo pipefail
           # Capture first: a failing gh call fails the job instead of passing the gate.
-          files=$(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[].filename')
+          files=$(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | .filename, (.previous_filename // empty)')
           rc=0; grep -q '^tf-files/' <<< "$files" || rc=$?
           case "$rc" in
             0) ;;
@@ -1323,6 +1323,8 @@ jobs:
           done
           echo "Timed out waiting for $CHECK"; exit 1
 ```
+
+The file list includes each renamed file's `previous_filename` as well as its `filename`, so a rename out of `tf-files/` still requires an AWS_Stack plan; GitHub reports the new path in `filename` and the old path only in `previous_filename`. Deletions need no extra field, because a removed file keeps its path in `filename`.
 
 The gate fails closed. Every `gh api` result is captured before it is tested, so a failed call fails the job rather than letting `!` turn a broken pipeline into a pass. The file test reads a here-string, so `grep -q` closing early cannot raise SIGPIPE in an upstream `gh` process. Check runs and statuses are parsed with `jq --arg`, which also keeps the check name out of the filter text, and `max_by(.id)` picks the newest run after a re-run. Any completed conclusion other than `success` (`neutral`, `skipped`, `stale`, `cancelled`, `timed_out`, `failure`, `action_required`) fails at once instead of waiting for the timeout. A fork pull request that touches `tf-files/` never gets a Spacelift run, so the gate times out and the pull request stays unmergeable, which is the intended outcome. A slow Proposed_Run past 42 minutes needs a manual re-run of the gate job.
 
@@ -1816,13 +1818,14 @@ The Operator compares each `source` line's `sha256_b64` with the matching upload
 | Step | Action | Requirement |
 | --- | --- | --- |
 | 1 | New key only: Change_Unit adding the document to `published-documents.json`; confirm the applied policy lists it in both statements before citing the URL | 9.6, 14.3 |
-| 2 | Record the current version ID: `aws s3api head-object --bucket crgomez-content --key <key> "${P[@]}" --query VersionId --output text` (`record-version.sh`) | 9.9 |
+| 2 | Replacement only: record the current version ID: `aws s3api head-object --bucket crgomez-content --key <key> "${P[@]}" --query VersionId --output text` (`record-version.sh`). A new key has no current version, so `head-object` fails; `record-version.sh` stops with a message saying the step applies only to a replacement | 9.9 |
 | 3 | Upload the new local file with `put.sh <file> <key> …`: explicit `Content-Type`, `Cache-Control` (`max-age=3600` resume, `max-age=604800` images), and for the resume `Content-Disposition: inline; filename="carlos-gomez-resume.pdf"` | 9.1 |
 | 4 | Read back metadata; for `docs/resume.pdf` confirm `Content-Disposition` equals the value above. A missing value means re-upload and repeat step 5 | 9.8, 9.10 |
 | 5 | After the upload completes, purge by URL: dashboard Caching → Configuration → Custom Purge, or `POST /zones/{zone}/purge_cache` `{"files":["https://field.crgomez.com/<key>"]}` with the local purge token (O-12) | 9.2, 9.7 |
 | 6 | Verify through Delivery_Host: 200, `Content-Type` as uploaded, body length equal to the new size; up to 3 attempts across at least 5 minutes | 9.5 |
 | 7 | If the size changed, Change_Unit updating `size_bytes` in `published-documents.json` in the same publish, so the Synthetic_Check expects the new size | 9.11 |
-| Rollback | `rollback.sh`: `aws s3api copy-object --bucket crgomez-content "${P[@]}" --key <key> --copy-source "crgomez-content/<key>?versionId=<url-encoded recorded id>"`, then purge by URL | 9.9 |
+| Rollback | Replacement: `rollback.sh`: `aws s3api copy-object --bucket crgomez-content "${P[@]}" --key <key> --copy-source "crgomez-content/<key>?versionId=<url-encoded recorded id>"`, then purge by URL | 9.9 |
+| Rollback, first upload of a new key | Soft-delete the new object with a key-only `aws s3api delete-object --bucket crgomez-content --key <key> "${P[@]}"`, which adds a delete marker and leaves the uploaded content recoverable as a noncurrent version; then a Change_Unit removing the key from `published-documents.json`, and purge by URL | 9.6, 14.3 |
 
 Staleness when a purge is skipped (Requirement 9 criteria 3 and 4):
 
@@ -1919,13 +1922,15 @@ Then run the Negative_Access_Test with `--phase post-lockdown` (R8.4, R11.9).
 
 The Spacelift run ID is the assume-role session name, so it appears as the CloudTrail username ([AWS integration](https://docs.spacelift.io/integrations/cloud-providers/aws)).
 
-```sh
-aws cloudtrail lookup-events --region us-west-2 \
+```bash
+#!/bin/bash
+. ~/crgomez-ops/lib.sh      # sets P (profile and region) and runs the live account guard
+aws cloudtrail lookup-events "${P[@]}" \
   --lookup-attributes AttributeKey=Username,AttributeValue=<run-id> \
   --start-time <apply-start> --end-time <apply-end> \
   --query 'Events[].{name:EventName,time:EventTime,arn:CloudTrailEvent}' --output json \
   | python3 -c 'import json,sys; [print(e["name"], e["time"], json.loads(e["arn"])["userIdentity"]["arn"]) for e in json.load(sys.stdin)]'
-aws cloudtrail lookup-events --region us-west-2 \
+aws cloudtrail lookup-events "${P[@]}" \
   --lookup-attributes AttributeKey=Username,AttributeValue=<ADMIN_IAM_USER> \
   --start-time <apply-start> --end-time <apply-end> --query 'Events[?starts_with(EventName, `Put`) || starts_with(EventName, `Delete`) || starts_with(EventName, `Create`)].EventName'
 ```
